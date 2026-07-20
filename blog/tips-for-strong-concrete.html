@@ -659,7 +659,9 @@
     </style>
     <link rel="stylesheet" href="../site-consistency.css" />
     <link rel="icon" href="../favicon.jpg" type="image/jpeg" />
-</head>
+<style id="faq-card-styles">
+.post-content .faq-list{display:grid;gap:.85rem;margin:1.25rem 0 2.5rem}.post-content .faq-item{border:1px solid #d7e3f2;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(20,61,112,.07);overflow:hidden}.post-content .faq-item[open]{border-color:#8eb4e2}.post-content .faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.15rem;color:#143b72;font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none}.post-content .faq-item summary::-webkit-details-marker{display:none}.post-content .faq-item summary::after{content:'+';display:grid;place-items:center;flex:none;width:1.65rem;height:1.65rem;border-radius:50%;background:#eaf2fc;color:#143b72;font-size:1.35rem;line-height:1}.post-content .faq-item[open] summary{background:#f2f7fd}.post-content .faq-item[open] summary::after{content:'−';background:#143b72;color:#fff}.post-content .faq-item p{margin:0;padding:0 1.15rem 1rem;line-height:1.65}.post-content .faq-item p+p{padding-top:0}@media(max-width:600px){.post-content .faq-item summary{padding:.9rem 1rem;font-size:1rem}.post-content .faq-item p{padding:0 1rem .9rem}}
+</style></head>
 
 <body>
 
@@ -1170,37 +1172,33 @@
                     </table>
                 </div>
 
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>What is the best water-cement ratio for strong concrete?</h3>
-                <p>
-                    The ideal water-cement ratio is <strong>0.40 to 0.45</strong> for most applications. This means 40-45 liters of water per 100kg of cement. For 50kg bags, use <strong>5-7 liters</strong> of water.
-                </p>
-
-                <h3>How long does concrete take to cure?</h3>
-                <p>
-                    Concrete should cure for at least <strong>7 days</strong>. For maximum strength, cure for <strong>14-28 days</strong>. The first 3-5 days are the most critical.
-                </p>
-
-                <h3>Why does my concrete have cracks?</h3>
-                <p>
-                    Common causes include <strong>insufficient curing, too much water, rapid drying, thermal stress, and lack of reinforcement</strong>. Good curing and proper mix design prevent most cracking.
-                </p>
-
-                <h3>Can I add water to concrete after it starts setting?</h3>
-                <p>
-                    <strong>Never add water to concrete that has started setting.</strong> It weakens the mix and creates weak spots. If it's too dry, it's better to discard and mix fresh.
-                </p>
-
-                <h3>How can I test concrete strength on site?</h3>
-                <p>
-                    You can use the <strong>slump test</strong> for workability, take <strong>cube samples</strong> for testing at 7 and 28 days, or use a <strong>Schmidt hammer</strong> for in-situ testing.
-                </p>
-
-                <h3>Do you supply cement for concrete projects?</h3>
-                <p>
-                    Yes! We deliver fresh, genuine Bamburi Cement across Kenya. <a href="../delivery.html">View our delivery areas</a> or <a href="../contact.html">contact us</a> for a quote.
-                </p>
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <section class="faq-list" aria-labelledby="faq-heading">
+                    <details class="faq-item" open>
+                        <summary>What is the best water-cement ratio for strong concrete?</summary>
+                        <p>The ideal water-cement ratio is <strong>0.40 to 0.45</strong> for most applications. This means 40–45 litres of water per 100 kg of cement. For 50 kg bags, use <strong>5–7 litres</strong> of water.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How long does concrete take to cure?</summary>
+                        <p>Concrete should cure for at least <strong>7 days</strong>. For maximum strength, cure for <strong>14–28 days</strong>. The first 3–5 days are the most critical.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Why does my concrete have cracks?</summary>
+                        <p>Common causes include <strong>insufficient curing, too much water, rapid drying, thermal stress, and lack of reinforcement</strong>. Good curing and proper mix design prevent most cracking.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I add water to concrete after it starts setting?</summary>
+                        <p><strong>Never add water to concrete that has started setting.</strong> It weakens the mix and creates weak spots. If it is too dry, it is better to discard it and mix fresh.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How can I test concrete strength on site?</summary>
+                        <p>You can use the <strong>slump test</strong> for workability, take <strong>cube samples</strong> for testing at 7 and 28 days, or use a <strong>Schmidt hammer</strong> for in-situ testing.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you supply cement for concrete projects?</summary>
+                        <p>Yes! We deliver fresh, genuine Bamburi Cement across Kenya. <a href="../delivery.html">View our delivery areas</a> or <a href="../contact.html">contact us</a> for a quote.</p>
+                    </details>
+                </section>
 
                 <h2>Conclusion</h2>
                 <p>
