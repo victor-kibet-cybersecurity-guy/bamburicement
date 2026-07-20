@@ -145,7 +145,7 @@ window.showToast = function(message) {
 window.addToCart = function(name, price, waLink) {
     const toast = document.getElementById('toastNotification');
     if (toast) {
-        toast.textContent = `ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
+        toast.textContent = `Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 3000);
     }
@@ -713,7 +713,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="stock-status ${stockClass}"><i class="fas fa-check-circle"></i> ${stockText}</span>
                     </div>
                     <div class="cart-item-actions">
-                        <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢</button>
+                        <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢</button>
                         <span class="qty-display">${item.quantity || 1}</span>
                         <button class="qty-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
                         <button class="remove-btn" onclick="removeCartItem(${index})" aria-label="Remove item">
@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCartItems();
         updateCartBadge();
         if (typeof window.showToast === 'function') {
-            window.showToast('ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â Removed from quote cart');
+            window.showToast('Removed from quote cart');
         }
     };
 
@@ -788,12 +788,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const qty = item.quantity || 1;
             const subtotal = price * qty;
             total += subtotal;
-            message += `ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ ${item.name} ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
+            message += `ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ ${item.name} ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
         });
 
-        message += `\nÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â° Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
-        message += '\n\nÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚Â Delivery Location: [Enter your location]';
-        message += '\nÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚Â¦ Quantity needed: [Confirm total bags]';
+        message += `\nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
+        message += '\n\nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â Delivery Location: [Enter your location]';
+        message += '\nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦ Quantity needed: [Confirm total bags]';
         message += '\n\nPlease send me your best pricing and delivery options.';
 
         const encoded = encodeURIComponent(message);
@@ -845,4 +845,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
 });
-document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.redirect-container'))return;const p=location.pathname.includes('/blog/')?'../':'';const cur=location.pathname.split('/').pop()||'index.html';const items=[['index.html','Home'],['products.html','Products'],['about.html','About'],['description.html','Product Guide'],['prices.html','Prices'],['delivery.html','Delivery Areas'],['blog.html','Blog'],['contact.html','Contact']];const nav=items.map(x=>`<li><a href="${p}${x[0]}"${cur===x[0]?' aria-current="page"':''}>${x[1]}</a></li>`).join('');document.querySelectorAll('.top-bar').forEach(x=>x.remove());const head=`<div id="siteShellTopbar"><div class="shell-row"><span>Supplying Genuine Bamburi Cement Across Kenya</span><span><a href="tel:+254750210207">0750 210 207</a> &nbsp; <a href="https://wa.me/254750210207">WhatsApp</a></span></div></div><header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="${p}index.html"><img src="${p}Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement"></a><ul class="shell-links" id="siteShellLinks">${nav}</ul><button class="shell-menu" type="button" aria-label="Open menu">☰</button></nav></header>`;const oldHead=document.querySelector('header');if(oldHead)oldHead.outerHTML=head;else document.body.insertAdjacentHTML('afterbegin',head);const foot=`<footer class="site-shell-footer"><div class="shell-footer-grid"><div><img class="shell-footer-logo" src="${p}Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement"><p>Independent supplier of genuine Bamburi Cement products, serving homeowners, contractors and developers across Kenya.</p></div><div><h3>Quick Links</h3><ul>${nav}</ul></div><div><h3>Products</h3><ul><li><a href="${p}fundi.html">Bamburi Fundi</a></li><li><a href="${p}tembo.html">Bamburi Tembo</a></li><li><a href="${p}nguvu.html">Bamburi Nguvu</a></li><li><a href="${p}powermax.html">PowerMax</a></li><li><a href="${p}duracem.html">Duracem</a></li></ul></div><div><h3>Contact</h3><p>Phone: <a href="tel:+254750210207">+254 750 210 207</a></p><p>WhatsApp: <a href="https://wa.me/254750210207">Chat with us</a></p><p>Email: <a href="mailto:sales@bamburicementkenya.co.ke">sales@bamburicementkenya.co.ke</a></p></div></div><div class="shell-footer-bottom"><p>© 2026 Bamburi Cement Kenya.</p></div></footer>`;const oldFoot=document.querySelector('footer');if(oldFoot)oldFoot.outerHTML=foot;else document.body.insertAdjacentHTML('beforeend',foot);document.querySelectorAll('.floating-wa,.floating-whatsapp,.floating-call').forEach(x=>x.remove());const menu=document.querySelector('.shell-menu'), links=document.getElementById('siteShellLinks');if(menu&&links)menu.onclick=()=>links.classList.toggle('is-open');const img=document.querySelector('.product-gallery .main-image[alt*="Nguvu"]');if(img){const g=img.closest('.product-gallery');if(g)g.style.background=`#f8fafc url("${p}bamburi-nguvu.jpg") center / contain no-repeat`;img.style.cssText+='display:block!important;visibility:visible!important;opacity:1!important;'}});
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.redirect-container'))return;const p=location.pathname.includes('/blog/')?'../':'';const cur=location.pathname.split('/').pop()||'index.html';const items=[['index.html','Home'],['products.html','Products'],['about.html','About'],['description.html','Product Guide'],['prices.html','Prices'],['delivery.html','Delivery Areas'],['blog.html','Blog'],['contact.html','Contact']];const nav=items.map(x=>`<li><a href="${p}${x[0]}"${cur===x[0]?' aria-current="page"':''}>${x[1]}</a></li>`).join('');document.querySelectorAll('.top-bar').forEach(x=>x.remove());const head=`<div id="siteShellTopbar"><div class="shell-row"><span>Supplying Genuine Bamburi Cement Across Kenya</span><span><a href="tel:+254750210207">0750 210 207</a> &nbsp; <a href="https://wa.me/254750210207">WhatsApp</a></span></div></div><header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="${p}index.html"><img src="${p}Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement"></a><ul class="shell-links" id="siteShellLinks">${nav}</ul><button class="shell-menu" type="button" aria-label="Open menu">â˜°</button></nav></header>`;const oldHead=document.querySelector('header');if(oldHead)oldHead.outerHTML=head;else document.body.insertAdjacentHTML('afterbegin',head);const foot=`<footer class="site-shell-footer"><div class="shell-footer-grid"><div><img class="shell-footer-logo" src="${p}Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement"><p>Independent supplier of genuine Bamburi Cement products, serving homeowners, contractors and developers across Kenya.</p></div><div><h3>Quick Links</h3><ul>${nav}</ul></div><div><h3>Products</h3><ul><li><a href="${p}fundi.html">Bamburi Fundi</a></li><li><a href="${p}tembo.html">Bamburi Tembo</a></li><li><a href="${p}nguvu.html">Bamburi Nguvu</a></li><li><a href="${p}powermax.html">PowerMax</a></li><li><a href="${p}duracem.html">Duracem</a></li></ul></div><div><h3>Contact</h3><p>Phone: <a href="tel:+254750210207">+254 750 210 207</a></p><p>WhatsApp: <a href="https://wa.me/254750210207">Chat with us</a></p><p>Email: <a href="mailto:sales@bamburicementkenya.co.ke">sales@bamburicementkenya.co.ke</a></p></div></div><div class="shell-footer-bottom"><p>Â© 2026 Bamburi Cement Kenya.</p></div></footer>`;const oldFoot=document.querySelector('footer');if(oldFoot)oldFoot.outerHTML=foot;else document.body.insertAdjacentHTML('beforeend',foot);document.querySelectorAll('.floating-wa,.floating-whatsapp,.floating-call').forEach(x=>x.remove());const menu=document.querySelector('.shell-menu'), links=document.getElementById('siteShellLinks');if(menu&&links)menu.onclick=()=>links.classList.toggle('is-open');const img=document.querySelector('.product-gallery .main-image[alt*="Nguvu"]');if(img){const g=img.closest('.product-gallery');if(g)g.style.background=`#f8fafc url("${p}bamburi-nguvu.jpg") center / contain no-repeat`;img.style.cssText+='display:block!important;visibility:visible!important;opacity:1!important;'}});
+// Open the quote-cart panel after a product is added.
+window.openQuoteCartPanel = function () {
+    const overlay = document.getElementById('cartOverlay');
+    const panel = document.getElementById('cartPanel');
+    if (!overlay || !panel) return;
+    overlay.classList.add('active');
+    panel.classList.add('open');
+    document.body.style.overflow = 'hidden';
+};
+document.addEventListener('cartUpdated', function () {
+    window.openQuoteCartPanel();
+});
