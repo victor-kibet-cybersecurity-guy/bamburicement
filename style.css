@@ -6248,3 +6248,17 @@ html, body { overflow-x: hidden; }
         padding: 0.45rem 0.65rem;
     }
 }
+
+/* White footer theme */
+.footer {
+    background: #ffffff;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+}
+.footer h3 { color: var(--text-primary); }
+.footer p { color: var(--text-secondary); }
+.footer a { color: var(--brand-primary); }
+.footer a:hover { color: var(--brand-primary-dark); }
+.footer-bottom { border-top-color: var(--border-color); }
+.footer-bottom p { color: var(--text-secondary); }
+.footer-logo { border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
