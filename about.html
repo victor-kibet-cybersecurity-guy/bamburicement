@@ -709,27 +709,96 @@
     <link rel="stylesheet" href="site-consistency.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="navbar">
-        <a href="index.html" class="brand-link" aria-label="Go to Bamburi Cement home page">
-          <img src="logo.jpg" alt="Bamburi special products" class="site-logo" width="250" height="77" decoding="async">
-        </a>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-        <nav class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="about.html" class="active">About</a>
-          <a href="products.html">Products</a>
-          <a href="nairobi.html">Nairobi Prices</a>
-          <a href="descriptions.html">Descriptions</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <header class="header">
+        <div class="container">
+            <div class="navbar">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement Kenya" />
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link has-dropdown">
+                            Products <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Cement Products</h4>
+                                <ul>
+                                    <li><a href="fundi.html"><i class="fas fa-cube"></i> Bamburi Fundi</a></li>
+                                    <li><a href="tembo.html"><i class="fas fa-cube"></i> Bamburi Tembo</a></li>
+                                    <li><a href="nguvu.html"><i class="fas fa-cube"></i> Bamburi Nguvu</a></li>
+                                    <li><a href="powermax.html"><i class="fas fa-cube"></i> Bamburi PowerMax</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Premium Products</h4>
+                                <ul>
+                                    <li><a href="duracem.html"><i class="fas fa-industry"></i> Bamburi Duracem</a></li>
+                                    <li><a href="powerplus.html"><i class="fas fa-industry"></i> Bamburi PowerPlus</a></li>
+                                    <li><a href="powercrete.html"><i class="fas fa-industry"></i> Bamburi Powercrete</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Resources</h4>
+                                <ul>
+                                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                                    <li><a href="description.html"><i class="fas fa-book"></i> Product Guide</a></li>
+                                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-feature">
+                                <h3>Need Help Choosing?</h3>
+                                <p>Compare Bamburi cement products, check prices, and request a quotation from our sales team.</p>
+                                <a href="products.html" class="btn btn-primary">View All Products</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="description.html" class="nav-link">Product Guide</a>
+                    </li>
+                </ul>
+
+                <!-- removed corrupted comment -->
+                <div class="header-actions">
+                    <!-- removed corrupted comment -->
+                    <button class="mobile-search-toggle" id="mobileSearchToggle" aria-label="Search products">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <!-- removed corrupted comment -->
+                    <a href="wishlist.html" class="wishlist-link">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+
+                    <!-- removed corrupted comment -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Links for mobile inside the same nav (so hamburger reveals them) -->
+                <ul class="nav nav-quicklinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="description.html" class="nav-link">Product Guide</a></li>
+                    <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                    <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery Areas</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
 
   <main>
     <section class="hero-about">

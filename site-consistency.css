@@ -16,3 +16,13 @@ img, picture, video, iframe { max-width: 100%; height: auto; }
   .floating-buttons { right: .75rem; bottom: 1rem; }
   .cart-panel { width: min(100%, 430px); }
 }
+/* Footer link visibility and one shared quick-action set */
+.footer ul li a,
+.footer ul li a:visited { color: #1d4f91 !important; }
+.footer ul li a:hover,
+.footer ul li a:focus { color: #143d73 !important; }
+.footer ul { margin: 0; padding: 0; list-style: none; }
+.footer ul li { display: block; }
+.floating-wa,
+.floating-whatsapp,
+.floating-call { display: none !important; }
