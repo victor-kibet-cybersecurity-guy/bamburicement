@@ -235,9 +235,6 @@ function renderProducts() {
                     ${badgeHtml}
                     ${saleBadgeHtml}
                     ${salePercentHtml}
-                    <button class="wishlist-btn" data-product-id="${product.id}" aria-label="Add to wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
                     <span class="stock-badge ${stockClass}">${stockText}</span>
                 </div>
 
@@ -264,41 +261,6 @@ function renderProducts() {
 // ATTACH EVENT LISTENERS
 // ============================================
 function attachProductEvents() {
-    // Wishlist toggle (with localStorage sync)
-    document.querySelectorAll('.wishlist-btn').forEach(btn => {
-        const productId = parseInt(btn.dataset.productId);
-
-        // Set initial state from localStorage
-        if (window.isInWishlist && window.isInWishlist(productId)) {
-            btn.classList.add('active');
-            const icon = btn.querySelector('i');
-            if (icon) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            }
-        }
-
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const id = parseInt(this.dataset.productId);
-            if (typeof window.toggleWishlist === 'function') {
-                window.toggleWishlist(id);
-                const isActive = window.isInWishlist(id);
-                this.classList.toggle('active', isActive);
-                const icon = this.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('far', !isActive);
-                    icon.classList.toggle('fas', isActive);
-                }
-                if (typeof window.updateWishlistBadge === 'function') {
-                    window.updateWishlistBadge();
-                }
-                if (typeof window.showToast === 'function') {
-                    window.showToast(isActive ? '❤️ Added to wishlist' : '💔 Removed from wishlist');
-                }
-            }
-        });
-    });
 
     // Track product views when clicking "View Details" or product name
     document.querySelectorAll('.product-card .view-details, .product-card h3 a').forEach(link => {

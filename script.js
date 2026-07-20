@@ -4,55 +4,6 @@
    ===================================================== */
 
 // ============================================
-// 1. WISHLIST SYSTEM (localStorage)
-// ============================================
-const WISHLIST_KEY = 'bamburi_wishlist';
-
-window.getWishlist = function() {
-    try {
-        const data = localStorage.getItem(WISHLIST_KEY);
-        return data ? JSON.parse(data) : [];
-    } catch (e) {
-        return [];
-    }
-};
-
-window.saveWishlist = function(items) {
-    localStorage.setItem(WISHLIST_KEY, JSON.stringify(items));
-    window.updateWishlistBadge();
-};
-
-window.toggleWishlist = function(productId) {
-    let wishlist = window.getWishlist();
-    const index = wishlist.indexOf(productId);
-    if (index > -1) {
-        wishlist.splice(index, 1);
-    } else {
-        wishlist.push(productId);
-    }
-    window.saveWishlist(wishlist);
-    return wishlist;
-};
-
-window.isInWishlist = function(productId) {
-    const wishlist = window.getWishlist();
-    return wishlist.includes(productId);
-};
-
-window.removeWishlistItem = function(productId) {
-    let wishlist = window.getWishlist();
-    wishlist = wishlist.filter(id => id != productId);
-    window.saveWishlist(wishlist);
-};
-
-window.updateWishlistBadge = function() {
-    const wishlist = window.getWishlist();
-    const count = wishlist.length;
-    const badge = document.querySelector('.wishlist-count');
-    if (badge) badge.textContent = count;
-};
-
-// ============================================
 // 2. QUOTE CART SYSTEM (localStorage)
 // ============================================
 const QUOTE_KEY = 'bamburi_quote_cart';
@@ -626,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Initialize Wishlist & Quote Badges ---
     setTimeout(function() {
-        if (typeof window.updateWishlistBadge === 'function') window.updateWishlistBadge();
+
         if (typeof window.updateQuoteBadge === 'function') window.updateQuoteBadge();
     }, 100);
 
