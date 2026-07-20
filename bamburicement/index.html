@@ -23,7 +23,7 @@
     <meta property="og:description"
         content="Competitive prices, nationwide delivery and bulk cement supply across Kenya." />
     <meta property="og:url" content="https://bamburicementkenya.co.ke/" />
-    <meta property="og:image" content="images/hero.webp" />
+    <meta property="og:image" content="images/hero.jpg" />
     <meta property="og:site_name" content="Bamburi Cement Kenya" />
 
     <!-- Twitter -->
@@ -31,9 +31,9 @@
     <meta name="twitter:title" content="Genuine Bamburi Cement Supplier in Kenya" />
     <meta name="twitter:description"
         content="Order genuine Bamburi Cement products with fast delivery across Kenya." />
-    <meta name="twitter:image" content="images/hero.webp" />
+    <meta name="twitter:image" content="images/hero.jpg" />
 
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.jpg" />
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +45,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- JSON‑LD Schema -->
+    <!-- JSONâ€‘LD Schema -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -66,7 +66,7 @@
 
     <style>
         /* =====================================================
-           INDEX PAGE – SPECIFIC STYLES
+           INDEX PAGE â€“ SPECIFIC STYLES
            ===================================================== */
 
         /* Keep only page-specific styles here. Shared UI styles are in style.css. */
@@ -155,7 +155,7 @@
     </div>
 
     <!-- =====================================================
-    HEADER – WITH MOBILE SEARCH (NO CART LINK)
+    HEADER â€“ WITH MOBILE SEARCH (NO CART LINK)
     ===================================================== -->
     <header class="header">
         <div class="container">
@@ -209,24 +209,24 @@
                         <a href="about.html" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="description.html" class="nav-link">📖 Product Guide</a>
+                        <a href="description.html" class="nav-link">ðŸ“– Product Guide</a>
                     </li>
                 </ul>
 
-                <!-- Right‑side Actions – 3 Icons for Mobile -->
+                <!-- Rightâ€‘side Actions â€“ 3 Icons for Mobile -->
                 <div class="header-actions">
-                    <!-- 1. 🔍 Search (Mobile only) -->
+                    <!-- 1. ðŸ” Search (Mobile only) -->
                     <button class="mobile-search-toggle" id="mobileSearchToggle" aria-label="Search products">
                         <i class="fas fa-search"></i>
                     </button>
 
-                    <!-- 2. ❤️ Wishlist -->
+                    <!-- 2. â¤ï¸ Wishlist -->
                     <a href="wishlist.html" class="wishlist-link">
                         <i class="far fa-heart"></i>
                         <span class="wishlist-count">0</span>
                     </a>
 
-                    <!-- 3. ☰ Hamburger Menu -->
+                    <!-- 3. â˜° Hamburger Menu -->
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -237,7 +237,7 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="description.html" class="nav-link">📖 Product Guide</a></li>
+                    <li class="nav-item"><a href="description.html" class="nav-link">ðŸ“– Product Guide</a></li>
                     <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
                     <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery Areas</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
@@ -283,7 +283,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/hero.webp" alt="Bamburi Cement Delivery" />
+                    <img src="images/hero.jpg" alt="Bamburi Cement Delivery" />
                     <div class="experience-card">
                         <h3>Trusted Supplier</h3>
                         <p>Serving customers across Kenya with reliable cement supply and delivery.</p>
@@ -408,7 +408,7 @@
                     </div>
                 </div>
                 <div class="wholesale-image">
-                    <img src="images/wholesale-delivery.webp" alt="Bulk Cement Delivery" loading="lazy" />
+                    <img src="images/wholesale-delivery.jpg" alt="Bulk Cement Delivery" loading="lazy" />
                 </div>
             </div>
         </div>
@@ -727,13 +727,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
+                <p>Â© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
             </div>
         </div>
     </footer>
 
     <!-- =====================================================
-    FLOATING BUTTONS & CART PANEL – UPDATED
+    FLOATING BUTTONS & CART PANEL â€“ UPDATED
     ===================================================== -->
 
     <!-- Floating Buttons -->
@@ -808,7 +808,7 @@
         window.addToCart = function(name, price, waLink) {
             const toast = document.getElementById('toastNotification');
             if (toast) {
-                toast.textContent = `🛒 Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
+                toast.textContent = `ðŸ›’ Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
                 toast.classList.add('show');
                 setTimeout(() => toast.classList.remove('show'), 3000);
             }
@@ -951,7 +951,7 @@
                             <span class="stock-status ${stockClass}"><i class="fas fa-check-circle"></i> ${stockText}</span>
                         </div>
                         <div class="cart-item-actions">
-                            <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">−</button>
+                            <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">âˆ’</button>
                             <span class="qty-display">${item.quantity || 1}</span>
                             <button class="qty-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
                             <button class="remove-btn" onclick="removeCartItem(${index})" aria-label="Remove item">
@@ -996,7 +996,7 @@
             renderCartItems();
             updateCartBadge();
             if (typeof window.showToast === 'function') {
-                window.showToast('🗑️ Removed from quote cart');
+                window.showToast('ðŸ—‘ï¸ Removed from quote cart');
             }
         }
 
@@ -1027,12 +1027,12 @@
                 const subtotal = price * qty;
                 total += subtotal;
                 message +=
-                    `• ${item.name} × ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
+                    `â€¢ ${item.name} Ã— ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
             });
 
-            message += `\n💰 Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
-            message += '\n\n📍 Delivery Location: [Enter your location]';
-            message += '\n📦 Quantity needed: [Confirm total bags]';
+            message += `\nðŸ’° Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
+            message += '\n\nðŸ“ Delivery Location: [Enter your location]';
+            message += '\nðŸ“¦ Quantity needed: [Confirm total bags]';
             message += '\n\nPlease send me your best pricing and delivery options.';
 
             const encoded = encodeURIComponent(message);
@@ -1247,7 +1247,7 @@
                 window.updateQuoteBadge();
             }
 
-            console.log('✅ Index page loaded successfully');
+            console.log('âœ… Index page loaded successfully');
         });
     </script>
 

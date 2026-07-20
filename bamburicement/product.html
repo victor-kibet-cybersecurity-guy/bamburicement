@@ -36,7 +36,7 @@
 
     <style>
         /* =====================================================
-           PRODUCT PAGE – SPECIFIC STYLES
+           PRODUCT PAGE â€“ SPECIFIC STYLES
            ===================================================== */
 
         /* Breadcrumb */
@@ -470,7 +470,7 @@
             border-bottom: none;
         }
         .product-tabs .tab-panel ul li::before {
-            content: '✓ ';
+            content: 'âœ“ ';
             color: #10b981;
             font-weight: 700;
         }
@@ -888,7 +888,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="description.html" class="nav-link">📖 Product Guide</a>
+                        <a href="description.html" class="nav-link">ðŸ“– Product Guide</a>
                     </li>
                 </ul>
                 <div class="header-actions">
@@ -910,7 +910,7 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="description.html" class="nav-link">📖 Product Guide</a></li>
+                    <li class="nav-item"><a href="description.html" class="nav-link">ðŸ“– Product Guide</a></li>
                     <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
                     <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery Areas</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
@@ -927,15 +927,15 @@
     <nav class="breadcrumb" id="breadcrumb">
         <div class="container">
             <a href="index.html">Home</a>
-            <span class="separator">›</span>
+            <span class="separator">â€º</span>
             <a href="products.html">Products</a>
-            <span class="separator">›</span>
+            <span class="separator">â€º</span>
             <span class="current" id="breadcrumbProduct">Loading...</span>
         </div>
     </nav>
 
     <!-- =====================================================
-    PRODUCT DETAIL – DYNAMIC CONTENT
+    PRODUCT DETAIL â€“ DYNAMIC CONTENT
     ===================================================== -->
     <section class="product-detail" id="productDetail">
         <div class="container">
@@ -963,7 +963,7 @@
                             <h1 class="product-name" id="productName"></h1>
 
                             <div class="product-rating">
-                                <span class="stars" id="productStars">★★★★★</span>
+                                <span class="stars" id="productStars">â˜…â˜…â˜…â˜…â˜…</span>
                                 <span class="review-count" id="productReviewCount">(0 reviews)</span>
                             </div>
 
@@ -997,7 +997,7 @@
                     </div>
 
                     <!-- ============================================
-                    🔥 FIXED: Product Tabs – Wrapped in .product-tabs
+                    ðŸ”¥ FIXED: Product Tabs â€“ Wrapped in .product-tabs
                     ============================================ -->
                     <div class="product-tabs" id="productTabs">
                         <div class="tab-nav" id="tabNav">
@@ -1135,7 +1135,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
+                <p>Â© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
             </div>
         </div>
     </footer>
@@ -1168,7 +1168,7 @@
 
     <script>
         // ============================================
-        // PRODUCT PAGE – DYNAMIC LOADER
+        // PRODUCT PAGE â€“ DYNAMIC LOADER
         // ============================================
 
         function getProductIdFromURL() {
@@ -1204,28 +1204,28 @@
                 return;
             }
 
-            // 🔥 DEBUG: Log product data to console
-            console.log('✅ Product loaded:', product);
-            console.log('  → Strength:', product.strength);
-            console.log('  → Packaging:', product.packaging);
-            console.log('  → Recommended Uses:', product.recommendedUses);
+            // ðŸ”¥ DEBUG: Log product data to console
+            console.log('âœ… Product loaded:', product);
+            console.log('  â†’ Strength:', product.strength);
+            console.log('  â†’ Packaging:', product.packaging);
+            console.log('  â†’ Recommended Uses:', product.recommendedUses);
 
             loadingState.style.display = 'none';
             content.style.display = 'block';
 
             // --- Update Page Title & Meta ---
-            document.title = `${product.name} – Bamburi Cement Kenya | Prices & Specifications`;
+            document.title = `${product.name} â€“ Bamburi Cement Kenya | Prices & Specifications`;
             document.querySelector('meta[name="description"]').content =
                 `Buy ${product.name} in Kenya at ${product.price}. ${product.description.substring(0, 150)}`;
 
             // --- Open Graph ---
-            document.querySelector('meta[property="og:title"]').content = `${product.name} – Bamburi Cement Kenya`;
+            document.querySelector('meta[property="og:title"]').content = `${product.name} â€“ Bamburi Cement Kenya`;
             document.querySelector('meta[property="og:description"]').content =
                 `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
             document.querySelector('meta[property="og:image"]').content = product.image;
 
             // --- Twitter Card ---
-            document.querySelector('meta[name="twitter:title"]').content = `${product.name} – Bamburi Cement Kenya`;
+            document.querySelector('meta[name="twitter:title"]').content = `${product.name} â€“ Bamburi Cement Kenya`;
             document.querySelector('meta[name="twitter:description"]').content =
                 `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
             document.querySelector('meta[name="twitter:image"]').content = product.image;
@@ -1262,19 +1262,19 @@
             const badgeContainer = document.getElementById('badgeContainer');
             badgeContainer.innerHTML = '';
             if (product.isBestSeller) {
-                badgeContainer.innerHTML += `<span class="badge bestseller">★ Best Seller</span>`;
+                badgeContainer.innerHTML += `<span class="badge bestseller">â˜… Best Seller</span>`;
             }
             if (product.isNew) {
-                badgeContainer.innerHTML += `<span class="badge new">✦ New</span>`;
+                badgeContainer.innerHTML += `<span class="badge new">âœ¦ New</span>`;
             }
             if (product.isFeatured) {
-                badgeContainer.innerHTML += `<span class="badge featured">⭐ Featured</span>`;
+                badgeContainer.innerHTML += `<span class="badge featured">â­ Featured</span>`;
             }
             if (product.oldPrice) {
                 const oldNum = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
                 const newNum = parseFloat(product.price.replace(/[^0-9.]/g, ''));
                 if (!isNaN(oldNum) && !isNaN(newNum) && oldNum > newNum) {
-                    badgeContainer.innerHTML += `<span class="badge sale">🔥 Sale</span>`;
+                    badgeContainer.innerHTML += `<span class="badge sale">ðŸ”¥ Sale</span>`;
                 }
             }
 
@@ -1300,8 +1300,8 @@
             document.getElementById('productName').textContent = product.name;
 
             // Rating (simulated)
-            document.getElementById('productStars').textContent = '★★★★★';
-            document.getElementById('productReviewCount').textContent = `(4.8 / 5.0 • 127 reviews)`;
+            document.getElementById('productStars').textContent = 'â˜…â˜…â˜…â˜…â˜…';
+            document.getElementById('productReviewCount').textContent = `(4.8 / 5.0 â€¢ 127 reviews)`;
 
             // Price
             const priceContainer = document.getElementById('productPrice');
@@ -1330,8 +1330,8 @@
             if (stockText === 'Low Stock') stockClass = 'low-stock';
             else if (stockText === 'Out of Stock') stockClass = 'out-of-stock';
             stockContainer.innerHTML = `
-                <span class="${stockClass}">●</span>
-                <span>${stockText}${stockText === 'In Stock' ? ' – Ready for delivery' : ''}</span>
+                <span class="${stockClass}">â—</span>
+                <span>${stockText}${stockText === 'In Stock' ? ' â€“ Ready for delivery' : ''}</span>
             `;
 
             // Description
@@ -1357,16 +1357,16 @@
             `).join('');
 
             // ============================================
-            // 🔥 FIX: POPULATE TABS WITH PRODUCT DATA
+            // ðŸ”¥ FIX: POPULATE TABS WITH PRODUCT DATA
             // ============================================
 
             // --- Description Tab ---
             const descContent = document.getElementById('tabDescriptionContent');
             if (descContent) {
                 descContent.textContent = product.description || 'No description available.';
-                console.log('✅ Description tab populated.');
+                console.log('âœ… Description tab populated.');
             } else {
-                console.error('❌ Element #tabDescriptionContent not found.');
+                console.error('âŒ Element #tabDescriptionContent not found.');
             }
 
             // --- Specifications Tab ---
@@ -1380,9 +1380,9 @@
                     `Quality: ISO certified`,
                 ];
                 specContent.innerHTML = specs.map(s => `<li>${s}</li>`).join('');
-                console.log('✅ Specifications tab populated.');
+                console.log('âœ… Specifications tab populated.');
             } else {
-                console.error('❌ Element #tabSpecificationsContent not found.');
+                console.error('âŒ Element #tabSpecificationsContent not found.');
             }
 
             // --- Applications Tab ---
@@ -1402,9 +1402,9 @@
                     ];
                 }
                 appContent.innerHTML = apps.map(a => `<li>${a}</li>`).join('');
-                console.log('✅ Applications tab populated.');
+                console.log('âœ… Applications tab populated.');
             } else {
-                console.error('❌ Element #tabApplicationsContent not found.');
+                console.error('âŒ Element #tabApplicationsContent not found.');
             }
 
             // --- Product Features ---
@@ -1466,7 +1466,7 @@
                             window.updateWishlistBadge();
                         }
                         if (typeof window.showToast === 'function') {
-                            window.showToast(isActive ? '❤️ Added to wishlist' : '💔 Removed from wishlist');
+                            window.showToast(isActive ? 'â¤ï¸ Added to wishlist' : 'ðŸ’” Removed from wishlist');
                         }
                     }
                 });
@@ -1479,8 +1479,8 @@
                     const isActive = this.classList.contains('active');
                     if (typeof window.showToast === 'function') {
                         window.showToast(isActive ?
-                            `⚖️ ${product.name} added to compare` :
-                            `⚖️ ${product.name} removed from compare`
+                            `âš–ï¸ ${product.name} added to compare` :
+                            `âš–ï¸ ${product.name} removed from compare`
                         );
                     }
                 });
@@ -1550,9 +1550,9 @@
                 else stockClass = 'in-stock';
 
                 let badgeHtml = '';
-                if (product.isBestSeller) badgeHtml = `<span class="product-badge bestseller">★ Best Seller</span>`;
-                else if (product.isNew) badgeHtml = `<span class="product-badge new">✦ New</span>`;
-                else if (product.isFeatured) badgeHtml = `<span class="product-badge featured">⭐ Featured</span>`;
+                if (product.isBestSeller) badgeHtml = `<span class="product-badge bestseller">â˜… Best Seller</span>`;
+                else if (product.isNew) badgeHtml = `<span class="product-badge new">âœ¦ New</span>`;
+                else if (product.isFeatured) badgeHtml = `<span class="product-badge featured">â­ Featured</span>`;
 
                 let salePercent = '';
                 if (product.oldPrice) {
@@ -1629,7 +1629,7 @@
                             window.updateWishlistBadge();
                         }
                         if (typeof window.showToast === 'function') {
-                            window.showToast(isActive ? '❤️ Added to wishlist' : '💔 Removed from wishlist');
+                            window.showToast(isActive ? 'â¤ï¸ Added to wishlist' : 'ðŸ’” Removed from wishlist');
                         }
                     }
                 });
@@ -1742,7 +1742,7 @@
             // Render product page
             renderProductPage();
 
-            console.log('✅ Product page loaded successfully');
+            console.log('âœ… Product page loaded successfully');
         });
     </script>
 
