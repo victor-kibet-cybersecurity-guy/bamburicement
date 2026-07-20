@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bamburi Cement Products – Complete Portfolio | Fundi to Powercrete</title>
+    <meta name="description"
+        content="Complete Bamburi cement product portfolio. Fundi (22.5 MPa), Tembo (32.5 MPa), Nguvu (32.5 MPa), Powermax (42.5 MPa), Duracem (42.5 MPa), Powerplus (42.5 MPa), Powercrete (52.5 MPa)." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bamburicementkenya.co.ke/products.html" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bamburi Cement Products – Complete Portfolio" />
+    <meta property="og:description"
+        content="7 premium cement grades for every project – from masonry to ultra-high strength." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bamburicementkenya.co.ke/products.html" />
+    <meta property="og:image" content="images/og-products.jpg" />
+    <meta property="og:site_name" content="Bamburi Cement Kenya" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bamburi Cement Products – Complete Portfolio" />
+    <meta name="twitter:description"
+        content="7 premium cement grades for every project – from masonry to ultra-high strength." />
+    <meta name="twitter:image" content="images/og-products.jpg" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JSON‑LD Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Bamburi Cement Products",
+            "brand": { "@type": "Brand", "name": "Bamburi Cement" },
+            "offers": [
+                { "@type": "Offer", "priceCurrency": "KES", "price": "580",
+                    "availability": "https://schema.org/InStock", "description": "Fundi 22.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "620",
+                    "availability": "https://schema.org/InStock", "description": "Tembo 32.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "680",
+                    "availability": "https://schema.org/InStock", "description": "Nguvu 32.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "750",
+                    "availability": "https://schema.org/InStock", "description": "Powermax 42.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "820",
+                    "availability": "https://schema.org/InStock", "description": "Duracem 42.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "950",
+                    "availability": "https://schema.org/InStock", "description": "Powerplus 42.5 MPa" },
+                { "@type": "Offer", "priceCurrency": "KES", "price": "1050",
+                    "availability": "https://schema.org/InStock", "description": "Powercrete 52.5 MPa" }
+            ]
+        }
+    </script>
+
+    <style>
+        /* =====================================================
+           PRODUCTS PAGE – SPECIFIC STYLES
+           ===================================================== */
+        .products-hero {
+            padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .products-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .products-hero p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        .products-section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .products-note {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--brand-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+            font-size: var(--text-sm);
+        }
+
+        .products-note strong {
+            color: var(--text-primary);
+        }
+
+        .products-note a {
+            color: var(--brand-primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .products-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* Products Footer */
+        .products-footer {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+
+        /* Toast Notification (same as index.html) */
+        .toast-notification {
+            position: fixed;
+            bottom: 8rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            z-index: var(--z-toast);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--brand-secondary);
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .toast-notification {
+                bottom: 6rem;
+                font-size: var(--text-xs);
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toast-notification {
+                bottom: 5rem;
+                font-size: 0.6rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+                max-width: 95%;
+            }
+        }
+
+        /* Dark mode for toast */
+        @media (prefers-color-scheme: dark) {
+            .toast-notification {
+                background: var(--bg-secondary);
+                border-color: var(--border-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+    ANNOUNCEMENT BAR
+    ===================================================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Supplying Genuine Bamburi Cement Across Kenya</span>
+            </div>
+            <div class="top-right">
+                <a href="tel:+254750210207"><i class="fa-solid fa-phone"></i> 0750 210 207</a>
+                <a href="https://wa.me/254750210207"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+    HEADER (identical to index.html)
+    ===================================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement Kenya" />
+                </a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link has-dropdown">
+                            Products <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Cement Products</h4>
+                                <ul>
+                                    <li><a href="fundi.html"><i class="fas fa-cube"></i> Bamburi Fundi</a></li>
+                                    <li><a href="tembo.html"><i class="fas fa-cube"></i> Bamburi Tembo</a></li>
+                                    <li><a href="nguvu.html"><i class="fas fa-cube"></i> Bamburi Nguvu</a></li>
+                                    <li><a href="powermax.html"><i class="fas fa-cube"></i> Bamburi PowerMax</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Premium Products</h4>
+                                <ul>
+                                    <li><a href="duracem.html"><i class="fas fa-industry"></i> Bamburi Duracem</a></li>
+                                    <li><a href="bamburi-plant.jpg"><i class="fas fa-industry"></i> Bamburi PowerPlus</a></li>
+                                    <li><a href="product.html?id=7"><i class="fas fa-industry"></i> Bamburi Powercrete</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-feature">
+                                <h3>Need Help Choosing?</h3>
+                                <p>Compare Bamburi cement products, check prices, and request a quotation from our sales team.</p>
+                                <a href="products.html" class="btn btn-primary">View All Products</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="header-actions">
+                    <a href="wishlist.html" class="wishlist-link">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="quote-cart.html" class="quote-cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="quote-badge">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" title="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Links for mobile inside the same nav (hamburger reveals them) -->
+                <ul class="nav nav-quicklinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="description.html" class="nav-link">📖 Product Guide</a></li>
+                    <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                    <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery Areas</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+    PRODUCTS HERO
+    ===================================================== -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Complete Product Portfolio</h1>
+            <p>7 premium cement grades for every project – from masonry to ultra-high strength. All <strong>in stock</strong> and ready for delivery.</p>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    PRODUCTS GRID – USING THE SAME renderProducts() FUNCTION
+    ===================================================== -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-note">
+                🏗️ All products are <strong>100% genuine Bamburi Cement</strong> supplied through authorized channels.
+                <br />Need help choosing? <a href="contact.html">Contact our sales team</a> for expert guidance.
+            </div>
+
+            <!-- ⚠️ IMPORTANT: Using the same ID as index.html -->
+            <!-- This allows renderProducts() to work on both pages -->
+            <div class="products-grid" id="featuredProducts">
+                <!-- Dynamically loaded from products.js using renderProducts() -->
+            </div>
+
+            <div class="products-footer">
+                <a href="products.html" class="btn-primary">View All Products <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    RECENTLY VIEWED
+    ===================================================== -->
+    <section class="section recently-viewed-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Recently Viewed</span>
+                <h2>Your Recent Products</h2>
+                <p>Products you've checked out recently.</p>
+            </div>
+            <div id="recentlyViewed">
+                <!-- Dynamically loaded by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    TOAST NOTIFICATION
+    ===================================================== -->
+    <div id="toastNotification" class="toast-notification"></div>
+
+    <!-- =====================================================
+    FOOTER (identical to index.html)
+    ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="images/logo.png" alt="Logo" class="footer-logo" />
+                    <p>We are an independent supplier of genuine Bamburi Cement products, serving homeowners, contractors, hardware stores and developers throughout Kenya.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="prices.html">Prices</a></li>
+                        <li><a href="delivery.html">Delivery Areas</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="product.html?id=1">Bamburi Fundi</a></li>
+                        <li><a href="product.html?id=2">Bamburi Tembo</a></li>
+                        <li><a href="product.html?id=3">Bamburi Nguvu</a></li>
+                        <li><a href="product.html?id=4">PowerMax</a></li>
+                        <li><a href="product.html?id=5">Duracem</a></li>
+                        <li><a href="product.html?id=6">PowerPlus</a></li>
+                        <li><a href="product.html?id=7">Powercrete</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Phone: <a href="tel:+254750210207">+254 750 210 207</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/254750210207">Chat Now</a></p>
+                    <p>Email: <a href="mailto:sales@bamburicementkenya.co.ke">sales@bamburicementkenya.co.ke</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+    FLOATING BUTTONS
+    ===================================================== -->
+    <a href="tel:+254750210207" class="floating-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- =====================================================
+    SCRIPTS
+    ===================================================== -->
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // ============================================
+        // ADD TO CART FUNCTION (global for onclick)
+        // ============================================
+        window.addToCart = function(name, price, waLink) {
+            const toast = document.getElementById('toastNotification');
+            if (toast) {
+                toast.textContent = `🛒 Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            }
+
+            if (typeof window.addToQuoteCart === 'function' && typeof products !== 'undefined') {
+                const product = products.find(p => p.name === name || name.includes(p.name));
+                if (product) {
+                    window.addToQuoteCart(product.id);
+                    return;
+                }
+            }
+
+            setTimeout(() => {
+                window.open(waLink, '_blank');
+            }, 800);
+        };
+
+        // ============================================
+        // MOBILE MENU & SCROLL TOP
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav');
+            const body = document.body;
+
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    nav.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                    body.classList.toggle('no-scroll');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (nav.classList.contains('active') &&
+                        !nav.contains(e.target) &&
+                        !menuToggle.contains(e.target)) {
+                        nav.classList.remove('active');
+                        body.classList.remove('no-scroll');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+
+                nav.querySelectorAll('.nav-link, .mega-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 991) {
+                            nav.classList.remove('active');
+                            body.classList.remove('no-scroll');
+                            const icon = menuToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Scroll to top
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', function() {
+                    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+                });
+                scrollTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // 🔥 IMPORTANT: renderProducts() from products.js will auto-run on DOMContentLoaded
+            // But since it targets #featuredProducts, it will work on this page too!
+
+            // Update badges
+            if (typeof window.updateWishlistBadge === 'function') {
+                window.updateWishlistBadge();
+            }
+            if (typeof window.updateQuoteBadge === 'function') {
+                window.updateQuoteBadge();
+            }
+
+            // Load recently viewed
+            setTimeout(function() {
+                if (typeof window.renderRecentlyViewed === 'function') {
+                    window.renderRecentlyViewed();
+                }
+            }, 200);
+
+            console.log('✅ Products page loaded successfully');
+        });
+    </script>
+
+</body>
+</html>
