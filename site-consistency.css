@@ -1,0 +1,18 @@
+/* Shared consistency and responsive safeguards */
+*, *::before, *::after { box-sizing: border-box; }
+html { max-width: 100%; overflow-x: hidden; }
+body { min-width: 0; overflow-x: hidden; }
+img, picture, video, iframe { max-width: 100%; height: auto; }
+.container { width: min(100% - 2rem, 1200px); margin-inline: auto; }
+.footer { background: #fff; color: #334155; border-top: 1px solid #dbe3ee; }
+.footer h3 { color: #172a46; }
+.footer a { color: #1d4f91; }
+.footer-bottom { border-top-color: #dbe3ee; }
+.floating-buttons { z-index: 1100; }
+.cart-panel { z-index: 1200; max-width: min(100vw, 430px); }
+@media (max-width: 767px) {
+  .container { width: min(100% - 1.25rem, 1200px); }
+  .footer-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
+  .floating-buttons { right: .75rem; bottom: 1rem; }
+  .cart-panel { width: min(100%, 430px); }
+}
