@@ -6193,3 +6193,26 @@ table { width: 100%; border-collapse: collapse; }
     .cart-item { gap: .5rem; }
     .cart-item-actions { gap: .25rem; }
 }
+
+/* Shared component and mobile consistency refinements */
+.floating-buttons { z-index: 10020; }
+.cart-panel { max-width: min(420px, 100vw); }
+.cart-panel:focus { outline: none; }
+.cart-overlay.active { pointer-events: auto; }
+body.no-scroll, body.cart-open { overflow: hidden; }
+@media (max-width: 991px) {
+    .floating-buttons { right: max(.75rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); }
+    .float-btn { width: 3.25rem; height: 3.25rem; font-size: 1.15rem; }
+    .cart-panel { width: min(100%, 420px); }
+}
+@media (max-width: 575px) {
+    .floating-buttons { gap: .6rem; }
+    .float-btn { width: 3rem; height: 3rem; font-size: 1rem; }
+    .cart-header { padding: 1rem; }
+    .cart-body { padding: .75rem 1rem; }
+    .cart-footer { padding: 1rem; }
+    .cart-item { align-items: flex-start; flex-wrap: wrap; }
+    .cart-item-details { min-width: calc(100% - 4.5rem); }
+    .cart-item-actions { width: 100%; justify-content: flex-end; }
+    .cart-item-details .name { white-space: normal; }
+}

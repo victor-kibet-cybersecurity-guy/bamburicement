@@ -145,7 +145,7 @@ window.showToast = function(message) {
 window.addToCart = function(name, price, waLink) {
     const toast = document.getElementById('toastNotification');
     if (toast) {
-        toast.textContent = `🛒 Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
+        toast.textContent = `ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂºÃ¢â‚¬â„¢ Added to quote cart: ${name} (KES ${price.toLocaleString()})`;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 3000);
     }
@@ -634,6 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Open Cart ---
     window.openCart = function() {
+        if (!cartOverlay || !cartPanel || !cartBody) return;
         cartOverlay.classList.add('active');
         cartPanel.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -642,6 +643,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Close Cart ---
     window.closeCart = function() {
+        if (!cartOverlay || !cartPanel) return;
         cartOverlay.classList.remove('active');
         cartPanel.classList.remove('open');
         document.body.style.overflow = '';
@@ -649,12 +651,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Toggle Cart ---
     window.toggleCart = function() {
+        if (!cartPanel) return;
         if (cartPanel.classList.contains('open')) {
             closeCart();
         } else {
             openCart();
         }
     };
+
+    // --- Resolve cart images from either root pages or blog articles ---
+    function getCartImagePath(image) {
+        const fallback = 'images/hero.jpg';
+        const path = image || fallback;
+        const isBlogArticle = window.location.pathname.includes('/blog/');
+        return isBlogArticle && !/^(?:https?:|\/|\.\.\/)/.test(path) ? '../' + path : path;
+    }
 
     // --- Render Cart Items ---
     function renderCartItems() {
@@ -694,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function() {
             itemsHtml += `
                 <div class="cart-item" data-index="${index}">
                     <div class="cart-item-image">
-                        <img src="${item.image || 'images/placeholder.jpg'}" alt="${item.name}" loading="lazy">
+                        <img src="${getCartImagePath(item.image)}" alt="${item.name}" loading="lazy">
                     </div>
                     <div class="cart-item-details">
                         <div class="name">${item.name}</div>
@@ -702,7 +713,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="stock-status ${stockClass}"><i class="fas fa-check-circle"></i> ${stockText}</span>
                     </div>
                     <div class="cart-item-actions">
-                        <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">−</button>
+                        <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢</button>
                         <span class="qty-display">${item.quantity || 1}</span>
                         <button class="qty-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
                         <button class="remove-btn" onclick="removeCartItem(${index})" aria-label="Remove item">
@@ -747,7 +758,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCartItems();
         updateCartBadge();
         if (typeof window.showToast === 'function') {
-            window.showToast('🗑️ Removed from quote cart');
+            window.showToast('ÃƒÂ°Ã…Â¸Ã¢â‚¬â€Ã¢â‚¬ËœÃƒÂ¯Ã‚Â¸Ã‚Â Removed from quote cart');
         }
     };
 
@@ -777,12 +788,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const qty = item.quantity || 1;
             const subtotal = price * qty;
             total += subtotal;
-            message += `• ${item.name} × ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
+            message += `ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ ${item.name} ÃƒÆ’Ã¢â‚¬â€ ${qty} = ${item.price} each (Subtotal: KSh ${subtotal.toLocaleString('en-KE', { minimumFractionDigits: 0 })})\n`;
         });
 
-        message += `\n💰 Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
-        message += '\n\n📍 Delivery Location: [Enter your location]';
-        message += '\n📦 Quantity needed: [Confirm total bags]';
+        message += `\nÃƒÂ°Ã…Â¸Ã¢â‚¬â„¢Ã‚Â° Total: KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
+        message += '\n\nÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â Delivery Location: [Enter your location]';
+        message += '\nÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â¦ Quantity needed: [Confirm total bags]';
         message += '\n\nPlease send me your best pricing and delivery options.';
 
         const encoded = encodeURIComponent(message);
@@ -801,7 +812,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ESC key to close
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && cartPanel.classList.contains('open')) {
+        if (e.key === 'Escape' && cartPanel && cartPanel.classList.contains('open')) {
             closeCart();
         }
     });
@@ -832,5 +843,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    console.log('✅ Bamburi Cement Kenya - Scripts Loaded Successfully');
+    console.log('ÃƒÂ¢Ã…â€œÃ¢â‚¬Â¦ Bamburi Cement Kenya - Scripts Loaded Successfully');
 });
