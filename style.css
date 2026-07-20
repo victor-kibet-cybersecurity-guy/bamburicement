@@ -6231,3 +6231,20 @@ html, body { overflow-x: hidden; }
     .compare-table th,
     .compare-table td { overflow-wrap: anywhere; }
 }
+
+/* Make the full-colour footer logo clear against the dark footer. */
+.footer-logo {
+    width: 156px;
+    height: auto;
+    max-width: 100%;
+    padding: 0.55rem 0.8rem;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    filter: none;
+}
+@media (max-width: 479px) {
+    .footer-logo {
+        width: 132px;
+        padding: 0.45rem 0.65rem;
+    }
+}
