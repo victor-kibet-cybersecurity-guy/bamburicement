@@ -71,7 +71,7 @@
       backdrop-filter: blur(12px);
     }
 
-    .navbar {
+    .site-header .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -95,7 +95,7 @@
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
     }
 
-    .menu-toggle {
+    .site-header .menu-toggle {
       display: none;
       border: 0;
       background: transparent;
@@ -508,7 +508,7 @@
     }
 
     @media (max-width: 1120px) {
-      .navbar {
+      .site-header .navbar {
         gap: 0.85rem 1rem;
       }
 
@@ -532,11 +532,11 @@
         grid-template-columns: 1fr;
       }
 
-      .navbar {
+      .site-header .navbar {
         min-height: 76px;
       }
 
-      .menu-toggle {
+      .site-header .menu-toggle {
         display: inline-flex;
       }
 
@@ -709,7 +709,15 @@
     <link rel="stylesheet" href="site-consistency.css" />
 </head>
 <body>
-  <header class="header">
+  <div class="top-bar">
+    <div class="container">
+        <div class="top-left"><i class="fa-solid fa-circle-check"></i><span>Supplying Genuine Bamburi Cement Across Kenya</span></div>
+        <div class="top-right">
+            <a href="tel:+254750210207"><i class="fa-solid fa-phone"></i> 0750 210 207</a>
+            <a href="https://wa.me/254750210207"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</div><header class="header">
         <div class="container">
             <div class="navbar">
 
