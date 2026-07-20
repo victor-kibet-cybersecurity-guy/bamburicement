@@ -574,7 +574,9 @@
     </style>
     <link rel="stylesheet" href="../site-consistency.css" />
     <link rel="icon" href="../favicon.jpg" type="image/jpeg" />
-</head>
+<style id="faq-card-styles">
+.post-content .faq-list{display:grid;gap:.85rem;margin:1.25rem 0 2.5rem}.post-content .faq-item{border:1px solid #d7e3f2;border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(20,61,112,.07);overflow:hidden}.post-content .faq-item[open]{border-color:#8eb4e2}.post-content .faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.15rem;color:#143b72;font-size:1.05rem;font-weight:700;cursor:pointer;list-style:none}.post-content .faq-item summary::-webkit-details-marker{display:none}.post-content .faq-item summary::after{content:'+';display:grid;place-items:center;flex:none;width:1.65rem;height:1.65rem;border-radius:50%;background:#eaf2fc;color:#143b72;font-size:1.35rem;line-height:1}.post-content .faq-item[open] summary{background:#f2f7fd}.post-content .faq-item[open] summary::after{content:'−';background:#143b72;color:#fff}.post-content .faq-item p{margin:0;padding:0 1.15rem 1rem;line-height:1.65}.post-content .faq-item p+p{padding-top:0}@media(max-width:600px){.post-content .faq-item summary{padding:.9rem 1rem;font-size:1rem}.post-content .faq-item p{padding:0 1rem .9rem}}
+</style></head>
 
 <body>
 
@@ -1012,37 +1014,33 @@
                     </ul>
                 </div>
 
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>What is the most common construction mistake in Kenya?</h3>
-                <p>
-                    The most common mistakes are <strong>insufficient curing</strong> and <strong>using too much water</strong> in concrete. These two errors can reduce concrete strength by up to 50%.
-                </p>
-
-                <h3>How can I avoid cement waste on my site?</h3>
-                <p>
-                    Store cement properly (raised, covered, dry), plan quantities accurately using a <a href="cement-calculator-guide.html">cement calculator</a>, and always use FIFO (First In, First Out).
-                </p>
-
-                <h3>Which Bamburi Cement is best for foundations?</h3>
-                <p>
-                    <strong><a href="../tembo.html">Bamburi Tembo</a></strong> (32.5 MPa) is the best choice for residential foundations. For heavy structures, use <strong><a href="../nguvu.html">Bamburi Nguvu</a></strong> or <strong><a href="../powermax.html">Bamburi PowerMax</a></strong>.
-                </p>
-
-                <h3>How long should concrete cure?</h3>
-                <p>
-                    Concrete should cure for <strong>at least 7 days</strong>. For maximum strength, cure for <strong>14-28 days</strong>. In hot weather, water more frequently.
-                </p>
-
-                <h3>How much water should I add to concrete?</h3>
-                <p>
-                    Use approximately <strong>5-7 liters</strong> of clean water per 50kg bag of cement. The exact amount depends on the moisture content of sand and aggregate.
-                </p>
-
-                <h3>Do you supply cement for construction projects?</h3>
-                <p>
-                    Yes! We deliver genuine Bamburi Cement across Kenya. <a href="../delivery.html">View our delivery areas</a> or <a href="../contact.html">contact us</a> for a quote.
-                </p>
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <section class="faq-list" aria-labelledby="faq-heading">
+                    <details class="faq-item" open>
+                        <summary>What is the most common construction mistake in Kenya?</summary>
+                        <p>The most common mistakes are <strong>insufficient curing</strong> and <strong>using too much water</strong> in concrete. These two errors can reduce concrete strength by up to 50%.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How can I avoid cement waste on my site?</summary>
+                        <p>Store cement properly—raised, covered, and dry—plan quantities accurately using a <a href="cement-calculator-guide.html">cement calculator</a>, and always use FIFO (First In, First Out).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Which Bamburi Cement is best for foundations?</summary>
+                        <p><strong><a href="../tembo.html">Bamburi Tembo</a></strong> (32.5 MPa) is the best choice for residential foundations. For heavy structures, use <strong><a href="../nguvu.html">Bamburi Nguvu</a></strong> or <strong><a href="../powermax.html">Bamburi PowerMax</a></strong>.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How long should concrete cure?</summary>
+                        <p>Concrete should cure for <strong>at least 7 days</strong>. For maximum strength, cure for <strong>14–28 days</strong>. In hot weather, water more frequently.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How much water should I add to concrete?</summary>
+                        <p>Use approximately <strong>5–7 litres</strong> of clean water per 50 kg bag of cement. The exact amount depends on the moisture content of sand and aggregate.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you supply cement for construction projects?</summary>
+                        <p>Yes! We deliver genuine Bamburi Cement across Kenya. <a href="../delivery.html">View our delivery areas</a> or <a href="../contact.html">contact us</a> for a quote.</p>
+                    </details>
+                </section>
 
                 <h2>Conclusion</h2>
                 <p>
