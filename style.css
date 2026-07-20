@@ -6216,3 +6216,18 @@ body.no-scroll, body.cart-open { overflow: hidden; }
     .cart-item-actions { width: 100%; justify-content: flex-end; }
     .cart-item-details .name { white-space: normal; }
 }
+
+/* Mobile audit fixes: eliminate horizontal scroll and keep comparison tables usable. */
+html, body { overflow-x: hidden; }
+@media (max-width: 767px) {
+    table.compare-table {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .compare-table th,
+    .compare-table td { overflow-wrap: anywhere; }
+}
