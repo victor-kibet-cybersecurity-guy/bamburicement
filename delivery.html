@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bamburi Cement Delivery Areas â€“ Nationwide Kenya</title>
+    <meta name="description"
+        content="We deliver genuine Bamburi Cement to all 47 counties in Kenya. Fast, reliable, and affordable cement delivery to your construction site." />
+    <meta name="keywords"
+        content="Bamburi Cement delivery, cement delivery Kenya, Nairobi cement delivery, Mombasa cement delivery, Kisumu cement delivery" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bamburicementkenya.co.ke/delivery.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bamburi Cement Delivery Areas â€“ Nationwide Kenya" />
+    <meta property="og:description"
+        content="We deliver genuine Bamburi Cement to all 47 counties in Kenya. Fast, reliable, and affordable cement delivery to your construction site." />
+    <meta property="og:url" content="https://bamburicementkenya.co.ke/delivery.html" />
+    <meta property="og:image" content="images/og-delivery.jpg" />
+    <meta property="og:site_name" content="Bamburi Cement Kenya" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bamburi Cement Delivery Areas â€“ Nationwide Kenya" />
+    <meta name="twitter:description"
+        content="We deliver genuine Bamburi Cement to all 47 counties in Kenya. Fast, reliable, and affordable cement delivery to your construction site." />
+    <meta name="twitter:image" content="images/og-delivery.jpg" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JSONâ€‘LD Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Cement Delivery",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Bamburi Cement Kenya",
+                "telephone": "+254750210207"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "Kenya"
+            },
+            "description": "Nationwide cement delivery across all 47 counties in Kenya.",
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "price": "Varies by location",
+                "priceCurrency": "KES"
+            }
+        }
+    </script>
+
+    <style>
+        /* =====================================================
+           DELIVERY PAGE â€“ SPECIFIC STYLES
+           ===================================================== */
+
+        .delivery-hero {
+            padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .delivery-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .delivery-hero p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 720px;
+        }
+
+        .delivery-section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .delivery-section-alt {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .region-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-base);
+        }
+
+        .region-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-primary-light);
+        }
+
+        .region-card .region-icon {
+            font-size: 2rem;
+            color: var(--brand-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .region-card h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .region-card .county-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+        }
+
+        .region-card .county-list .county-tag {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.7rem;
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Delivery Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .info-card {
+            background: var(--bg-primary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-primary-light);
+        }
+
+        .info-card .info-icon {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .info-card h4 {
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .info-card p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Map */
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            min-height: 400px;
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            color: var(--text-inverse);
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+
+        .cta-box h3 {
+            color: var(--text-inverse);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 560px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: var(--text-base);
+        }
+
+        .cta-box .btn-group {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-box .btn-group .btn {
+            min-width: 160px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .region-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-md);
+            }
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .map-wrapper {
+                min-height: 250px;
+            }
+            .map-wrapper iframe {
+                height: 250px;
+            }
+            .cta-box {
+                padding: var(--spacing-lg);
+            }
+            .cta-box h3 {
+                font-size: var(--text-xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .region-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-wrapper {
+                min-height: 200px;
+            }
+            .map-wrapper iframe {
+                height: 200px;
+            }
+            .cta-box .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-box .btn-group .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .delivery-hero {
+                background: var(--bg-secondary);
+                border-bottom-color: var(--border-color);
+            }
+            .delivery-section-alt {
+                background: var(--bg-secondary);
+            }
+            .region-card {
+                background: var(--bg-secondary);
+                border-color: var(--border-color);
+            }
+            .info-card {
+                background: var(--bg-secondary);
+                border-color: var(--border-color);
+            }
+            .cta-box {
+                background: linear-gradient(135deg, var(--brand-primary-dark) 0%, #0a1628 100%);
+            }
+            .map-wrapper {
+                background: var(--bg-tertiary);
+            }
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 8rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            z-index: var(--z-toast);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--brand-secondary);
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .toast-notification {
+                bottom: 6rem;
+                font-size: var(--text-xs);
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toast-notification {
+                bottom: 5rem;
+                font-size: 0.6rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+                max-width: 95%;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .toast-notification {
+                background: var(--bg-secondary);
+                border-color: var(--border-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+    ANNOUNCEMENT BAR
+    ===================================================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Supplying Genuine Bamburi Cement Across Kenya</span>
+            </div>
+            <div class="top-right">
+                <a href="tel:+254750210207"><i class="fa-solid fa-phone"></i> 0750 210 207</a>
+                <a href="https://wa.me/254750210207"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+    HEADER
+    ===================================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Bamburi Cement Kenya" />
+                </a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link has-dropdown">
+                            Products <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Cement Products</h4>
+                                <ul>
+                                    <li><a href="product.html?id=1"><i class="fas fa-cube"></i> Bamburi Fundi</a></li>
+                                    <li><a href="product.html?id=2"><i class="fas fa-cube"></i> Bamburi Tembo</a></li>
+                                    <li><a href="product.html?id=3"><i class="fas fa-cube"></i> Bamburi Nguvu</a></li>
+                                    <li><a href="product.html?id=4"><i class="fas fa-cube"></i> Bamburi PowerMax</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Premium Products</h4>
+                                <ul>
+                                    <li><a href="product.html?id=5"><i class="fas fa-industry"></i> Bamburi Duracem</a></li>
+                                    <li><a href="product.html?id=6"><i class="fas fa-industry"></i> Bamburi PowerPlus</a></li>
+                                    <li><a href="product.html?id=7"><i class="fas fa-industry"></i> Bamburi Powercrete</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Resources</h4>
+                                <ul>
+                                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                                    <li><a href="description.html"><i class="fas fa-book"></i> Product Guide</a></li>
+                                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                                    <li><a href="delivery.html"><i class="fas fa-truck"></i> Delivery Areas</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-feature">
+                                <h3>Need Help Choosing?</h3>
+                                <p>Compare Bamburi cement products, check prices, and request a quotation from our sales team.</p>
+                                <a href="products.html" class="btn btn-primary">View All Products</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="delivery.html" class="nav-link" style="color: var(--brand-primary); font-weight: 700;">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="header-actions">
+                    <a href="wishlist.html" class="wishlist-link">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="quote-cart.html" class="quote-cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="quote-badge">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+    DELIVERY HERO
+    ===================================================== -->
+    <section class="delivery-hero">
+        <div class="container">
+            <h1>ðŸšš We Deliver Across Kenya</h1>
+            <p>Fast, reliable, and affordable cement delivery to all 47 counties. Whether you're building in Nairobi, Mombasa, Kisumu, or a remote village â€“ we get your genuine Bamburi Cement to your site.</p>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    DELIVERY AREAS â€“ REGIONS & COUNTIES
+    ===================================================== -->
+    <section class="delivery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nationwide Coverage</span>
+                <h2>Where We Deliver</h2>
+                <p>We serve all major towns and counties across Kenya. Below are the regions we regularly supply.</p>
+            </div>
+
+            <div class="region-grid">
+
+                <!-- Central Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Central Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Kiambu</span>
+                        <span class="county-tag">Murang'a</span>
+                        <span class="county-tag">Nyeri</span>
+                        <span class="county-tag">Kirinyaga</span>
+                        <span class="county-tag">Nyandarua</span>
+                        <span class="county-tag">Laikipia</span>
+                    </div>
+                </div>
+
+                <!-- Coast Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Coast Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Mombasa</span>
+                        <span class="county-tag">Kilifi</span>
+                        <span class="county-tag">Kwale</span>
+                        <span class="county-tag">Tana River</span>
+                        <span class="county-tag">Lamu</span>
+                        <span class="county-tag">Taita Taveta</span>
+                    </div>
+                </div>
+
+                <!-- Eastern Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-tree"></i></div>
+                    <h3>Eastern Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Machakos</span>
+                        <span class="county-tag">Kitui</span>
+                        <span class="county-tag">Makueni</span>
+                        <span class="county-tag">Embu</span>
+                        <span class="county-tag">Meru</span>
+                        <span class="county-tag">Tharaka-Nithi</span>
+                    </div>
+                </div>
+
+                <!-- Nyanza Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-water"></i></div>
+                    <h3>Nyanza Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Kisumu</span>
+                        <span class="county-tag">Siaya</span>
+                        <span class="county-tag">Homa Bay</span>
+                        <span class="county-tag">Migori</span>
+                        <span class="county-tag">Kisii</span>
+                        <span class="county-tag">Nyamira</span>
+                    </div>
+                </div>
+
+                <!-- Rift Valley Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-mountain-sun"></i></div>
+                    <h3>Rift Valley Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Nakuru</span>
+                        <span class="county-tag">Eldoret</span>
+                        <span class="county-tag">Kericho</span>
+                        <span class="county-tag">Bomet</span>
+                        <span class="county-tag">Narok</span>
+                        <span class="county-tag">Kajiado</span>
+                        <span class="county-tag">Samburu</span>
+                        <span class="county-tag">Baringo</span>
+                        <span class="county-tag">Turkana</span>
+                        <span class="county-tag">West Pokot</span>
+                        <span class="county-tag">Elgeyo Marakwet</span>
+                        <span class="county-tag">Nandi</span>
+                        <span class="county-tag">Trans Nzoia</span>
+                        <span class="county-tag">Uasin Gishu</span>
+                    </div>
+                </div>
+
+                <!-- Western Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-hills"></i></div>
+                    <h3>Western Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Kakamega</span>
+                        <span class="county-tag">Bungoma</span>
+                        <span class="county-tag">Busia</span>
+                        <span class="county-tag">Vihiga</span>
+                        <span class="county-tag">Siaya</span>
+                        <span class="county-tag">Kisumu</span>
+                    </div>
+                </div>
+
+                <!-- North Eastern Region -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-desert"></i></div>
+                    <h3>North Eastern Region</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Garissa</span>
+                        <span class="county-tag">Wajir</span>
+                        <span class="county-tag">Mandera</span>
+                        <span class="county-tag">Isiolo</span>
+                        <span class="county-tag">Marsabit</span>
+                    </div>
+                </div>
+
+                <!-- Nairobi & Surrounding -->
+                <div class="region-card">
+                    <div class="region-icon"><i class="fas fa-city"></i></div>
+                    <h3>Nairobi & Surrounding</h3>
+                    <p style="font-size: var(--text-sm); color: var(--text-muted);">Counties:</p>
+                    <div class="county-list">
+                        <span class="county-tag">Nairobi</span>
+                        <span class="county-tag">Kiambu</span>
+                        <span class="county-tag">Machakos</span>
+                        <span class="county-tag">Kajiado</span>
+                        <span class="county-tag">Thika</span>
+                        <span class="county-tag">Ruiru</span>
+                        <span class="county-tag">Kikuyu</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    DELIVERY INFORMATION
+    ===================================================== -->
+    <section class="delivery-section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Delivery Information</span>
+                <h2>How We Deliver</h2>
+                <p>Fast, flexible, and affordable delivery options tailored to your project needs.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Fast Delivery</h4>
+                    <p>Sameâ€‘day or nextâ€‘day delivery in major towns. Rural areas typically 2â€“3 days.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-truck"></i></div>
+                    <h4>Bulk Orders</h4>
+                    <p>We supply large quantities for contractors, developers, and institutions. Discounts available for bulk.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h4>Competitive Rates</h4>
+                    <p>Transparent pricing with no hidden fees. Get a free quote for your location.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-pin"></i></div>
+                    <h4>Flexible Scheduling</h4>
+                    <p>We work with your timeline. Schedule deliveries to suit your construction schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    MAP
+    ===================================================== -->
+    <section class="delivery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Find Us</span>
+                <h2>View Our Coverage</h2>
+                <p>We deliver nationwide â€“ our main operations are based in Nairobi, Mombasa, and Kisumu.</p>
+            </div>
+
+            <div class="map-wrapper">
+<iframe
+                    id="deliveryMapIframe"
+                    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853743783!2d36.68219867408506!3d-1.3028611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1700000000000"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Bamburi Cement Kenya â€“ Nationwide Delivery Map"
+                    src="about:blank"
+                    >
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    CTA TO CONTACT
+    ===================================================== -->
+    <section class="delivery-section-alt">
+        <div class="container">
+            <div class="cta-box">
+                <h3>Need Cement Delivered?</h3>
+                <p>Contact our sales team today to confirm availability, get a quote, and schedule your delivery. We're here to help you build with confidence.</p>
+                <div class="btn-group">
+                    <a href="tel:+254750210207" class="btn btn-primary" style="background: var(--brand-secondary); color: var(--text-primary); border-color: var(--brand-secondary);">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+<a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="btn btn-secondary" style="background: #25d366; color: white; border-color: #25d366;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="contact.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">
+                        <i class="fas fa-envelope"></i> Contact Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    FOOTER
+    ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="images/logo.png" alt="Logo" class="footer-logo" />
+                    <p>We are an independent supplier of genuine Bamburi Cement products, serving homeowners, contractors, hardware stores and developers throughout Kenya.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="delivery.html">Delivery Areas</a></li>
+                        <li><a href="description.html">Product Guide</a></li>
+                        <li><a href="prices.html">Prices</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="product.html?id=1">Bamburi Fundi</a></li>
+                        <li><a href="product.html?id=2">Bamburi Tembo</a></li>
+                        <li><a href="product.html?id=3">Bamburi Nguvu</a></li>
+                        <li><a href="product.html?id=4">PowerMax</a></li>
+                        <li><a href="product.html?id=5">Duracem</a></li>
+                        <li><a href="product.html?id=6">PowerPlus</a></li>
+                        <li><a href="product.html?id=7">Powercrete</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Phone: <a href="tel:+254750210207">+254 750 210 207</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/254750210207">Chat Now</a></p>
+                    <p>Email: <a href="mailto:sales@bamburicementkenya.co.ke">sales@bamburicementkenya.co.ke</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Â© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+    FLOATING BUTTONS
+    ===================================================== -->
+<a href="tel:+254750210207" class="floating-call" title="Call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button id="scrollTop" class="scroll-top" title="Back to top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- =====================================================
+    TOAST NOTIFICATION
+    ===================================================== -->
+    <div id="toastNotification" class="toast-notification"></div>
+
+    <!-- =====================================================
+    SCRIPTS
+    ===================================================== -->
+
+
+<script>
+        // ============================================
+        // DELIVERY PAGE SCRIPTS
+        // ============================================
+
+        // Only run if this page exists (prevents double-init issues)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy-load Google Maps only when needed (performance)
+            const mapIframe = document.getElementById('deliveryMapIframe');
+            if (mapIframe && mapIframe.dataset && mapIframe.dataset.src) {
+                const obs = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            mapIframe.src = mapIframe.dataset.src;
+                            observer.disconnect();
+                        }
+                    });
+                }, { rootMargin: '200px 0px', threshold: 0.01 });
+                obs.observe(mapIframe);
+            }
+
+            // --- Mobile Menu ---
+
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav');
+            const body = document.body;
+
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    nav.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                    body.classList.toggle('no-scroll');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (nav.classList.contains('active') &&
+                        !nav.contains(e.target) &&
+                        !menuToggle.contains(e.target)) {
+                        nav.classList.remove('active');
+                        body.classList.remove('no-scroll');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+
+                nav.querySelectorAll('.nav-link, .mega-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 991) {
+                            nav.classList.remove('active');
+                            body.classList.remove('no-scroll');
+                            const icon = menuToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                    });
+                });
+            }
+
+            // --- Scroll to Top ---
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', function() {
+                    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+                });
+                scrollTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // --- Update badges ---
+            if (typeof window.updateWishlistBadge === 'function') {
+                window.updateWishlistBadge();
+            }
+            if (typeof window.updateQuoteBadge === 'function') {
+                window.updateQuoteBadge();
+            }
+
+            console.log('âœ… Delivery page loaded successfully');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bamburi Cement Products</title>
+    <meta name="description" content="Premium Bamburi Cement products in Kenya. Find prices, specifications, and order online." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Bamburi Cement Products" />
+    <meta property="og:description" content="Premium Bamburi Cement products in Kenya." />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://bamburicementkenya.co.ke/product.html" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bamburi Cement Products" />
+    <meta name="twitter:description" content="Premium Bamburi Cement products in Kenya." />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JSON-LD Schema (dynamically populated) -->
+    <script type="application/ld+json" id="productSchema">
+        {}
+    </script>
+
+    <style>
+        /* =====================================================
+           PRODUCT PAGE â€“ SPECIFIC STYLES
+           ===================================================== */
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: var(--spacing-md) 0;
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+        .breadcrumb a {
+            color: var(--brand-primary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb .separator {
+            margin: 0 var(--spacing-xs);
+            color: var(--text-muted);
+        }
+        .breadcrumb .current {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Product Detail Layout */
+        .product-detail {
+            padding: var(--spacing-2xl) 0;
+        }
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+        }
+
+        /* Gallery */
+        .product-gallery-main {
+            position: relative;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            cursor: zoom-in;
+        }
+        .product-gallery-main img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+        .product-gallery-main img.zoomed {
+            transform: scale(1.5);
+            cursor: zoom-out;
+        }
+        .product-gallery-main .badge-container {
+            position: absolute;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            z-index: 2;
+        }
+        .product-gallery-main .badge-container .badge {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            box-shadow: var(--shadow-sm);
+            display: inline-block;
+        }
+        .badge.bestseller {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+        }
+        .badge.new {
+            background: #10b981;
+            color: white;
+        }
+        .badge.featured {
+            background: var(--brand-secondary);
+            color: var(--text-primary);
+        }
+        .badge.sale {
+            background: #ef4444;
+            color: white;
+        }
+
+        .product-gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        .product-gallery-thumbs img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            background: var(--bg-secondary);
+        }
+        .product-gallery-thumbs img:hover {
+            border-color: var(--brand-primary-light);
+            transform: scale(1.02);
+        }
+        .product-gallery-thumbs img.active {
+            border-color: var(--brand-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: var(--z-modal);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-2xl);
+        }
+        .lightbox .close-lightbox {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform var(--transition-fast);
+            background: none;
+            border: none;
+        }
+        .lightbox .close-lightbox:hover {
+            transform: scale(1.1);
+        }
+
+        /* Product Info */
+        .product-info .product-name {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            margin-bottom: var(--spacing-xs);
+        }
+        .product-info .product-rating {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        .product-info .product-rating .stars {
+            color: #f59e0b;
+            font-size: var(--text-sm);
+            letter-spacing: 1px;
+        }
+        .product-info .product-rating .review-count {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+        }
+        .product-info .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        .product-info .product-price .current-price {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--brand-primary);
+        }
+        .product-info .product-price .current-price.sale {
+            color: #ef4444;
+        }
+        .product-info .product-price .old-price {
+            font-size: var(--text-lg);
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .product-info .product-price .sale-badge {
+            background: #ef4444;
+            color: white;
+            padding: 0.15rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 700;
+        }
+        .product-info .stock-status {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+        .product-info .stock-status .in-stock {
+            color: #10b981;
+        }
+        .product-info .stock-status .low-stock {
+            color: #f59e0b;
+        }
+        .product-info .stock-status .out-of-stock {
+            color: #ef4444;
+        }
+        .product-info .product-description {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Product Details Grid */
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm) var(--spacing-lg);
+            background: var(--bg-secondary);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--border-color);
+        }
+        .product-details-grid .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-xs) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .product-details-grid .detail-item:last-child {
+            border-bottom: none;
+        }
+        .product-details-grid .detail-item .label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .product-details-grid .detail-item .value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Action Buttons */
+        .product-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        .product-actions .btn {
+            flex: 1;
+            min-width: 100px;
+            justify-content: center;
+        }
+        .product-actions .btn-wishlist-action {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex: 1;
+            justify-content: center;
+        }
+        .product-actions .btn-wishlist-action:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+        .product-actions .btn-wishlist-action.active {
+            border-color: #ef4444;
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+        }
+        .product-actions .btn-compare-action {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex: 1;
+            justify-content: center;
+        }
+        .product-actions .btn-compare-action:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+        }
+        .product-actions .btn-compare-action.active {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+            background: rgba(26, 75, 140, 0.05);
+        }
+        .product-actions .btn-whatsapp-action {
+            background: #25d366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            border: none;
+            text-decoration: none;
+            flex: 1;
+            justify-content: center;
+        }
+        .product-actions .btn-whatsapp-action:hover {
+            background: #1da851;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .product-actions .btn-call-action {
+            background: var(--brand-primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            border: none;
+            text-decoration: none;
+            flex: 1;
+            justify-content: center;
+        }
+        .product-actions .btn-call-action:hover {
+            background: var(--brand-primary-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Product Tabs - FIXED STRUCTURE */
+        .product-tabs {
+            margin-top: var(--spacing-2xl);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .product-tabs .tab-nav {
+            display: flex;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+        .product-tabs .tab-nav button {
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+        .product-tabs .tab-nav button:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+        .product-tabs .tab-nav button.active {
+            color: var(--brand-primary);
+            border-bottom-color: var(--brand-primary);
+            background: var(--bg-primary);
+        }
+        .product-tabs .tab-panel {
+            padding: var(--spacing-xl);
+            display: none;
+            background: var(--bg-primary);
+        }
+        .product-tabs .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        .product-tabs .tab-panel h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+        .product-tabs .tab-panel p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .product-tabs .tab-panel ul {
+            list-style: none;
+            padding-left: 0;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .product-tabs .tab-panel ul li {
+            padding: var(--spacing-xs) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .product-tabs .tab-panel ul li:last-child {
+            border-bottom: none;
+        }
+        .product-tabs .tab-panel ul li::before {
+            content: 'âœ“ ';
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        /* Product Features */
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            padding: var(--spacing-2xl) 0;
+        }
+        .product-features .feature {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+        .product-features .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-primary-light);
+        }
+        .product-features .feature i {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        .product-features .feature h4 {
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-xs);
+        }
+        .product-features .feature p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Related Products */
+        .related-products {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bg-secondary);
+        }
+        .related-products .section-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Quote Banner */
+        .quote-banner {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+            color: var(--text-inverse);
+            text-align: center;
+        }
+        .quote-banner h2 {
+            color: var(--text-inverse);
+            font-size: var(--text-3xl);
+            margin-bottom: var(--spacing-md);
+        }
+        .quote-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 560px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: var(--text-lg);
+        }
+
+        /* Loading State */
+        .loading-state {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .loading-state i {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            animation: spin 1s linear infinite;
+        }
+        .loading-state p {
+            margin-top: var(--spacing-md);
+            color: var(--text-muted);
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Not Found State */
+        .not-found {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .not-found i {
+            font-size: 4rem;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-lg);
+            display: block;
+        }
+        .not-found h2 {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--spacing-md);
+        }
+        .not-found p {
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 8rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            z-index: var(--z-toast);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--brand-secondary);
+            max-width: 90%;
+            text-align: center;
+        }
+        .toast-notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .toast-notification {
+                bottom: 6rem;
+                font-size: var(--text-xs);
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+        }
+        @media (max-width: 480px) {
+            .toast-notification {
+                bottom: 5rem;
+                font-size: 0.6rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+                max-width: 95%;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            .toast-notification {
+                background: var(--bg-secondary);
+                border-color: var(--border-color);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .product-detail-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+            .product-gallery-main img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                padding: var(--spacing-xl) 0;
+            }
+            .product-gallery-main img {
+                max-height: 300px;
+            }
+            .product-info .product-name {
+                font-size: var(--text-2xl);
+            }
+            .product-info .product-price .current-price {
+                font-size: var(--text-2xl);
+            }
+            .product-details-grid {
+                grid-template-columns: 1fr;
+                padding: var(--spacing-md);
+            }
+            .product-actions {
+                flex-direction: column;
+            }
+            .product-actions .btn,
+            .product-actions .btn-wishlist-action,
+            .product-actions .btn-compare-action,
+            .product-actions .btn-whatsapp-action,
+            .product-actions .btn-call-action {
+                width: 100%;
+                flex: none;
+            }
+            .product-tabs .tab-nav button {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: var(--text-xs);
+            }
+            .product-tabs .tab-panel {
+                padding: var(--spacing-md);
+            }
+            .product-features {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-md);
+                padding: var(--spacing-xl) 0;
+            }
+            .product-features .feature {
+                padding: var(--spacing-md);
+            }
+            .product-features .feature i {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-gallery-main img {
+                max-height: 250px;
+            }
+            .product-gallery-thumbs {
+                grid-template-columns: repeat(4, 1fr);
+                gap: var(--spacing-xs);
+            }
+            .product-info .product-name {
+                font-size: var(--text-xl);
+            }
+            .product-info .product-price .current-price {
+                font-size: var(--text-xl);
+            }
+            .product-details-grid {
+                padding: var(--spacing-sm);
+                font-size: var(--text-sm);
+            }
+            .product-tabs .tab-nav {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            .product-tabs .tab-nav button {
+                padding: var(--spacing-xs) var(--spacing-sm);
+                font-size: 0.6rem;
+            }
+            .product-features {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-xs);
+                padding: var(--spacing-lg) 0;
+            }
+            .product-features .feature {
+                padding: var(--spacing-sm);
+            }
+            .product-features .feature i {
+                font-size: 1.5rem;
+                margin-bottom: var(--spacing-xs);
+            }
+            .product-features .feature h4 {
+                font-size: var(--text-xs);
+            }
+            .product-features .feature p {
+                font-size: 0.55rem;
+            }
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            .breadcrumb {
+                background: var(--bg-secondary);
+                border-bottom-color: var(--border-color);
+            }
+            .product-gallery-main {
+                background: var(--bg-tertiary);
+                border-color: var(--border-color);
+            }
+            .product-gallery-main img {
+                background: var(--bg-secondary);
+            }
+            .product-details-grid {
+                background: var(--bg-tertiary);
+                border-color: var(--border-color);
+            }
+            .product-features .feature {
+                background: var(--bg-tertiary);
+                border-color: var(--border-color);
+            }
+            .product-tabs {
+                border-color: var(--border-color);
+            }
+            .product-tabs .tab-nav {
+                background: var(--bg-tertiary);
+                border-bottom-color: var(--border-color);
+            }
+            .product-tabs .tab-nav button.active {
+                background: var(--bg-secondary);
+            }
+            .product-tabs .tab-panel {
+                background: var(--bg-secondary);
+            }
+            .related-products {
+                background: var(--bg-primary);
+            }
+            .product-gallery-thumbs img {
+                background: var(--bg-tertiary);
+            }
+        }
+
+        /* Hidden display */
+        .hidden {
+            display: none;
+        }
+
+        /* CTA Buttons */
+        .quote-banner .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quote-banner .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            border-color: #25d366;
+        }
+
+        .quote-banner .btn-call {
+            background: var(--brand-secondary);
+            color: var(--text-primary);
+            border-color: var(--brand-secondary);
+        }
+
+        .quote-banner .btn-request {
+            border-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        /* Heart icon color */
+        .heart-icon {
+            color: #ef4444;
+        }
+
+        /* Spinner loading state */
+        .loading-placeholder {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+        }
+
+        .loading-placeholder i {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+    ANNOUNCEMENT BAR
+    ===================================================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-left">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Supplying Genuine Bamburi Cement Across Kenya</span>
+            </div>
+            <div class="top-right">
+                <a href="tel:+254750210207"><i class="fa-solid fa-phone"></i> 0750 210 207</a>
+                <a href="https://wa.me/254750210207"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+    HEADER
+    ===================================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement Kenya" />
+                </a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link has-dropdown">
+                            Products <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-column">
+                                <h4>Cement Products</h4>
+                                <ul>
+                                    <li><a href="fundi.html"><i class="fas fa-cube"></i> Bamburi Fundi</a></li>
+                                    <li><a href="tembo.html"><i class="fas fa-cube"></i> Bamburi Tembo</a></li>
+                                    <li><a href="nguvu.html"><i class="fas fa-cube"></i> Bamburi Nguvu</a></li>
+                                    <li><a href="powermax.html"><i class="fas fa-cube"></i> Bamburi PowerMax</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Premium Products</h4>
+                                <ul>
+                                    <li><a href="duracem.html"><i class="fas fa-industry"></i> Bamburi Duracem</a></li>
+                                    <li><a href="powerplus.html"><i class="fas fa-industry"></i> Bamburi PowerPlus</a></li>
+                                    <li><a href="powercrete.html"><i class="fas fa-industry"></i> Bamburi Powercrete</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h4>Resources</h4>
+                                <ul>
+                                    <li><a href="description.html"><i class="fas fa-book"></i> Product Guide</a></li>
+                                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-feature">
+                                <h3>Need Help Choosing?</h3>
+                                <p>Compare Bamburi cement products, check prices, and request a quotation from our sales team.</p>
+                                <a href="products.html" class="btn btn-primary">View All Products</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="description.html" class="nav-link">ðŸ“– Product Guide</a>
+                    </li>
+                </ul>
+                <div class="header-actions">
+                    <a href="wishlist.html" class="wishlist-link">
+                        <i class="far fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="quote-cart.html" class="quote-cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="quote-badge">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" title="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Links for mobile inside the same nav (hamburger reveals them) -->
+                <ul class="nav nav-quicklinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="description.html" class="nav-link">ðŸ“– Product Guide</a></li>
+                    <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                    <li class="nav-item"><a href="delivery.html" class="nav-link">Delivery Areas</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+    BREADCRUMB
+    ===================================================== -->
+    <nav class="breadcrumb" id="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="separator">â€º</span>
+            <a href="products.html">Products</a>
+            <span class="separator">â€º</span>
+            <span class="current" id="breadcrumbProduct">Loading...</span>
+        </div>
+    </nav>
+
+    <!-- =====================================================
+    PRODUCT DETAIL â€“ DYNAMIC CONTENT
+    ===================================================== -->
+    <section class="product-detail" id="productDetail">
+        <div class="container">
+            <div id="productContent">
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState">
+                    <i class="fas fa-spinner"></i>
+                    <p>Loading product details...</p>
+                </div>
+
+                <!-- Product Content (hidden until loaded) -->
+                <div id="productContentLoaded" class="hidden">
+                    <div class="product-detail-grid">
+                        <!-- Left Column: Gallery -->
+                        <div class="product-gallery">
+                            <div class="product-gallery-main" id="galleryMain">
+                                <img id="mainImage" src="" alt="" />
+                                <div class="badge-container" id="badgeContainer"></div>
+                            </div>
+                            <div class="product-gallery-thumbs" id="galleryThumbs"></div>
+                        </div>
+
+                        <!-- Right Column: Product Info -->
+                        <div class="product-info">
+                            <h1 class="product-name" id="productName"></h1>
+
+                            <div class="product-rating">
+                                <span class="stars" id="productStars">â˜…â˜…â˜…â˜…â˜…</span>
+                                <span class="review-count" id="productReviewCount">(0 reviews)</span>
+                            </div>
+
+                            <div class="product-price" id="productPrice"></div>
+
+                            <div class="stock-status" id="productStock"></div>
+
+                            <p class="product-description" id="productDescription"></p>
+
+                            <div class="product-details-grid" id="productDetails"></div>
+
+                            <!-- Actions -->
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-add-quote" id="addToQuoteBtn">
+                                    <i class="fas fa-plus"></i> Add to Quote
+                                </button>
+                                <button class="btn-wishlist-action" id="wishlistBtn">
+                                    <i class="far fa-heart"></i> <span id="wishlistText">Wishlist</span>
+                                </button>
+                                <button class="btn-compare-action" id="compareBtn">
+                                    <i class="fas fa-balance-scale"></i> Compare
+                                </button>
+                                <a href="#" class="btn-whatsapp-action" id="whatsappBtn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="tel:+254750210207" class="btn-call-action">
+                                    <i class="fas fa-phone"></i> Call Sales
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============================================
+                    ðŸ”¥ FIXED: Product Tabs â€“ Wrapped in .product-tabs
+                    ============================================ -->
+                    <div class="product-tabs" id="productTabs">
+                        <div class="tab-nav" id="tabNav">
+                            <button class="active" data-tab="description">Description</button>
+                            <button data-tab="specifications">Specifications</button>
+                            <button data-tab="applications">Applications</button>
+                            <button data-tab="delivery">Delivery</button>
+                        </div>
+                        <div class="tab-panel active" id="tabDescription">
+                            <h3>Description</h3>
+                            <p id="tabDescriptionContent">loading description...</p>
+                        </div>
+                        <div class="tab-panel" id="tabSpecifications">
+                            <h3>Specifications</h3>
+                            <ul id="tabSpecificationsContent"><li>Loading specifications...</li></ul>
+                        </div>
+                        <div class="tab-panel" id="tabApplications">
+                            <h3>Applications</h3>
+                            <ul id="tabApplicationsContent"><li>Loading applications...</li></ul>
+                        </div>
+                        <div class="tab-panel" id="tabDelivery">
+                            <h3>Delivery Information</h3>
+                            <p>We deliver across Kenya to homes, construction sites, contractors, hardware stores and commercial developments.</p>
+                            <ul>
+                                <li><strong>Nairobi:</strong> Same-day or next-day delivery</li>
+                                <li><strong>Mombasa:</strong> Fast deliveries from our local distribution network</li>
+                                <li><strong>Kisumu:</strong> Reliable deliveries for residential and commercial projects</li>
+                                <li><strong>Nakuru:</strong> Competitive pricing with scheduled deliveries</li>
+                                <li><strong>Eldoret:</strong> Bulk cement supply for contractors and developers</li>
+                                <li><strong>Other counties:</strong> Please contact us for delivery schedules</li>
+                            </ul>
+                            <p><a href="delivery.html" class="btn btn-outline">View All Delivery Areas</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features" id="productFeatures"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    RELATED PRODUCTS
+    ===================================================== -->
+    <section class="related-products" id="relatedProductsSection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">You May Also Like</span>
+                <h2>Related Products</h2>
+                <p>Explore other Bamburi Cement products that might interest you.</p>
+            </div>
+            <div class="products-grid" id="relatedProductsGrid">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    RECENTLY VIEWED
+    ===================================================== -->
+    <section class="section recently-viewed-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Recently Viewed</span>
+                <h2>Your Recent Products</h2>
+                <p>Products you've checked out recently.</p>
+            </div>
+            <div id="recentlyViewedProduct">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    QUOTE BANNER
+    ===================================================== -->
+    <section class="quote-banner">
+        <div class="container">
+            <h2>Need a Bulk Quote?</h2>
+            <p>Get competitive pricing for large orders. Our sales team is ready to help you with your project requirements.</p>
+            <div class="cta-buttons">
+                <a href="tel:+254750210207" class="btn btn-primary btn-call">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="btn btn-secondary btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Sales
+                </a>
+                <a href="contact.html" class="btn btn-outline btn-request">
+                    Request Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+    FOOTER
+    ===================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="images/logo.png" alt="Logo" class="footer-logo" />
+                    <p>We are an independent supplier of genuine Bamburi Cement products, serving homeowners, contractors, hardware stores and developers throughout Kenya.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="description.html">Product Guide</a></li>
+                        <li><a href="prices.html">Prices</a></li>
+                        <li><a href="delivery.html">Delivery Areas</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="product.html?id=1">Bamburi Fundi</a></li>
+                        <li><a href="product.html?id=2">Bamburi Tembo</a></li>
+                        <li><a href="product.html?id=3">Bamburi Nguvu</a></li>
+                        <li><a href="product.html?id=4">PowerMax</a></li>
+                        <li><a href="product.html?id=5">Duracem</a></li>
+                        <li><a href="product.html?id=6">PowerPlus</a></li>
+                        <li><a href="product.html?id=7">Powercrete</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Phone: <a href="tel:+254750210207">+254 750 210 207</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/254750210207">Chat Now</a></p>
+                    <p>Email: <a href="mailto:sales@bamburicementkenya.co.ke">sales@bamburicementkenya.co.ke</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Â© 2026 Bamburi Cement Kenya. Independent Supplier of Genuine Bamburi Cement Products.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+    LIGHTBOX
+    ===================================================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-lightbox" id="closeLightbox">&times;</button>
+        <img id="lightboxImage" src="" alt="" />
+    </div>
+
+    <!-- =====================================================
+    FLOATING BUTTONS
+    ===================================================== -->
+    <a href="tel:+254750210207" class="floating-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- =====================================================
+    TOAST NOTIFICATION
+    ===================================================== -->
+    <div id="toastNotification" class="toast-notification"></div>
+
+    <!-- =====================================================
+    SCRIPTS
+    ===================================================== -->
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // ============================================
+        // PRODUCT PAGE â€“ DYNAMIC LOADER
+        // ============================================
+
+        function getProductIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id'));
+            return isNaN(id) ? null : id;
+        }
+
+        function getProductById(id) {
+            if (typeof products === 'undefined') return null;
+            return products.find(p => p.id === id) || null;
+        }
+
+        function renderProductPage() {
+            const productId = getProductIdFromURL();
+            const product = productId ? getProductById(productId) : null;
+
+            const loadingState = document.getElementById('loadingState');
+            const content = document.getElementById('productContentLoaded');
+
+            if (!product) {
+                loadingState.style.display = 'none';
+                content.style.display = 'block';
+                content.innerHTML = `
+                    <div class="not-found">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h2>Product Not Found</h2>
+                        <p>The product you're looking for doesn't exist or has been removed.</p>
+                        <a href="products.html" class="btn btn-primary">Browse All Products</a>
+                    </div>
+                `;
+                document.getElementById('breadcrumbProduct').textContent = 'Product Not Found';
+                return;
+            }
+
+            // ðŸ”¥ DEBUG: Log product data to console
+            console.log('âœ… Product loaded:', product);
+            console.log('  â†’ Strength:', product.strength);
+            console.log('  â†’ Packaging:', product.packaging);
+            console.log('  â†’ Recommended Uses:', product.recommendedUses);
+
+            loadingState.style.display = 'none';
+            content.style.display = 'block';
+
+            // --- Update Page Title & Meta ---
+            document.title = `${product.name} â€“ Bamburi Cement Kenya | Prices & Specifications`;
+            document.querySelector('meta[name="description"]').content =
+                `Buy ${product.name} in Kenya at ${product.price}. ${product.description.substring(0, 150)}`;
+
+            // --- Open Graph ---
+            document.querySelector('meta[property="og:title"]').content = `${product.name} â€“ Bamburi Cement Kenya`;
+            document.querySelector('meta[property="og:description"]').content =
+                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
+            document.querySelector('meta[property="og:image"]').content = product.image;
+
+            // --- Twitter Card ---
+            document.querySelector('meta[name="twitter:title"]').content = `${product.name} â€“ Bamburi Cement Kenya`;
+            document.querySelector('meta[name="twitter:description"]').content =
+                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
+            document.querySelector('meta[name="twitter:image"]').content = product.image;
+
+            // --- JSON-LD Schema ---
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": product.name,
+                "description": product.description,
+                "image": product.image,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Bamburi Cement"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "KES",
+                    "price": parseFloat(product.price.replace(/[^0-9.]/g, '')),
+                    "availability": product.stock === 'In Stock' ? "https://schema.org/InStock" :
+                        product.stock === 'Low Stock' ? "https://schema.org/LimitedAvailability" :
+                        "https://schema.org/OutOfStock"
+                }
+            };
+            document.getElementById('productSchema').textContent = JSON.stringify(schema);
+
+            // --- Breadcrumb ---
+            document.getElementById('breadcrumbProduct').textContent = product.name;
+
+            // --- Gallery ---
+            document.getElementById('mainImage').src = product.image;
+            document.getElementById('mainImage').alt = product.name;
+
+            const badgeContainer = document.getElementById('badgeContainer');
+            badgeContainer.innerHTML = '';
+            if (product.isBestSeller) {
+                badgeContainer.innerHTML += `<span class="badge bestseller">â˜… Best Seller</span>`;
+            }
+            if (product.isNew) {
+                badgeContainer.innerHTML += `<span class="badge new">âœ¦ New</span>`;
+            }
+            if (product.isFeatured) {
+                badgeContainer.innerHTML += `<span class="badge featured">â­ Featured</span>`;
+            }
+            if (product.oldPrice) {
+                const oldNum = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
+                const newNum = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+                if (!isNaN(oldNum) && !isNaN(newNum) && oldNum > newNum) {
+                    badgeContainer.innerHTML += `<span class="badge sale">ðŸ”¥ Sale</span>`;
+                }
+            }
+
+            // Thumbnails
+            const thumbContainer = document.getElementById('galleryThumbs');
+            thumbContainer.innerHTML = '';
+            const allImages = [product.image, ...(product.extraImages || [])];
+            allImages.forEach((img, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = img;
+                thumb.alt = `${product.name} - view ${index + 1}`;
+                if (index === 0) thumb.classList.add('active');
+                thumb.dataset.index = index;
+                thumb.addEventListener('click', function() {
+                    document.getElementById('mainImage').src = this.src;
+                    thumbContainer.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+                thumbContainer.appendChild(thumb);
+            });
+
+            // --- Product Info ---
+            document.getElementById('productName').textContent = product.name;
+
+            // Rating (simulated)
+            document.getElementById('productStars').textContent = 'â˜…â˜…â˜…â˜…â˜…';
+            document.getElementById('productReviewCount').textContent = `(4.8 / 5.0 â€¢ 127 reviews)`;
+
+            // Price
+            const priceContainer = document.getElementById('productPrice');
+            priceContainer.innerHTML = '';
+            if (product.oldPrice) {
+                const oldNum = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
+                const newNum = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+                if (!isNaN(oldNum) && !isNaN(newNum) && oldNum > newNum) {
+                    const percent = Math.round((1 - newNum / oldNum) * 100);
+                    priceContainer.innerHTML = `
+                        <span class="current-price sale">${product.price}</span>
+                        <span class="old-price">${product.oldPrice}</span>
+                        <span class="sale-badge">-${percent}%</span>
+                    `;
+                } else {
+                    priceContainer.innerHTML = `<span class="current-price">${product.price}</span>`;
+                }
+            } else {
+                priceContainer.innerHTML = `<span class="current-price">${product.price}</span>`;
+            }
+
+            // Stock
+            const stockContainer = document.getElementById('productStock');
+            const stockText = product.stock || 'In Stock';
+            let stockClass = 'in-stock';
+            if (stockText === 'Low Stock') stockClass = 'low-stock';
+            else if (stockText === 'Out of Stock') stockClass = 'out-of-stock';
+            stockContainer.innerHTML = `
+                <span class="${stockClass}">â—</span>
+                <span>${stockText}${stockText === 'In Stock' ? ' â€“ Ready for delivery' : ''}</span>
+            `;
+
+            // Description
+            document.getElementById('productDescription').textContent = product.description;
+
+            // Details Grid
+            const detailsContainer = document.getElementById('productDetails');
+            const details = [
+                { label: 'Strength', value: product.strength || 'Standard' },
+                { label: 'Category', value: product.category || 'Cement' },
+                { label: 'Packaging', value: product.packaging || '50kg bag' },
+                { label: 'Brand', value: 'Bamburi Cement' },
+                { label: 'Coverage', value: product.coverage || 'Varies by application' },
+                { label: 'Recommended Uses', value: product.recommendedUses || 'General construction' },
+                { label: 'Weight', value: '50 kg' },
+                { label: 'Shelf Life', value: product.shelfLife || '6 months (unopened)' },
+            ];
+            detailsContainer.innerHTML = details.map(d => `
+                <div class="detail-item">
+                    <span class="label">${d.label}</span>
+                    <span class="value">${d.value}</span>
+                </div>
+            `).join('');
+
+            // ============================================
+            // ðŸ”¥ FIX: POPULATE TABS WITH PRODUCT DATA
+            // ============================================
+
+            // --- Description Tab ---
+            const descContent = document.getElementById('tabDescriptionContent');
+            if (descContent) {
+                descContent.textContent = product.description || 'No description available.';
+                console.log('âœ… Description tab populated.');
+            } else {
+                console.error('âŒ Element #tabDescriptionContent not found.');
+            }
+
+            // --- Specifications Tab ---
+            const specContent = document.getElementById('tabSpecificationsContent');
+            if (specContent) {
+                const specs = [
+                    `Strength: ${product.strength || 'Standard'} MPa`,
+                    `Packaging: ${product.packaging || '50kg bag'}`,
+                    `Brand: Bamburi Cement`,
+                    `Made in Kenya`,
+                    `Quality: ISO certified`,
+                ];
+                specContent.innerHTML = specs.map(s => `<li>${s}</li>`).join('');
+                console.log('âœ… Specifications tab populated.');
+            } else {
+                console.error('âŒ Element #tabSpecificationsContent not found.');
+            }
+
+            // --- Applications Tab ---
+            const appContent = document.getElementById('tabApplicationsContent');
+            if (appContent) {
+                let apps = [];
+                if (product.recommendedUses) {
+                    apps = product.recommendedUses.split(',').map(item => item.trim()).filter(item => item.length > 0);
+                }
+                if (apps.length === 0) {
+                    apps = [
+                        'General construction',
+                        'Foundations and slabs',
+                        'Plastering and rendering',
+                        'Block and brick laying',
+                        'Mortar works'
+                    ];
+                }
+                appContent.innerHTML = apps.map(a => `<li>${a}</li>`).join('');
+                console.log('âœ… Applications tab populated.');
+            } else {
+                console.error('âŒ Element #tabApplicationsContent not found.');
+            }
+
+            // --- Product Features ---
+            const featuresContainer = document.getElementById('productFeatures');
+            const features = [
+                { icon: 'fa-certificate', title: '100% Genuine', desc: 'Authorized Bamburi Cement products' },
+                { icon: 'fa-truck-fast', title: 'Fast Delivery', desc: 'Nationwide delivery across Kenya' },
+                { icon: 'fa-tags', title: 'Competitive Price', desc: 'Best prices for quality cement' },
+                { icon: 'fa-headset', title: 'Expert Support', desc: 'Professional sales guidance' },
+            ];
+            if (featuresContainer) {
+                featuresContainer.innerHTML = features.map(f => `
+                    <div class="feature">
+                        <i class="fas ${f.icon}"></i>
+                        <h4>${f.title}</h4>
+                        <p>${f.desc}</p>
+                    </div>
+                `).join('');
+            }
+
+            // --- Actions ---
+            const addBtn = document.getElementById('addToQuoteBtn');
+            if (addBtn) {
+                addBtn.addEventListener('click', function() {
+                    if (typeof window.addToQuoteCart === 'function') {
+                        window.addToQuoteCart(product.id);
+                    }
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Added';
+                    this.style.background = '#10b981';
+                    this.style.color = 'white';
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                        this.style.color = '';
+                    }, 1500);
+                });
+            }
+
+            const wishBtn = document.getElementById('wishlistBtn');
+            const wishText = document.getElementById('wishlistText');
+            if (wishBtn) {
+                if (window.isInWishlist && window.isInWishlist(product.id)) {
+                    wishBtn.classList.add('active');
+                    wishBtn.querySelector('i').classList.remove('far');
+                    wishBtn.querySelector('i').classList.add('fas');
+                    wishText.textContent = 'In Wishlist';
+                }
+                wishBtn.addEventListener('click', function() {
+                    if (typeof window.toggleWishlist === 'function') {
+                        window.toggleWishlist(product.id);
+                        const isActive = window.isInWishlist(product.id);
+                        this.classList.toggle('active', isActive);
+                        const icon = this.querySelector('i');
+                        icon.classList.toggle('far', !isActive);
+                        icon.classList.toggle('fas', isActive);
+                        wishText.textContent = isActive ? 'In Wishlist' : 'Wishlist';
+                        if (typeof window.updateWishlistBadge === 'function') {
+                            window.updateWishlistBadge();
+                        }
+                        if (typeof window.showToast === 'function') {
+                            window.showToast(isActive ? 'â¤ï¸ Added to wishlist' : 'ðŸ’” Removed from wishlist');
+                        }
+                    }
+                });
+            }
+
+            const compBtn = document.getElementById('compareBtn');
+            if (compBtn) {
+                compBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const isActive = this.classList.contains('active');
+                    if (typeof window.showToast === 'function') {
+                        window.showToast(isActive ?
+                            `âš–ï¸ ${product.name} added to compare` :
+                            `âš–ï¸ ${product.name} removed from compare`
+                        );
+                    }
+                });
+            }
+
+            const waBtn = document.getElementById('whatsappBtn');
+            if (waBtn) {
+                const waPrice = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+                waBtn.href =
+                    `https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}%20at%20KES%20${waPrice}%20per%20bag.%20Please%20confirm%20availability.`;
+            }
+
+            // --- Recently Viewed ---
+            if (typeof window.saveRecentlyViewed === 'function') {
+                window.saveRecentlyViewed(product.id);
+            }
+
+            setTimeout(function() {
+                if (typeof window.renderRecentlyViewed === 'function') {
+                    window.renderRecentlyViewed();
+                }
+            }, 100);
+
+            renderRelatedProducts(product.id);
+        }
+
+        // ============================================
+        // RENDER RELATED PRODUCTS
+        // ============================================
+        function renderRelatedProducts(currentProductId) {
+            const container = document.getElementById('relatedProductsGrid');
+            if (!container) return;
+
+            if (typeof products === 'undefined') {
+                container.innerHTML = '<p>Loading related products...</p>';
+                return;
+            }
+
+            const currentProduct = products.find(p => p.id === currentProductId);
+            let relatedIds = currentProduct?.related || [];
+
+            if (relatedIds.length === 0) {
+                const others = products.filter(p => p.id !== currentProductId);
+                for (let i = others.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [others[i], others[j]] = [others[j], others[i]];
+                }
+                relatedIds = others.slice(0, 4).map(p => p.id);
+            }
+
+            const relatedProducts = relatedIds
+                .map(id => products.find(p => p.id === id))
+                .filter(p => p !== undefined);
+
+            if (relatedProducts.length === 0) {
+                container.innerHTML =
+                    '<p style="text-align:center; color: var(--text-muted);">No related products found.</p>';
+                return;
+            }
+
+            container.innerHTML = relatedProducts.map(product => {
+                let stockClass = '';
+                let stockText = product.stock || 'In Stock';
+                if (stockText === 'In Stock') stockClass = 'in-stock';
+                else if (stockText === 'Low Stock') stockClass = 'low-stock';
+                else if (stockText === 'Out of Stock') stockClass = 'out-of-stock';
+                else stockClass = 'in-stock';
+
+                let badgeHtml = '';
+                if (product.isBestSeller) badgeHtml = `<span class="product-badge bestseller">â˜… Best Seller</span>`;
+                else if (product.isNew) badgeHtml = `<span class="product-badge new">âœ¦ New</span>`;
+                else if (product.isFeatured) badgeHtml = `<span class="product-badge featured">â­ Featured</span>`;
+
+                let salePercent = '';
+                if (product.oldPrice) {
+                    const oldNum = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
+                    const newNum = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+                    if (!isNaN(oldNum) && !isNaN(newNum) && oldNum > newNum) {
+                        const percent = Math.round((1 - newNum / oldNum) * 100);
+                        salePercent = `<span class="sale-percent">-${percent}%</span>`;
+                    }
+                }
+
+                let priceHtml = '';
+                if (product.oldPrice) {
+                    priceHtml = `
+                        <span class="old-price">${product.oldPrice}</span>
+                        <span class="sale-price">${product.price}</span>
+                    `;
+                } else {
+                    priceHtml = `<span class="regular-price">${product.price}</span>`;
+                }
+
+                const waLink = `https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}%20at%20KES%20${product.price.replace(/[^0-9.]/g,'')}`;
+
+                return `
+                    <div class="product-card" data-product-id="${product.id}">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                            ${badgeHtml}
+                            ${salePercent}
+                            <button class="wishlist-btn" data-product-id="${product.id}" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="stock-badge ${stockClass}">${stockText}</span>
+                        </div>
+                        <div class="product-body">
+                            <h3><a href="product.html?id=${product.id}">${product.name}</a></h3>
+                            <p class="description">${product.description.substring(0, 80)}...</p>
+                            <div class="price-row">${priceHtml}</div>
+                        </div>
+                        <div class="product-footer">
+                            <button class="btn-sm btn-add-quote" onclick="addToCart('${product.name}', ${parseFloat(product.price.replace(/[^0-9.]/g,''))}, '${waLink}')">
+                                <i class="fas fa-plus"></i> Add to Quote
+                            </button>
+                            <a href="product.html?id=${product.id}" class="btn-sm btn-outline">View Details</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Re-attach wishlist events for related products
+            document.querySelectorAll('#relatedProductsGrid .wishlist-btn').forEach(btn => {
+                const productId = parseInt(btn.dataset.productId);
+                if (window.isInWishlist && window.isInWishlist(productId)) {
+                    btn.classList.add('active');
+                    const icon = btn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                    }
+                }
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const id = parseInt(this.dataset.productId);
+                    if (typeof window.toggleWishlist === 'function') {
+                        window.toggleWishlist(id);
+                        const isActive = window.isInWishlist(id);
+                        this.classList.toggle('active', isActive);
+                        const icon = this.querySelector('i');
+                        if (icon) {
+                            icon.classList.toggle('far', !isActive);
+                            icon.classList.toggle('fas', isActive);
+                        }
+                        if (typeof window.updateWishlistBadge === 'function') {
+                            window.updateWishlistBadge();
+                        }
+                        if (typeof window.showToast === 'function') {
+                            window.showToast(isActive ? 'â¤ï¸ Added to wishlist' : 'ðŸ’” Removed from wishlist');
+                        }
+                    }
+                });
+            });
+        }
+
+        // ============================================
+        // TAB FUNCTIONALITY
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            document.querySelectorAll('#tabNav button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#tabNav button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const tab = this.dataset.tab;
+                    document.querySelectorAll('#productTabs .tab-panel').forEach(p => p.classList.remove('active'));
+                    const panel = document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1));
+                    if (panel) panel.classList.add('active');
+                });
+            });
+
+            // Lightbox
+            const mainImage = document.getElementById('mainImage');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeLightbox = document.getElementById('closeLightbox');
+
+            if (mainImage && lightbox) {
+                mainImage.addEventListener('click', function() {
+                    lightbox.classList.add('active');
+                    lightboxImage.src = this.src;
+                    lightboxImage.alt = this.alt;
+                    document.body.style.overflow = 'hidden';
+                });
+
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                if (closeLightbox) {
+                    closeLightbox.addEventListener('click', function() {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Mobile Menu
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav');
+            const body = document.body;
+
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    nav.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                    body.classList.toggle('no-scroll');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (nav.classList.contains('active') &&
+                        !nav.contains(e.target) &&
+                        !menuToggle.contains(e.target)) {
+                        nav.classList.remove('active');
+                        body.classList.remove('no-scroll');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // Scroll to Top
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', function() {
+                    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+                });
+                scrollTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Update badges
+            if (typeof window.updateWishlistBadge === 'function') {
+                window.updateWishlistBadge();
+            }
+            if (typeof window.updateQuoteBadge === 'function') {
+                window.updateQuoteBadge();
+            }
+
+            // Render product page
+            renderProductPage();
+
+            console.log('âœ… Product page loaded successfully');
+        });
+    </script>
+
+</body>
+</html>
