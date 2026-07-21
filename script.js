@@ -309,6 +309,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- FAQ Accordion ---
     document.querySelectorAll('.faq-question').forEach(button => {
+        // Blog uses its own accessible accordion controller; do not toggle it twice.
+        if (button.closest('.blog-faq')) return;
+
         button.addEventListener('click', function() {
             const parent = this.parentElement;
             document.querySelectorAll('.faq-item').forEach(item => {
