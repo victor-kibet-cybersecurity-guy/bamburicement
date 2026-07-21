@@ -218,7 +218,7 @@ function renderProducts() {
             galleryHtml = `
                 <div class="product-gallery">
                     ${product.extraImages.map(img => `
-                        <img src="${img}" alt="${product.name}" loading="lazy">
+                        <img src="${img}" alt="${product.name}" loading="lazy" decoding="async">
                     `).join('')}
                 </div>
             `;
@@ -230,7 +230,7 @@ function renderProducts() {
         return `
             <div class="product-card" data-product-id="${product.id}" data-product-link="${product.link}">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" class="main-image" loading="lazy">
+                    <img src="${product.image}" alt="${product.name}" class="main-image" loading="lazy" decoding="async">
                     ${galleryHtml}
                     ${badgeHtml}
                     ${saleBadgeHtml}

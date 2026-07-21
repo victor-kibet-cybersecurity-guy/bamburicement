@@ -353,7 +353,7 @@
                 return `
                     <div class="product-card" data-product-id="${product.id}">
                         <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
                             ${badgeHtml}
                             ${salePercent}
                             <span class="stock-badge ${stockClass}">${stockText}</span>
