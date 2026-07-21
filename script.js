@@ -307,6 +307,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Shared mobile site-shell menu ---
+    const shellMenu = document.querySelector('#siteShellHeader .shell-menu');
+    const shellLinks = document.querySelector('#siteShellHeader .shell-links');
+    if (shellMenu && shellLinks) {
+        const closeShellMenu = () => {
+            shellLinks.classList.remove('is-open');
+            shellMenu.setAttribute('aria-expanded', 'false');
+            shellMenu.setAttribute('aria-label', 'Open navigation menu');
+            shellMenu.querySelector('i')?.classList.replace('fa-times', 'fa-bars');
+        };
+        shellMenu.addEventListener('click', () => {
+            const isOpen = shellLinks.classList.toggle('is-open');
+            shellMenu.setAttribute('aria-expanded', String(isOpen));
+            shellMenu.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            shellMenu.querySelector('i')?.classList.toggle('fa-bars', !isOpen);
+            shellMenu.querySelector('i')?.classList.toggle('fa-times', isOpen);
+        });
+        shellLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeShellMenu));
+        window.addEventListener('resize', () => { if (window.innerWidth > 800) closeShellMenu(); });
+    }
     // --- FAQ Accordion ---
     document.querySelectorAll('.faq-question').forEach(button => {
         // Blog uses its own accessible accordion controller; do not toggle it twice.

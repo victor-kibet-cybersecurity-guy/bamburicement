@@ -40,7 +40,15 @@ img, picture, video, iframe { max-width: 100%; height: auto; }
 html,body{max-width:100%;overflow-x:hidden}img,iframe,video{max-width:100%;height:auto}img{content-visibility:auto}.container{width:min(100% - 2rem,1200px)}@media(max-width:800px){body{font-size:16px}.container{width:min(100% - 1.25rem,1200px)}.grid-2,.grid-3,.grid-4,.products-grid,.product-grid,.footer-grid,.section-grid,.stats-grid{grid-template-columns:1fr!important}.hero,.hero-content,.product-detail-grid{gap:1.25rem!important}.hero{padding-block:2rem!important}.section{padding-block:2.5rem!important}h1{font-size:clamp(2rem,9vw,3rem)!important}h2{font-size:clamp(1.55rem,7vw,2.25rem)!important}.btn,.product-actions .btn{min-height:44px}.floating-buttons{right:.75rem!important;bottom:.75rem!important}.floating-buttons .float-btn{width:52px!important;height:52px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 /* Static navigation: prevent header replacement and layout shift */
-#siteShellHeader{position:sticky;top:0;background:#fff;z-index:1000}#siteShellHeader .shell-links{display:flex!important;position:static!important;flex-wrap:wrap;align-items:center}@media(max-width:800px){#siteShellHeader .shell-nav{padding:.65rem 0;align-items:flex-start}#siteShellHeader .shell-logo img{width:60px}#siteShellHeader .shell-links{justify-content:flex-start;gap:.55rem .85rem}#siteShellHeader .shell-links a{font-size:.78rem}}
+#siteShellHeader{position:sticky;top:0;background:#fff;z-index:1000}
+@media(max-width:800px){
+  #siteShellHeader .shell-nav{padding:.65rem 0;align-items:center}
+  #siteShellHeader .shell-logo img{width:60px}
+  #siteShellHeader .shell-links{display:none!important;position:absolute!important;top:100%;left:0;right:0;padding:.75rem 1rem 1rem;background:#fff;border-bottom:1px solid #dbe3ee;box-shadow:0 12px 24px rgba(15,23,42,.1);flex-direction:column;align-items:stretch;gap:.1rem}
+  #siteShellHeader .shell-links.is-open{display:flex!important}
+  #siteShellHeader .shell-links a{display:block;padding:.8rem .5rem;font-size:1rem}
+  #siteShellHeader .shell-menu{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #dbe3ee;border-radius:8px;background:#fff;color:#1d4f91;margin-left:auto;cursor:pointer}
+}
 /* Blog article mobile safeguards */
 .blog-post-body,.blog-post-body .post-content,.blog-post-hero,.post-content{min-width:0;max-width:100%}.post-content img,.post-content iframe,.post-content table{max-width:100%}.data-table,.post-content table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.data-table th,.data-table td{white-space:normal;overflow-wrap:anywhere}@media(max-width:800px){.blog-post-hero,.blog-post-body{padding-inline:0}.blog-post-body .post-content{width:100%;margin:0}.comparison-grid,.tips-grid,.related-posts .blog-grid{grid-template-columns:1fr!important}.comparison-card,.callout-box,.pro-tip-box,.author-bio{min-width:0;overflow-wrap:anywhere}.post-meta{flex-wrap:wrap}.blog-post-hero h1{font-size:clamp(1.8rem,8vw,2.5rem)!important}.post-content h2{font-size:clamp(1.35rem,6vw,1.8rem)!important}.post-content p,.post-content li{overflow-wrap:anywhere}}
 /* Why Genuine Cement Matters article */
