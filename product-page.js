@@ -55,26 +55,38 @@
             document.querySelector('meta[name="twitter:title"]').content = `${product.name} | Bamburi Cement Kenya`;
             document.querySelector('meta[name="twitter:description"]').content =
                 `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
-            document.querySelector('meta[name="twitter:image"]').content = product.image;
-
-            // --- JSON-LD Schema ---
+            document.querySelector('meta[name="twitter:image"]').content = product.image;            // --- JSON-LD Schema ---
+            const productUrl = new URL(window.location.href);
+            productUrl.searchParams.set('id', product.id);
+            const schemaStockText = product.stock || 'In Stock';
+            const schemaAvailability = schemaStockText === 'In Stock'
+                ? 'https://schema.org/InStock'
+                : schemaStockText === 'Low Stock'
+                    ? 'https://schema.org/LimitedAvailability'
+                    : 'https://schema.org/OutOfStock';
             const schema = {
-                "@context": "https://schema.org",
-                "@type": "Product",
-                "name": product.name,
-                "description": product.description,
-                "image": product.image,
-                "brand": {
-                    "@type": "Brand",
-                    "name": "Bamburi Cement"
+                '@context': 'https://schema.org',
+                '@type': 'Product',
+                name: product.name,
+                description: product.description,
+                sku: String(product.id),
+                url: productUrl.href,
+                image: [new URL(product.image, window.location.href).href],
+                brand: {
+                    '@type': 'Brand',
+                    name: 'Bamburi Cement'
                 },
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "KES",
-                    "price": parseFloat(product.price.replace(/[^0-9.]/g, '')),
-                    "availability": product.stock === 'In Stock' ? "https://schema.org/InStock" :
-                        product.stock === 'Low Stock' ? "https://schema.org/LimitedAvailability" :
-                        "https://schema.org/OutOfStock"
+                offers: {
+                    '@type': 'Offer',
+                    url: productUrl.href,
+                    priceCurrency: 'KES',
+                    price: parseFloat(product.price.replace(/[^0-9.]/g, '')),
+                    availability: schemaAvailability,
+                    itemCondition: 'https://schema.org/NewCondition',
+                    seller: {
+                        '@type': 'Organization',
+                        name: 'Bamburi Cement Kenya'
+                    }
                 }
             };
             document.getElementById('productSchema').textContent = JSON.stringify(schema);

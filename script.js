@@ -816,3 +816,86 @@ document.addEventListener('DOMContentLoaded', function () {
         element.remove();
     });
 });
+// Shared structured data for blog posts. The data is generated from visible page content only.
+(function () {
+    const isBlogPost = /\/blog\/[^/]+\.html$/i.test(window.location.pathname);
+    if (!isBlogPost) return;
+
+    const cleanText = (value) => (value || '').replace(/\s+/g, ' ').trim();
+    const addSchema = (id, data) => {
+        if (document.getElementById(id)) return;
+        const node = document.createElement('script');
+        node.type = 'application/ld+json';
+        node.id = id;
+        node.textContent = JSON.stringify(data);
+        document.head.appendChild(node);
+    };
+    const pageUrl = window.location.href.split('#')[0];
+    const homeUrl = new URL('../index.html', pageUrl).href;
+    const blogUrl = new URL('../blog.html', pageUrl).href;
+    const headline = cleanText(document.querySelector('h1')?.textContent) || cleanText(document.title);
+    const description = document.querySelector('meta[name="description"]')?.content || '';
+    const organization = {
+        '@type': 'Organization',
+        '@id': `${window.location.origin}/bamburicement/#organization`,
+        name: 'Bamburi Cement Kenya',
+        url: homeUrl,
+        logo: `${window.location.origin}/bamburicement/Bamburi_Cement_Logo-84x58.png`
+    };
+
+    addSchema('blog-breadcrumb-schema', {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: blogUrl },
+            { '@type': 'ListItem', position: 3, name: headline, item: pageUrl }
+        ]
+    });
+
+    const hasArticleSchema = Array.from(document.querySelectorAll('script[type="application/ld+json"]')).some((node) => {
+        try {
+            const value = JSON.parse(node.textContent);
+            const types = Array.isArray(value?.['@type']) ? value['@type'] : [value?.['@type']];
+            return types.includes('Article') || types.includes('BlogPosting');
+        } catch (_) {
+            return false;
+        }
+    });
+    if (!hasArticleSchema && headline && description) {
+        addSchema('blog-article-schema', {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline,
+            description,
+            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+            author: organization,
+            publisher: organization
+        });
+    }
+
+    const faqHeading = Array.from(document.querySelectorAll('h2, h3')).find((node) =>
+        /frequently asked questions/i.test(cleanText(node.textContent))
+    );
+    if (!faqHeading) return;
+    const faqSection = faqHeading.closest('section') || faqHeading.parentElement;
+    const entities = Array.from(faqSection.querySelectorAll('h3, h4')).filter((node) =>
+        node !== faqHeading && /\?$/.test(cleanText(node.textContent))
+    ).map((question) => {
+        let answerNode = question.nextElementSibling;
+        while (answerNode && !cleanText(answerNode.textContent)) answerNode = answerNode.nextElementSibling;
+        const answer = answerNode && !/^H[1-6]$/.test(answerNode.tagName) ? cleanText(answerNode.textContent) : '';
+        return answer ? {
+            '@type': 'Question',
+            name: cleanText(question.textContent),
+            acceptedAnswer: { '@type': 'Answer', text: answer }
+        } : null;
+    }).filter(Boolean);
+    if (entities.length >= 2) {
+        addSchema('blog-faq-schema', {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: entities
+        });
+    }
+}());
