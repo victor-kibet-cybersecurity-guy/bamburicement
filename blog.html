@@ -559,30 +559,107 @@
 
         /* --- FAQ --- */
         .blog-faq {
-            max-width: 720px;
-            margin: 0 auto;
+            max-width: 880px;
+            margin: var(--spacing-xl) auto 0;
+            display: grid;
+            gap: 1rem;
         }
 
+        .blog-faq .faq-item {
+            background: #fff;
+            border: 1px solid #dbe5f2;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 22px rgba(15, 43, 78, 0.06);
+            transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+        }
+
+        .blog-faq .faq-item:hover,
+        .blog-faq .faq-item:focus-within {
+            border-color: #8facd0;
+            box-shadow: 0 12px 28px rgba(15, 43, 78, 0.11);
+            transform: translateY(-2px);
+        }
+
+        .blog-faq .faq-item.active {
+            border-color: var(--brand-primary);
+            box-shadow: 0 14px 32px rgba(20, 75, 139, 0.14);
+        }
+
+        .blog-faq .faq-question {
+            width: 100%;
+            min-height: 72px;
+            padding: 1.15rem 1.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border: 0;
+            background: transparent;
+            color: var(--text-primary);
+            font: inherit;
+            font-size: clamp(1rem, 2vw, 1.08rem);
+            font-weight: 700;
+            line-height: 1.45;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .blog-faq .faq-question:focus-visible {
+            outline: 3px solid rgba(25, 103, 210, 0.35);
+            outline-offset: -3px;
+        }
+
+        .blog-faq .faq-question i {
+            width: 2rem;
+            height: 2rem;
+            flex: 0 0 2rem;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #eaf1fb;
+            color: var(--brand-primary);
+            font-size: 0.85rem;
+            transition: transform 180ms ease, color 180ms ease, background 180ms ease;
+        }
+
+        .blog-faq .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            background: var(--brand-primary);
+            color: #fff;
+        }
+
+        .blog-faq .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0 1.35rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            transition: max-height 280ms ease, opacity 180ms ease, padding 280ms ease;
+        }
+
+        .blog-faq .faq-item.active .faq-answer {
+            max-height: 1100px;
+            opacity: 1;
+            padding: 0 1.35rem 1.35rem;
+        }
+
+        .blog-faq .faq-answer p { margin: 0.75rem 0; }
         .blog-faq .faq-answer ul {
             list-style: disc;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-            margin: var(--spacing-sm) 0;
+            padding-left: 1.35rem;
+            margin: 0.9rem 0;
         }
-
-        .blog-faq .faq-answer ul li {
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .blog-faq .faq-answer a {
+        .blog-faq .faq-answer ul li { margin: 0.45rem 0; }
+        .blog-faq .faq-answer a,
+        .faq-link {
             color: var(--brand-primary);
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
         }
-
-        .blog-faq .faq-answer a:hover {
-            text-decoration: underline;
-        }
+        .blog-faq .faq-answer a:hover,
+        .blog-faq .faq-answer a:focus-visible { text-decoration: underline; }
 
         /* Responsive */
         @media (max-width: 992px) {
@@ -1272,7 +1349,7 @@
 
                 <!-- FAQ 1 -->
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question">
                         Which Bamburi Cement product is best for foundations?
                         <i class="fas fa-plus"></i>
                     </button>
@@ -1284,12 +1361,12 @@
 
                 <!-- FAQ 2 -->
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question">
                         How many bags of cement do I need for a 3-bedroom house?
                         <i class="fas fa-plus"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>A typical 3-bedroom house (approx. 100m<strong>250</strong> of cement (50kg each). This estimate covers foundations, floor slabs, wall construction, plastering, and finishing works. Factors like house design, number of floors, soil type, and finishing quality will affect the final quantity.</p>
+                        <p>A typical 3-bedroom house (approximately 100–120 m²) requires around 600–900 bags of cement (50 kg each). This estimate covers foundations, floor slabs, wall construction, plastering, and finishing works. Factors like house design, number of floors, soil type, and finishing quality will affect the final quantity.</p>
                         <p><strong>Quick breakdown:</strong></p>
                         <ul>
                             <li><strong>Foundations:</strong> 60</li>
@@ -1304,7 +1381,7 @@
 
                 <!-- FAQ 3 -->
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question">
                         What's the difference between Fundi and Tembo cement?
                         <i class="fas fa-plus"></i>
                     </button>
@@ -1317,7 +1394,7 @@
 
                 <!-- FAQ 4 -->
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question">
                         How should I store cement properly?
                         <i class="fas fa-plus"></i>
                     </button>
@@ -1336,7 +1413,7 @@
 
                 <!-- FAQ 5 -->
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button type="button" class="faq-question">
                         Do you deliver cement across Kenya?
                         <i class="fas fa-plus"></i>
                     </button>
@@ -1547,18 +1624,33 @@
             }
 
             // --- FAQ Accordion ---
-            document.querySelectorAll('.faq-question').forEach(button => {
+            const faqItems = document.querySelectorAll('.blog-faq .faq-item');
+            faqItems.forEach((item, index) => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = button?.querySelector('i');
+                if (!button || !answer) return;
+
+                const answerId = `blog-faq-answer-${index + 1}`;
+                answer.id = answerId;
+                button.setAttribute('aria-controls', answerId);
+                button.setAttribute('aria-expanded', 'false');
+
                 button.addEventListener('click', function() {
-                    const parent = this.parentElement;
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        if (item !== parent) item.classList.remove('active');
+                    const willOpen = !item.classList.contains('active');
+                    faqItems.forEach((otherItem) => {
+                        const otherButton = otherItem.querySelector('.faq-question');
+                        const otherIcon = otherButton?.querySelector('i');
+                        otherItem.classList.remove('active');
+                        otherButton?.setAttribute('aria-expanded', 'false');
+                        otherIcon?.classList.remove('fa-minus');
+                        otherIcon?.classList.add('fa-plus');
                     });
-                    parent.classList.toggle('active');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                    }
+
+                    item.classList.toggle('active', willOpen);
+                    button.setAttribute('aria-expanded', String(willOpen));
+                    icon?.classList.toggle('fa-plus', !willOpen);
+                    icon?.classList.toggle('fa-minus', willOpen);
                 });
             });
 
