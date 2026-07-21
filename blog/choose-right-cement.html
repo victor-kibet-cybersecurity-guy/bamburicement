@@ -580,6 +580,22 @@
             }
         }
     </style>
+    <style>
+        .article-faq { margin: 3rem 0; }
+        .article-faq > h2 { margin-bottom: 1.25rem; }
+        .article-faq-item { margin: .8rem 0; border: 1px solid #d9e4f1; border-radius: 14px; background: #fff; overflow: hidden; box-shadow: 0 7px 18px rgba(15, 42, 78, .05); }
+        .article-faq-item h3 { margin: 0; }
+        .article-faq-question { width: 100%; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; border: 0; background: #fff; color: #172a46; text-align: left; font: inherit; font-size: 1.05rem; font-weight: 700; cursor: pointer; }
+        .article-faq-question:hover, .article-faq-question:focus-visible { background: #f4f8fd; outline: none; }
+        .article-faq-question:focus-visible { box-shadow: inset 0 0 0 3px #8fb4e3; }
+        .article-faq-symbol { flex: 0 0 32px; width: 32px; height: 32px; display: inline-grid; place-items: center; border-radius: 50%; background: #eaf2fd; color: #1d5aa6; font-size: 1.45rem; line-height: 1; }
+        .article-faq-item.is-open { border-color: #8fb4e3; box-shadow: 0 10px 24px rgba(29, 90, 166, .12); }
+        .article-faq-item.is-open .article-faq-question { background: #f6faff; }
+        .article-faq-item.is-open .article-faq-symbol { background: #1d5aa6; color: #fff; }
+        .article-faq-answer { padding: 0 1.15rem 1.15rem; border-top: 1px solid #e5edf7; color: #475569; }
+        .article-faq-answer p { margin: .85rem 0 0; line-height: 1.7; }
+        @media (max-width: 600px) { .article-faq { margin: 2.25rem 0; } .article-faq-question { min-height: 58px; padding: .85rem 1rem; font-size: 1rem; } .article-faq-answer { padding: 0 1rem 1rem; } }
+    </style>
     <link rel="stylesheet" href="../site-consistency.css" />
 </head>
 
@@ -777,38 +793,39 @@
                     </p>
                 </div>
 
-                <h2>Frequently Asked Questions</h2>
+                <section class="article-faq" aria-labelledby="articleFaqTitle">
+                    <h2 id="articleFaqTitle">Frequently Asked Questions</h2>
 
-                <h3>What is the difference between 32.5R and 32.5N cement?</h3>
-                <p>
-                    <strong>32.5N:</strong> This is the most commonly used cement with ordinary early strength. It is more suitable where high early strength is not required for construction. The 'N' in the cement class denotes normal strength.<br />
-                    <strong>32.5R:</strong> This type of cement is used where high early strength is required for construction.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>What is the difference between 32.5R and 32.5N cement?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p><strong>32.5N:</strong> This is the most commonly used cement with ordinary early strength. It is more suitable where high early strength is not required for construction. The “N” in the cement class denotes normal strength.</p><p><strong>32.5R:</strong> This type of cement is used where high early strength is required for construction.</p></div>
+                    </article>
 
-                <h3>Which Bamburi Cement is best for plastering?</h3>
-                <p>
-                    <strong>Bamburi Fundi</strong> is the best choice for plastering. It is a specialized masonry cement formulated for optimal workability, smooth finishes, and excellent bonding.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>Which Bamburi Cement is best for plastering?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p><strong>Bamburi Fundi</strong> is the best choice for plastering. It is a specialized masonry cement formulated for optimal workability, smooth finishes, and excellent bonding.</p></div>
+                    </article>
 
-                <h3>Which Bamburi Cement is best for foundations?</h3>
-                <p>
-                    For residential foundations, <strong>Bamburi Tembo</strong> is recommended. For commercial or heavy-load structures, <strong>Bamburi PowerMax</strong> or <strong>Bamburi Nguvu</strong> are better choices.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>Which Bamburi Cement is best for foundations?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p>For residential foundations, <strong>Bamburi Tembo</strong> is recommended. For commercial or heavy-load structures, <strong>Bamburi PowerMax</strong> or <strong>Bamburi Nguvu</strong> are better choices.</p></div>
+                    </article>
 
-                <h3>Can I use Tembo for plastering?</h3>
-                <p>
-                    While Tembo can be used for plastering, <strong>Fundi</strong> is specifically formulated for this purpose and delivers better results with smoother finishes and easier application.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>Can I use Tembo for plastering?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p>While Tembo can be used for plastering, <strong>Fundi</strong> is specifically formulated for this purpose and delivers better results with smoother finishes and easier application.</p></div>
+                    </article>
 
-                <h3>Do you deliver across Kenya?</h3>
-                <p>
-                    Yes! We deliver nationwide across all 47 counties. <a href="../delivery.html">View our delivery areas</a> for more details.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>Do you deliver across Kenya?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p>Yes! We deliver nationwide across all 47 counties. <a href="../delivery.html">View our delivery areas</a> for more details.</p></div>
+                    </article>
 
-                <h3>How can I request a quotation?</h3>
-                <p>
-                    You can request a quotation by calling <a href="tel:+254750210207">+254 750 210 207</a>, sending a WhatsApp message, or filling out our <a href="../contact.html">online contact form</a>.
-                </p>
+                    <article class="article-faq-item">
+                        <h3><button class="article-faq-question" type="button" aria-expanded="false"><span>How can I request a quotation?</span><span class="article-faq-symbol" aria-hidden="true">+</span></button></h3>
+                        <div class="article-faq-answer" hidden><p>You can request a quotation by calling <a href="tel:+254750210207">+254 750 210 207</a>, sending a WhatsApp message, or filling out our <a href="../contact.html">online contact form</a>.</p></div>
+                    </article>
+                </section>
 
                 <h2>Conclusion</h2>
                 <p>
@@ -1040,5 +1057,35 @@
             });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.article-faq-item');
+            faqItems.forEach((item, index) => {
+                const button = item.querySelector('.article-faq-question');
+                const answer = item.querySelector('.article-faq-answer');
+                const symbol = item.querySelector('.article-faq-symbol');
+                if (!button || !answer) return;
+                const answerId = `choose-cement-faq-${index + 1}`;
+                answer.id = answerId;
+                button.setAttribute('aria-controls', answerId);
+                button.addEventListener('click', function () {
+                    const willOpen = !item.classList.contains('is-open');
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('is-open');
+                        const otherButton = otherItem.querySelector('.article-faq-question');
+                        const otherAnswer = otherItem.querySelector('.article-faq-answer');
+                        const otherSymbol = otherItem.querySelector('.article-faq-symbol');
+                        otherButton?.setAttribute('aria-expanded', 'false');
+                        if (otherAnswer) otherAnswer.hidden = true;
+                        if (otherSymbol) otherSymbol.textContent = '+';
+                    });
+                    item.classList.toggle('is-open', willOpen);
+                    button.setAttribute('aria-expanded', String(willOpen));
+                    answer.hidden = !willOpen;
+                    if (symbol) symbol.textContent = willOpen ? '−' : '+';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
