@@ -41,7 +41,8 @@
                 "name": "Bamburi Cement Kenya"
             },
             "datePublished": "2026-07-16",
-            "dateModified": "2026-07-16",
+            "dateModified": "2026-07-21",
+            "image": "https://victor-kibet-cybersecurity-guy.github.io/bamburicement/images/fundi-tembo-nguvu-powermax-comparison.jpg",
             "publisher": {
                 "@type": "Organization",
                 "name": "Bamburi Cement Kenya"
@@ -66,6 +67,31 @@
     <style>
         /* removed corrupted comment */
 
+
+        .comparison-feature-image {
+            margin: var(--spacing-xl) 0 0;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            background: #fff;
+            box-shadow: var(--shadow-xl);
+        }
+        .comparison-feature-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+        }
+        .comparison-feature-image figcaption {
+            padding: .75rem 1rem;
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+        }
+        @media (max-width: 600px) {
+            .comparison-feature-image { margin-top: var(--spacing-lg); border-radius: var(--radius-lg); }
+            .comparison-feature-image img { aspect-ratio: auto; }
+        }
         .blog-post-hero {
             padding: clamp(2.5rem, 6vw, 4.5rem) 0;
             background: var(--bg-secondary);
@@ -572,7 +598,7 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .blog-post-hero {
+        .blog-post-hero {
                 background: var(--bg-secondary);
                 border-bottom-color: var(--border-color);
             }
@@ -701,6 +727,10 @@
             <p class="post-excerpt">
                 Bamburi cement types differ in their strength and the best tasks they do. <strong>Fundi</strong> is for soft jobs like plastering. <strong>Tembo</strong> and <strong>Nguvu</strong> do general building and bricklaying. <strong>PowerMax</strong> is the strongest type for heavy jobs like beams and slabs. This guide breaks down the differences so you can choose the right one.
             </p>
+            <figure class="comparison-feature-image">
+                <img src="../images/fundi-tembo-nguvu-powermax-comparison.jpg" alt="Bamburi Fundi, Tembo, Nguvu and PowerMax cement bags for different construction needs" width="1536" height="1024" fetchpriority="high" decoding="async">
+                <figcaption>Compare Fundi, Tembo, Nguvu and PowerMax to choose the right cement for your project.</figcaption>
+            </figure>
         </div>
     </section>
 
