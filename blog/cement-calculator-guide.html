@@ -19,7 +19,7 @@
     <meta property="og:description"
         content="Use our cement calculator guide to estimate exactly how many bags of cement you need for foundations, slabs, plastering, and more." />
     <meta property="og:url" content="https://bamburicementkenya.co.ke/blog/cement-calculator-guide.html" />
-    <meta property="og:image" content="https://bamburicementkenya.co.ke/images/blog-calculator-og.jpg" />
+    <meta property="og:image" content="https://victor-kibet-cybersecurity-guy.github.io/bamburicement/images/blog-how-many-bags.jpg" />
     <meta property="og:site_name" content="Bamburi Cement Kenya" />
 
     <!-- Twitter Card -->
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="How Many Bags of Cement Do I Need?" />
     <meta name="twitter:description"
         content="Use our cement calculator guide to estimate exactly how many bags of cement you need for foundations, slabs, plastering, and more." />
-    <meta name="twitter:image" content="https://bamburicementkenya.co.ke/images/blog-calculator-og.jpg" />
+    <meta name="twitter:image" content="https://victor-kibet-cybersecurity-guy.github.io/bamburicement/images/blog-how-many-bags.jpg" />
 
     <!-- Article Schema -->
     <script type="application/ld+json">
@@ -119,6 +119,32 @@
             line-height: 1.8;
         }
 
+
+        .cement-calculator-feature-image {
+            max-width: 820px;
+            margin: var(--spacing-xl) 0 0;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            background: #fff;
+            box-shadow: var(--shadow-xl);
+        }
+        .cement-calculator-feature-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+        }
+        .cement-calculator-feature-image figcaption {
+            padding: .75rem 1rem;
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+        }
+        @media (max-width: 600px) {
+            .cement-calculator-feature-image { margin-top: var(--spacing-lg); border-radius: var(--radius-lg); }
+            .cement-calculator-feature-image img { aspect-ratio: auto; }
+        }
         .blog-post-body {
             padding: var(--spacing-3xl) 0;
         }
@@ -504,7 +530,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .blog-post-body {
+        .blog-post-body {
                 padding: var(--spacing-xl) 0;
             }
             .blog-post-body .post-content {
@@ -711,6 +737,10 @@
             <p class="post-excerpt">
                 Use our cement calculator guide to estimate exactly how many bags of cement you need for foundations, slabs, plastering, and more. Includes formulas, examples, and quick reference tables for all your construction needs.
             </p>
+            <figure class="cement-calculator-feature-image">
+                <img src="../images/blog-how-many-bags.jpg" alt="How many bags of Bamburi Cement are needed for a construction project" width="1536" height="1024" fetchpriority="high" decoding="async">
+                <figcaption>Use this guide to estimate the right number of Bamburi Cement bags for foundations, slabs and plastering.</figcaption>
+            </figure>
         </div>
     </section>
 
