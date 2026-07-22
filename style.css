@@ -5021,6 +5021,12 @@ body.no-scroll {
     right: 0.75rem;
 }
 
+/* Keep Sale badges on the left even when a product has more than one badge. */
+.product-badge.sale {
+    left: 0.75rem;
+    right: auto;
+}
+
 /* --- Wishlist Button (on image) --- */
 .wishlist-btn {
     position: absolute;
