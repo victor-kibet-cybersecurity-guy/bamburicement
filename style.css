@@ -1374,6 +1374,20 @@ body.no-scroll {
     gap: var(--spacing-sm);
 }
 
+.product-card .btn-whatsapp-order {
+    background: #25d366;
+    color: #ffffff;
+    border: 1px solid #25d366;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.product-card .btn-whatsapp-order:hover,
+.product-card .btn-whatsapp-order:focus-visible {
+    background: #1da851;
+    border-color: #1da851;
+    color: #ffffff;
+}
 .product-card .product-footer .btn-sm {
     padding: 0.4rem 1rem;
     font-size: var(--text-xs);

@@ -245,9 +245,9 @@ function renderProducts() {
                 </div>
 
                 <div class="product-footer">
-                    <button class="btn-sm btn-add-quote" onclick="addToCart('${product.name}', ${parseFloat(product.price.replace(/[^0-9.]/g,''))}, '${waLink}')">
-                        <i class="fas fa-plus"></i> Add to Quote
-                    </button>
+                    <a href="${waLink}" class="btn-sm btn-whatsapp-order" target="_blank" rel="noopener" aria-label="Order ${product.name} via WhatsApp">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
                     <a href="${product.link}" class="btn-sm btn-outline view-details">View Details</a>
                 </div>
             </div>
