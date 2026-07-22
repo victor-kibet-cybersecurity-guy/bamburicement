@@ -6226,8 +6226,8 @@ body.no-scroll, body.cart-open { overflow: hidden; }
     .cart-panel { width: min(100%, 420px); }
 }
 @media (max-width: 575px) {
-    .floating-buttons { gap: .6rem; }
-    .float-btn { width: 3rem; height: 3rem; font-size: 1rem; }
+        .floating-buttons { gap: .8rem; }
+    .float-btn { width: 3.75rem; height: 3.75rem; font-size: 1.35rem; }
     .cart-header { padding: 1rem; }
     .cart-body { padding: .75rem 1rem; }
     .cart-footer { padding: 1rem; }
