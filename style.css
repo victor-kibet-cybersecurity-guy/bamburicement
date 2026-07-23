@@ -2189,7 +2189,7 @@ body.no-scroll {
 }
 
 /* =====================================================
-   25. FLOATING BUTTONS (OLD – Kept for backward compatibility)
+   25. FLOATING BUTTONS (OLD â€“ Kept for backward compatibility)
    ===================================================== */
 
 .floating-call,
@@ -4948,7 +4948,7 @@ body.no-scroll {
     }
 }
 /* =====================================================
-   PRODUCT CARDS – Enhanced
+   PRODUCT CARDS â€“ Enhanced
    ===================================================== */
 
 /* --- Card Container --- */
@@ -5771,7 +5771,7 @@ body.no-scroll {
 }
 
 /* =====================================================
-   CART PANEL – SLIDE OUT
+   CART PANEL â€“ SLIDE OUT
    ===================================================== */
 
 /* Overlay */
@@ -6176,7 +6176,7 @@ table { width: 100%; border-collapse: collapse; }
     :root { --container-padding: 1rem; }
     .header .container, .navbar { min-width: 0; }
     .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
-    .nav { position: fixed; inset: 0 0 0 auto; width: min(86vw, 360px); height: 100dvh; padding: 5rem 1rem 2rem; overflow-y: auto; overscroll-behavior: contain; background: var(--bg-primary); flex-direction: column; align-items: stretch; gap: .25rem; transform: translateX(105%); transition: transform var(--transition-base); box-shadow: var(--shadow-2xl); }
+    .nav { position: fixed; inset: 0 0 0 auto; width: min(86vw, 360px); height: 100dvh; padding: 5rem 1rem 2rem; overflow-y: auto; background: var(--bg-primary); flex-direction: column; align-items: stretch; gap: .25rem; transform: translateX(105%); transition: transform var(--transition-base); box-shadow: var(--shadow-2xl); }
     .nav.active { transform: translateX(0); }
     .nav-item, .nav-link { width: 100%; }
     .mega-menu { min-width: 0; width: 100%; }
@@ -6195,7 +6195,7 @@ table { width: 100%; border-collapse: collapse; }
     .hero-features { gap: .65rem; }
     .experience-card { max-width: min(72%, 180px); }
     .section-header p, .hero-content p { font-size: 1rem; }
-    .table-wrap, .comparison-table, .compare-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-wrap, .comparison-table, .compare-table { overflow-x: auto; }
     .compare-table { min-width: 560px; }
     input, select, textarea { max-width: 100%; }
     .floating-buttons { right: .75rem; bottom: 1rem; }
@@ -6246,7 +6246,6 @@ html, body { overflow-x: hidden; }
         min-width: 0;
         max-width: 100%;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
     .compare-table th,
     .compare-table td { overflow-wrap: anywhere; }

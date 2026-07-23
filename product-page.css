@@ -407,7 +407,7 @@
             border-bottom: none;
         }
         .product-tabs .tab-panel ul li::before {
-            content: "✓";
+            content: "âœ“";
             color: #10b981;
             font-weight: 700;
         }
