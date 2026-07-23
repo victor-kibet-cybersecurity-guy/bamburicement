@@ -113,3 +113,112 @@ html,body{max-width:100%;overflow-x:hidden}img,iframe,video{max-width:100%;heigh
 .inline-style-2eb704783f21 { border-top: 2px solid var(--border-color); }
 .inline-style-d8fe78f3c904 { font-size: var(--text-xs); color: var(--text-muted); }
 .inline-style-d7242934c4ea { font-weight:600; color:var(--brand-primary); }
+/* Product pages: dark-mode contrast repair */
+@media (prefers-color-scheme: dark) {
+    #siteShellHeader {
+        background: var(--bg-primary);
+        border-bottom-color: var(--border-color);
+    }
+
+    #siteShellHeader .shell-links,
+    .site-shell-footer {
+        background: var(--bg-primary) !important;
+        border-color: var(--border-color);
+    }
+
+    #siteShellHeader .shell-links a,
+    .site-shell-footer h3,
+    .site-shell-footer h4 {
+        color: var(--text-primary) !important;
+    }
+
+    .site-shell-footer,
+    .site-shell-footer p,
+    .site-shell-footer .shell-footer-bottom {
+        color: var(--text-secondary) !important;
+    }
+
+    .product-detail,
+    .fundi-page,
+    .tembo-page {
+        background: var(--bg-primary) !important;
+    }
+
+    .product-gallery,
+    .fundi-page .product-gallery,
+    .tembo-page .product-gallery {
+        background: var(--bg-tertiary) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    .product-info,
+    .fundi-page .product-info,
+    .tembo-page .product-info,
+    .product-tabs,
+    .fundi-page .product-tabs,
+    .tembo-page .product-tabs,
+    .feature-grid > *,
+    .app-grid > * {
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary);
+        border-color: var(--border-color) !important;
+        box-shadow: none;
+    }
+
+    .product-info h1,
+    .product-info h2,
+    .product-info h3,
+    .product-info .label,
+    .product-info .value,
+    .product-tabs h1,
+    .product-tabs h2,
+    .product-tabs h3,
+    .product-tabs h4,
+    .product-tabs li,
+    .feature-grid h3,
+    .feature-grid h4,
+    .app-grid h3,
+    .app-grid h4 {
+        color: var(--text-primary) !important;
+    }
+
+    .product-description,
+    .product-tabs p,
+    .feature-grid p,
+    .app-grid p {
+        color: var(--text-secondary) !important;
+    }
+
+    .product-details-grid,
+    .fundi-page .product-details-grid,
+    .tembo-page .product-details-grid {
+        background: var(--bg-tertiary) !important;
+        border-color: var(--border-color) !important;
+        box-shadow: none;
+    }
+
+    .detail-item,
+    .fundi-page .detail-item,
+    .tembo-page .detail-item {
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        border-left-color: #42bd69;
+    }
+
+    #tab-specifications .fundi-spec-table {
+        background: var(--bg-secondary) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-primary) !important;
+    }
+
+    #tab-specifications .fundi-spec-table td {
+        color: var(--text-primary) !important;
+        border-bottom-color: var(--border-color) !important;
+    }
+
+    #tab-specifications .fundi-spec-table th {
+        background: var(--bg-tertiary) !important;
+        color: #b9f2c9 !important;
+        border-bottom-color: var(--border-color) !important;
+    }
+}
