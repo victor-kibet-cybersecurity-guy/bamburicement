@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Resolve cart images from either root pages or blog articles ---
     function getCartImagePath(image) {
-        const fallback = 'images/hero.jpg';
+        const fallback = 'images/hero.webp';
         const path = image || fallback;
         const isBlogArticle = window.location.pathname.includes('/blog/');
         return isBlogArticle && !/^(?:https?:|\/|\.\.\/)/.test(path) ? '../' + path : path;
