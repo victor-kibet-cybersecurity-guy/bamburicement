@@ -714,7 +714,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="fundi.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(1)">Add</button>
                             </td>
                         </tr>
                         <!-- Tembo -->
@@ -732,7 +731,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="tembo.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(2)">Add</button>
                             </td>
                         </tr>
                         <!-- Nguvu -->
@@ -750,7 +748,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="nguvu.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(3)">Add</button>
                             </td>
                         </tr>
                         <!-- PowerMax -->
@@ -768,7 +765,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="powermax.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(4)">Add</button>
                             </td>
                         </tr>
                         <!-- Duracem -->
@@ -786,7 +782,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="duracem.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(5)">Add</button>
                             </td>
                         </tr>
                         <!-- PowerPlus -->
@@ -804,7 +799,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="powerplus.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(6)">Add</button>
                             </td>
                         </tr>
                         <!-- Powercrete -->
@@ -822,7 +816,6 @@
                             <td><span class="badge-stock in-stock">In Stock</span></td>
                             <td>
                                 <a href="powercrete.html" class="btn-sm btn-outline">View</a>
-                                <button class="btn-sm btn-primary" onclick="addToQuoteCart(7)">Add</button>
                             </td>
                         </tr>
                     </tbody>
@@ -1264,23 +1257,6 @@
     <script src="script.js"></script>
 
     <script>
-        // ============================================
-        // ADD TO QUOTE CART
-        // ============================================
-        function addToQuoteCart(productId) {
-            if (typeof window.addToQuoteCart === 'function') {
-                window.addToQuoteCart(productId);
-            } else {
-                console.warn('addToQuoteCart not available');
-            }
-            const toast = document.getElementById('toastNotification');
-            if (toast) {
-                toast.textContent = "Quote request received. We will contact you shortly.";
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 3000);
-            }
-        }
-
         // ============================================
         // MOBILE MENU & SCROLL TOP
         // ============================================

@@ -43,11 +43,9 @@ window.addToQuoteCart = function(productId) {
                     quantity: 1
                 });
             } else {
-                console.warn('Product not found:', productId);
                 return;
             }
         } else {
-            console.warn('Products array not loaded');
             return;
         }
     }
