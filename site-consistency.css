@@ -317,3 +317,86 @@ html,body{max-width:100%;overflow-x:hidden}img,iframe,video{max-width:100%;heigh
         white-space: nowrap;
     }
 }
+
+/* About page: dark-mode mobile contrast */
+@media (prefers-color-scheme: dark) {
+    .about-page {
+        --primary-dark: #f5f9ff;
+        --primary-green: #56c987;
+        --primary-green-soft: #173f31;
+        --primary-accent: #f2b84b;
+        --text-dark: #f5f9ff;
+        --text-soft: #d5e0ec;
+        --surface: #142235;
+        --surface-muted: #0f1a2a;
+        --border: #38506a;
+        background: #0f1a2a;
+        color: #f5f9ff;
+    }
+
+    .about-page .hero-about {
+        background: linear-gradient(135deg, #173b2c 0%, #12263a 100%);
+    }
+
+    .about-page .mission-vision,
+    .about-page .values-section,
+    .about-page .sustainability {
+        background: #142235;
+    }
+
+    .about-page .our-story,
+    .about-page .bamburi-plant,
+    .about-page .leadership {
+        background: #0f1a2a;
+    }
+
+    .about-page .hero-content h1,
+    .about-page .story-text h2,
+    .about-page .plant-copy h2,
+    .about-page .section-title,
+    .about-page .mv-card h3,
+    .about-page .value-item h4,
+    .about-page .leader-card h4,
+    .about-page .stat-number {
+        color: #f5f9ff;
+    }
+
+    .about-page .highlight,
+    .about-page .mv-icon,
+    .about-page .value-item i,
+    .about-page .leader-img,
+    .about-page .signature,
+    .about-page .stat-number {
+        color: #63d695;
+    }
+
+    .about-page .hero-content p,
+    .about-page .story-text p,
+    .about-page .plant-copy p,
+    .about-page .section-subhead,
+    .about-page .value-item p,
+    .about-page .sustainability p,
+    .about-page .leader-bio,
+    .about-page .stat-label {
+        color: #d5e0ec;
+    }
+
+    .about-page .stat-item,
+    .about-page .mv-card,
+    .about-page .value-item,
+    .about-page .leader-card {
+        background: #1a2b40;
+        border-color: #3b5673;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .about-page .hero-badge {
+        background: #193f2e;
+        border-color: #3d805d;
+        color: #e5f8eb;
+    }
+
+    .about-page .leader-img {
+        background: #173f31;
+    }
+}
