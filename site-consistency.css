@@ -69,3 +69,47 @@ html,body{max-width:100%;overflow-x:hidden}img,iframe,video{max-width:100%;heigh
   margin-top: var(--spacing-2xl);
   text-align: center;
 }
+
+/* Externalized inline presentation styles */
+.inline-style-904cb2477d95 { font-size: var(--text-sm); color: var(--text-muted); }
+.inline-style-8ef2132378aa { background: var(--brand-secondary); color: var(--text-primary); border-color: var(--brand-secondary); }
+.inline-style-9fba14b00699 { background: #25d366; color: white; border-color: #25d366; }
+.inline-style-a15bd9d84a4f { border-color: rgba(255,255,255,0.3); color: white; }
+.inline-style-639ccb6a37e1 { font-weight:600; color:var(--text-primary); }
+.inline-style-36a41238f75b { font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--spacing-sm); }
+.inline-style-6c8d770b74f8 { margin-top: var(--spacing-xl); }
+.inline-style-04dbf16eac99 { text-align: center; margin-top: var(--spacing-2xl); }
+.inline-style-3f1e8d3a30a9 { margin-top: var(--spacing-lg); }
+.inline-style-efb1667f468b { background-color:#f8fafc !important;background-image:url('bamburi-nguvu.jpg') !important;background-position:center !important;background-repeat:no-repeat !important;background-size:contain !important; }
+.inline-style-2e85db1b73fa { display:block!important;visibility:visible!important;opacity:1!important; }
+.inline-style-926a50bb90cd { font-weight: 600; color: var(--brand-primary); }
+.inline-style-b443cef7fb2f { margin-top: var(--spacing-md); }
+.inline-style-88ccc311a4bd { text-align: center; margin-top: var(--spacing-lg); }
+.inline-style-22558b971d38 { list-style:disc; padding-left:1.5rem; color:var(--text-secondary); margin-top:var(--spacing-sm); }
+.inline-style-7ae9873a16ab { margin-top:var(--spacing-sm); }
+.inline-style-6b2a94ea3bb9 { font-weight:600; }
+.inline-style-3e810f5cc643 { list-style:disc; padding-left:1.5rem; color:var(--text-secondary); }
+.inline-style-8ae0837bdf6e { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--spacing-md); text-align:center; }
+.inline-style-634e8d4e3dc6 { background:var(--bg-secondary); padding:var(--spacing-md); border-radius:var(--radius-md); border:1px solid var(--border-color); text-decoration:none; color:var(--text-primary); transition:all var(--transition-fast); }
+.inline-style-4440760f401b { color:var(--brand-primary); font-size:1.5rem; display:block; margin-bottom:var(--spacing-xs); }
+.inline-style-89ac7bd639a6 { padding-top:0; }
+.inline-style-1cbf02a3348d { border-top-color: #e74c3c; }
+.inline-style-90510b77141a { font-weight:400;color:var(--gray-500);font-size:0.9rem; }
+.inline-style-9db4cf6b51c9 { border-top-color: #2980b9; }
+.inline-style-23e4fa3dc594 { border-top-color: #8e44ad; }
+.inline-style-9fb700137e83 { border-top-color: #27ae60; }
+.inline-style-33b8493d92e1 { color: var(--text-muted); margin-bottom: var(--spacing-md); }
+.inline-style-9f190b23e9ac { margin-top: var(--spacing-sm); }
+.inline-style-1db8583420c7 { color:var(--brand-primary); }
+.inline-style-08694f93aea0 { margin-bottom: 0; color: #721c24; }
+.inline-style-8551a00287ea { color:#721c24; text-decoration:underline; }
+.inline-style-20774c6be576 { text-align: center; margin-top: var(--spacing-xl); }
+.inline-style-b3a2297a12f5 { margin-bottom: 0; }
+.inline-style-b7e0fd8b4823 { display:inline-block; margin-top:var(--spacing-xs); padding:0.4rem 1rem; border-radius:var(--radius-sm); background:var(--brand-primary); color:var(--text-inverse); text-decoration:none; }
+.inline-style-410c710ea225 { display:inline-block; margin-top:var(--spacing-xs); padding:0.4rem 1rem; border-radius:var(--radius-sm); border:1px solid var(--brand-primary); color:var(--brand-primary); text-decoration:none; }
+.inline-style-ba38ce030feb { margin-top: var(--spacing-sm); font-size: var(--text-sm); color: var(--text-muted); }
+.inline-style-09b93606646e { color:#155724; font-weight:600; }
+.inline-style-6bf4051bec32 { font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--spacing-xs); }
+.inline-style-2eb704783f21 { border-top: 2px solid var(--border-color); }
+.inline-style-d8fe78f3c904 { font-size: var(--text-xs); color: var(--text-muted); }
+.inline-style-d7242934c4ea { font-weight:600; color:var(--brand-primary); }

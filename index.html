@@ -177,7 +177,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/hero.jpg" alt="Bamburi Cement Delivery" loading="eager" decoding="async" fetchpriority="high" />
+                    <img src="images/hero.jpg" alt="Bamburi Cement Delivery" loading="eager" decoding="async" />
                     <div class="experience-card">
                         <h3>Trusted Cement Provider</h3>
                         <p>Serving customers across Kenya with reliable cement supply and delivery.</p>
@@ -565,7 +565,7 @@
                     <div class="contact-item"><i class="fas fa-location-dot"></i><div><h4>Location</h4><p>Nationwide Cement Supply Across Kenya</p></div></div>
                 </div>
                 <div class="map-box">
-                    <iframe loading="lazy" src="https://www.google.com/maps?q=Bamburi%20Cement%20Mombasa&output=embed" title="Bamburi Cement Location Map" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps?q=Bamburi%20Cement%20Mombasa&output=embed" title="Bamburi Cement Location Map" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -831,7 +831,7 @@
                             <span class="stock-status ${stockClass}"><i class="fas fa-check-circle"></i> ${stockText}</span>
                         </div>
                         <div class="cart-item-actions">
-                            <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">−</button>
+                            <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">âˆ’</button>
                             <span class="qty-display">${item.quantity || 1}</span>
                             <button class="qty-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
                             <button class="remove-btn" onclick="removeCartItem(${index})" aria-label="Remove item">
