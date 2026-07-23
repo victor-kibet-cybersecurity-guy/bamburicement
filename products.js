@@ -169,6 +169,10 @@ function renderProducts() {
     const container = document.getElementById('featuredProducts');
     if (!container) return;
 
+    const mobileImagePath = (imagePath) => imagePath && imagePath.startsWith('images/')
+        ? imagePath.replace('images/', 'images/mobile/')
+        : imagePath;
+
     container.innerHTML = products.map(product => {
         // Stock badge
         let stockClass = '';
@@ -218,7 +222,7 @@ function renderProducts() {
             galleryHtml = `
                 <div class="product-gallery">
                     ${product.extraImages.map(img => `
-                        <img src="${img}" alt="${product.name}" loading="lazy" decoding="async">
+                        <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(img)}" type="image/webp"><img src="${img}" alt="${product.name}" loading="lazy" decoding="async"></picture>
                     `).join('')}
                 </div>
             `;
@@ -230,7 +234,7 @@ function renderProducts() {
         return `
             <div class="product-card" data-product-id="${product.id}" data-product-link="${product.link}">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" class="main-image" loading="lazy" decoding="async">
+                    <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(product.image)}" type="image/webp"><img src="${product.image}" alt="${product.name}" class="main-image" loading="lazy" decoding="async"></picture>
                     ${galleryHtml}
                     ${badgeHtml}
                     ${saleBadgeHtml}
