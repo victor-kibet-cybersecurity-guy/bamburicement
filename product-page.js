@@ -1,3 +1,7 @@
+function getProductImageDimensions(imagePath) {
+    return typeof getImageDimensions === 'function' ? getImageDimensions(imagePath) : { width: 640, height: 946 };
+}
+
 
         // ============================================
 // Removed corrupted legacy comment.
@@ -95,8 +99,12 @@
             document.getElementById('breadcrumbProduct').textContent = product.name;
 
             // --- Gallery ---
-            document.getElementById('mainImage').src = product.image;
-            document.getElementById('mainImage').alt = product.name;
+            const mainImageElement = document.getElementById('mainImage');
+            const mainImageDimensions = getProductImageDimensions(product.image);
+            mainImageElement.src = product.image;
+            mainImageElement.alt = product.name;
+            mainImageElement.width = mainImageDimensions.width;
+            mainImageElement.height = mainImageDimensions.height;
 
             const badgeContainer = document.getElementById('badgeContainer');
             badgeContainer.innerHTML = '';
@@ -365,7 +373,7 @@
                 return `
                     <div class="product-card" data-product-id="${product.id}">
                         <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
+                            <img src="${product.image}" alt="${product.name}" width="${getProductImageDimensions(product.image).width}" height="${getProductImageDimensions(product.image).height}" loading="lazy" decoding="async">
                             ${badgeHtml}
                             ${salePercent}
                             <span class="stock-badge ${stockClass}">${stockText}</span>
@@ -409,8 +417,11 @@
             if (mainImage && lightbox) {
                 mainImage.addEventListener('click', function() {
                     lightbox.classList.add('active');
+                    const lightboxDimensions = getProductImageDimensions(this.src);
                     lightboxImage.src = this.src;
                     lightboxImage.alt = this.alt;
+                    lightboxImage.width = lightboxDimensions.width;
+                    lightboxImage.height = lightboxDimensions.height;
                     document.body.style.overflow = 'hidden';
                 });
 

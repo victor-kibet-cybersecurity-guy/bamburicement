@@ -162,6 +162,26 @@ const products = [
     }
 ];
 
+const productImageDimensions = Object.freeze({
+    'images/duracem.webp': { width: 640, height: 911 },
+    'images/fundi.webp': { width: 640, height: 946 },
+    'images/fundi-2.webp': { width: 640, height: 946 },
+    'images/fundi-3.webp': { width: 640, height: 946 },
+    'images/nguvu.webp': { width: 640, height: 941 },
+    'images/powercrete.webp': { width: 640, height: 904 },
+    'images/powermax.webp': { width: 269, height: 400 },
+    'images/powermax-2.webp': { width: 269, height: 400 },
+    'images/powermax-3.webp': { width: 269, height: 400 },
+    'images/powerplus.webp': { width: 640, height: 946 },
+    'images/powerplus-2.webp': { width: 640, height: 946 },
+    'images/tembo.webp': { width: 640, height: 917 },
+    'images/tembo-2.webp': { width: 640, height: 917 }
+});
+
+function getImageDimensions(imagePath) {
+    const normalizedPath = String(imagePath || '').replace(/^.*?(images\/)/, 'images/');
+    return productImageDimensions[normalizedPath] || { width: 640, height: 946 };
+}
 // ============================================
 // RENDER FUNCTION – Product Grid
 // ============================================
@@ -222,7 +242,7 @@ function renderProducts() {
             galleryHtml = `
                 <div class="product-gallery">
                     ${product.extraImages.map(img => `
-                        <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(img)}" type="image/webp"><img src="${img}" alt="${product.name}" loading="lazy" decoding="async"></picture>
+                        <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(img)}" type="image/webp"><img src="${img}" alt="${product.name}" width="${getImageDimensions(img).width}" height="${getImageDimensions(img).height}" loading="lazy" decoding="async"></picture>
                     `).join('')}
                 </div>
             `;
@@ -234,7 +254,7 @@ function renderProducts() {
         return `
             <div class="product-card" data-product-id="${product.id}" data-product-link="${product.link}">
                 <div class="product-image">
-                    <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(product.image)}" type="image/webp"><img src="${product.image}" alt="${product.name}" class="main-image" loading="lazy" decoding="async"></picture>
+                    <picture class="responsive-image"><source media="(max-width: 600px)" srcset="${mobileImagePath(product.image)}" type="image/webp"><img src="${product.image}" alt="${product.name}" class="main-image" width="${getImageDimensions(product.image).width}" height="${getImageDimensions(product.image).height}" loading="lazy" decoding="async"></picture>
                     ${galleryHtml}
                     ${badgeHtml}
                     ${saleBadgeHtml}

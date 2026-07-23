@@ -184,7 +184,7 @@ window.renderRecentlyViewed = function() {
                 return `
                     <div class="product-card" style="border: 2px solid var(--brand-primary-light);">
                         <div class="product-image" style="padding-top: 75%;">
-                            <img src="${product.image}" alt="${product.name}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                            <img src="${product.image}" alt="${product.name}" width="${(window.getImageDimensions ? window.getImageDimensions(product.image).width : 640)}" height="${(window.getImageDimensions ? window.getImageDimensions(product.image).height : 946)}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                             <span class="stock-badge ${stockClass}">${stockText}</span>
                         </div>
                         <div class="product-body" style="padding: 0.75rem;">
@@ -238,7 +238,7 @@ window.renderRecommendations = function(productId) {
                 return `
                     <div class="product-card">
                         <div class="product-image" style="padding-top: 75%;">
-                            <img src="${product.image}" alt="${product.name}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                            <img src="${product.image}" alt="${product.name}" width="${(window.getImageDimensions ? window.getImageDimensions(product.image).width : 640)}" height="${(window.getImageDimensions ? window.getImageDimensions(product.image).height : 946)}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                             <span class="stock-badge ${stockClass}">${stockText}</span>
                         </div>
                         <div class="product-body" style="padding: 0.75rem;">
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 else stockClass = 'in-stock';
                 return `
                     <a href="${product.link}" class="search-result-item" data-product-id="${product.id}">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
+                        <img src="${product.image}" alt="${product.name}" width="${(window.getImageDimensions ? window.getImageDimensions(product.image).width : 640)}" height="${(window.getImageDimensions ? window.getImageDimensions(product.image).height : 946)}" loading="lazy" decoding="async">
                         <div class="info">
                             <h4>${product.name}</h4>
                             <span>${product.description.substring(0, 60)}...</span>
@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     return `
                         <a href="${product.link}" class="search-result-item">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
+                            <img src="${product.image}" alt="${product.name}" width="${(window.getImageDimensions ? window.getImageDimensions(product.image).width : 640)}" height="${(window.getImageDimensions ? window.getImageDimensions(product.image).height : 946)}" loading="lazy" decoding="async">
                             <div class="info">
                                 <h4>${product.name}</h4>
                                 <span>${product.price}</span>
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
             itemsHtml += `
                 <div class="cart-item" data-index="${index}">
                     <div class="cart-item-image">
-                        <img src="${getCartImagePath(item.image)}" alt="${item.name}" loading="lazy" decoding="async">
+                        <img src="${getCartImagePath(item.image)}" alt="${item.name}" width="640" height="946" loading="lazy" decoding="async">
                     </div>
                     <div class="cart-item-details">
                         <div class="name">${item.name}</div>
