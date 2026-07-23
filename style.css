@@ -2189,7 +2189,7 @@ body.no-scroll {
 }
 
 /* =====================================================
-   25. FLOATING BUTTONS (OLD â€“ Kept for backward compatibility)
+   25. FLOATING BUTTONS (OLD - Kept for backward compatibility)
    ===================================================== */
 
 .floating-call,
@@ -4948,7 +4948,7 @@ body.no-scroll {
     }
 }
 /* =====================================================
-   PRODUCT CARDS â€“ Enhanced
+   PRODUCT CARDS - Enhanced
    ===================================================== */
 
 /* --- Card Container --- */
@@ -5771,7 +5771,7 @@ body.no-scroll {
 }
 
 /* =====================================================
-   CART PANEL â€“ SLIDE OUT
+   CART PANEL - SLIDE OUT
    ===================================================== */
 
 /* Overlay */
@@ -6281,3 +6281,55 @@ html, body { overflow-x: hidden; }
 .footer-bottom { border-top-color: var(--border-color); }
 .footer-bottom p { color: var(--text-secondary); }
 .footer-logo { border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+/* Low-glare colour theme */
+:root {
+    color-scheme: light dark;
+    --bg-primary: #f2f5f8;
+    --bg-secondary: #e8edf3;
+    --bg-tertiary: #dee6ee;
+    --bg-accent: #e5ecf7;
+    --border-color: #d2dde8;
+    --border-dark: #bac9d8;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+.footer {
+    background: var(--bg-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #111b2b;
+        --bg-secondary: #19263a;
+        --bg-tertiary: #25354b;
+        --bg-accent: #1d3858;
+        --text-primary: #f4f7fb;
+        --text-secondary: #d1dbe8;
+        --text-muted: #a8b7c8;
+        --border-color: #34475f;
+        --border-dark: #4a6079;
+    }
+
+    .footer {
+        background: var(--bg-primary);
+        color: var(--text-secondary);
+    }
+
+    .footer h3,
+    .footer h4,
+    .footer strong {
+        color: var(--text-primary);
+    }
+
+    .footer p,
+    .footer .footer-bottom {
+        color: var(--text-secondary);
+    }
+
+    .footer-logo {
+        background: #f4f7fb;
+    }
+}
