@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 else stockClass = 'in-stock';
                 return `
                     <a href="${product.link}" class="search-result-item" data-product-id="${product.id}">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
                         <div class="info">
                             <h4>${product.name}</h4>
                             <span>${product.description.substring(0, 60)}...</span>
@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     return `
                         <a href="${product.link}" class="search-result-item">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
                             <div class="info">
                                 <h4>${product.name}</h4>
                                 <span>${product.price}</span>
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
             itemsHtml += `
                 <div class="cart-item" data-index="${index}">
                     <div class="cart-item-image">
-                        <img src="${getCartImagePath(item.image)}" alt="${item.name}" loading="lazy">
+                        <img src="${getCartImagePath(item.image)}" alt="${item.name}" loading="lazy" decoding="async">
                     </div>
                     <div class="cart-item-details">
                         <div class="name">${item.name}</div>
