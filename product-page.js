@@ -45,18 +45,18 @@ function getProductImageDimensions(imagePath) {
             content.style.display = 'block';
 
             // --- Update Page Title & Meta ---
-            document.title = `${product.name} | Bamburi Cement Kenya`;
+            document.title = `${product.name} | Bamburi Cement PLC`;
             document.querySelector('meta[name="description"]').content =
                 `Buy ${product.name} in Kenya at ${product.price}. ${product.description.substring(0, 150)}`;
 
             // --- Open Graph ---
-            document.querySelector('meta[property="og:title"]').content = `${product.name} | Bamburi Cement Kenya`;
+            document.querySelector('meta[property="og:title"]').content = `${product.name} | Bamburi Cement PLC`;
             document.querySelector('meta[property="og:description"]').content =
                 `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
             document.querySelector('meta[property="og:image"]').content = product.image;
 
             // --- Twitter Card ---
-            document.querySelector('meta[name="twitter:title"]').content = `${product.name} | Bamburi Cement Kenya`;
+            document.querySelector('meta[name="twitter:title"]').content = `${product.name} | Bamburi Cement PLC`;
             document.querySelector('meta[name="twitter:description"]').content =
                 `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
             document.querySelector('meta[name="twitter:image"]').content = product.image;            // --- JSON-LD Schema ---
@@ -89,7 +89,7 @@ function getProductImageDimensions(imagePath) {
                     itemCondition: 'https://schema.org/NewCondition',
                     seller: {
                         '@type': 'Organization',
-                        name: 'Bamburi Cement Kenya'
+                        name: 'Bamburi Cement PLC'
                     }
                 }
             };

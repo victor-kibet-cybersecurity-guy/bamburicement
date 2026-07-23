@@ -400,3 +400,16 @@ html,body{max-width:100%;overflow-x:hidden}img,iframe,video{max-width:100%;heigh
         background: #173f31;
     }
 }
+
+/* Centered shared footer copyright and supplier disclosure. */
+.footer .footer-bottom { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.35rem; }
+.footer .footer-bottom p { width:100%; margin:0; text-align:center; }
+.footer .footer-disclaimer { max-width:58rem; font-size:.82rem; line-height:1.5; }
+.products-catalogue-fallback { margin-top:1.5rem; }
+.products-catalogue-fallback > h2 { margin:0 0 1.25rem; text-align:center; color:#172a46; }
+@media (max-width:600px) { .footer .footer-bottom { padding-inline:.5rem; } .footer .footer-bottom p { font-size:.78rem; } .footer .footer-disclaimer { font-size:.72rem; } }
+
+.site-shell-footer .shell-footer-bottom { display:flex; flex-direction:column; align-items:center; text-align:center; gap:.35rem; }
+.site-shell-footer .shell-footer-bottom p { width:100%; margin:0; text-align:center; }
+.site-shell-footer .shell-footer-bottom .footer-disclaimer { max-width:58rem; font-size:.82rem; line-height:1.5; }
+@media (max-width:600px) { .site-shell-footer .shell-footer-bottom p { font-size:.78rem; } .site-shell-footer .shell-footer-bottom .footer-disclaimer { font-size:.72rem; } }

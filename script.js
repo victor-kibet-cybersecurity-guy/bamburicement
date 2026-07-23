@@ -1,5 +1,5 @@
 /* =====================================================
-   Bamburi Cement Kenya
+   Bamburi Cement PLC
    script.js - Main Interactive Features
    ===================================================== */
 
@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const organization = {
         '@type': 'Organization',
         '@id': `${window.location.origin}/bamburicement/#organization`,
-        name: 'Bamburi Cement Kenya',
+        name: 'Bamburi Cement PLC',
         url: homeUrl,
         logo: `${window.location.origin}/bamburicement/Bamburi_Cement_Logo-84x58.png`
     };
@@ -920,3 +920,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 }());
+// Keep the shared footer copyright year current.
+document.addEventListener('DOMContentLoaded', function footerCurrentYear() {
+    document.querySelectorAll('#current-year').forEach(function (element) {
+        element.textContent = String(new Date().getFullYear());
+    });
+});
