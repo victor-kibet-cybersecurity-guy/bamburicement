@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" /></noscript>
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -168,6 +168,9 @@
                 border-color: var(--border-color);
             }
         }
+
+        /* Render below-fold product cards lazily without changing their allocated space. */
+        .products-grid .product-card { content-visibility: auto; contain-intrinsic-size: auto 42rem; }
     </style>
     <link rel="stylesheet" href="site-consistency.css" />
 <script id="products-page-product-schema" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"url":"fundi.html","offers":{"price":"580","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"Masonry cement for plastering, mortar, rendering and brick or block laying.","name":"Bamburi Fundi","@type":"Product"},{"url":"tembo.html","offers":{"price":"620","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"All-purpose cement for foundations, slabs, plastering and general construction.","name":"Bamburi Tembo","@type":"Product"},{"url":"nguvu.html","offers":{"price":"680","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"High-strength cement for structural applications, precast concrete and load-bearing work.","name":"Bamburi Nguvu","@type":"Product"},{"url":"powermax.html","offers":{"price":"750","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"High-performance cement for foundations, beams, columns and engineering projects.","name":"Bamburi PowerMax","@type":"Product"},{"url":"duracem.html","offers":{"price":"820","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"Sulphate-resistant cement for coastal, water-retaining and aggressive environments.","name":"Bamburi Duracem","@type":"Product"},{"url":"powerplus.html","offers":{"price":"950","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"Premium high-strength cement for industrial slabs and heavy-duty foundations.","name":"Bamburi PowerPlus","@type":"Product"},{"url":"powercrete.html","offers":{"price":"1050","priceCurrency":"KES","availability":"https://schema.org/InStock","@type":"Offer"},"description":"Ultra-high-strength cement for demanding structural and precast applications.","name":"Bamburi Powercrete","@type":"Product"}]}</script></head>
@@ -206,33 +209,16 @@
 
             <!-- removed corrupted comment -->
             <!-- This allows renderProducts() to work on both pages -->
-            <div class="products-grid" id="featuredProducts"></div>
-<noscript><section class="products-catalogue-fallback" aria-label="Bamburi Cement product catalogue"><h2>Complete Bamburi Cement Product Catalogue</h2><div class="products-grid"><article class="product-card"><div class="product-image"><img src="images/fundi.webp" alt="Bamburi Fundi" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="fundi.html">Bamburi Fundi</a></h2><p class="description">Masonry cement for plastering, mortar, rendering and brick or block laying.</p><p class="price-row"><strong>KSh 580</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="fundi.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/tembo.webp" alt="Bamburi Tembo" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="tembo.html">Bamburi Tembo</a></h2><p class="description">All-purpose cement for foundations, slabs, plastering and general construction.</p><p class="price-row"><strong>KSh 620</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="tembo.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/nguvu.webp" alt="Bamburi Nguvu" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="nguvu.html">Bamburi Nguvu</a></h2><p class="description">High-strength cement for structural applications, precast concrete and load-bearing work.</p><p class="price-row"><strong>KSh 680</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="nguvu.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/powermax.webp" alt="Bamburi PowerMax" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powermax.html">Bamburi PowerMax</a></h2><p class="description">High-performance cement for foundations, beams, columns and engineering projects.</p><p class="price-row"><strong>KSh 750</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="powermax.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/duracem.webp" alt="Bamburi Duracem" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="duracem.html">Bamburi Duracem</a></h2><p class="description">Sulphate-resistant cement for coastal, water-retaining and aggressive environments.</p><p class="price-row"><strong>KSh 820</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="duracem.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/powerplus.webp" alt="Bamburi PowerPlus" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powerplus.html">Bamburi PowerPlus</a></h2><p class="description">Premium high-strength cement for industrial slabs and heavy-duty foundations.</p><p class="price-row"><strong>KSh 950</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="powerplus.html">View Details</a></div></article>
-<article class="product-card"><div class="product-image"><img src="images/powercrete.webp" alt="Bamburi Powercrete" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powercrete.html">Bamburi Powercrete</a></h2><p class="description">Ultra-high-strength cement for demanding structural and precast applications.</p><p class="price-row"><strong>KSh 1,050</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-outline view-details" href="powercrete.html">View Details</a></div></article></div></section></noscript>
+            <section class="products-catalogue-fallback" aria-label="Bamburi Cement product catalogue"><h2>Complete Bamburi Cement Product Catalogue</h2><div class="products-grid" id="featuredProducts" data-static-products="true"><article class="product-card"><div class="product-image"><img src="images/fundi.webp" alt="Bamburi Fundi" width="640" height="946" loading="eager" fetchpriority="high" decoding="async"></div><div class="product-body"><h2><a href="fundi.html">Bamburi Fundi</a></h2><p class="description">Masonry cement for plastering, mortar, rendering and brick or block laying.</p><p class="price-row"><strong>KSh 580</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Fundi%20at%20KES%20580" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="fundi.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/tembo.webp" alt="Bamburi Tembo" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="tembo.html">Bamburi Tembo</a></h2><p class="description">All-purpose cement for foundations, slabs, plastering and general construction.</p><p class="price-row"><strong>KSh 620</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Tembo%20at%20KES%20620" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="tembo.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/nguvu.webp" alt="Bamburi Nguvu" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="nguvu.html">Bamburi Nguvu</a></h2><p class="description">High-strength cement for structural applications, precast concrete and load-bearing work.</p><p class="price-row"><strong>KSh 680</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Nguvu%20at%20KES%20680" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="nguvu.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powermax.webp" alt="Bamburi PowerMax" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powermax.html">Bamburi PowerMax</a></h2><p class="description">High-performance cement for foundations, beams, columns and engineering projects.</p><p class="price-row"><strong>KSh 750</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerMax%20at%20KES%20750" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powermax.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/duracem.webp" alt="Bamburi Duracem" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="duracem.html">Bamburi Duracem</a></h2><p class="description">Sulphate-resistant cement for coastal, water-retaining and aggressive environments.</p><p class="price-row"><strong>KSh 820</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Duracem%20at%20KES%20820" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="duracem.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powerplus.webp" alt="Bamburi PowerPlus" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powerplus.html">Bamburi PowerPlus</a></h2><p class="description">Premium high-strength cement for industrial slabs and heavy-duty foundations.</p><p class="price-row"><strong>KSh 950</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerPlus%20at%20KES%20950" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powerplus.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powercrete.webp" alt="Bamburi Powercrete" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powercrete.html">Bamburi Powercrete</a></h2><p class="description">Ultra-high-strength cement for demanding structural and precast applications.</p><p class="price-row"><strong>KSh 1,050</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Powercrete%20at%20KES%201050" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powercrete.html">View Details</a></div></article></div></section>
 
             <div class="products-footer">
                 <a href="products.html" class="btn-primary">View All Products <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================
-    RECENTLY VIEWED
-    ===================================================== -->
-    <section class="section recently-viewed-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Recently Viewed</span>
-                <h2>Your Recent Products</h2>
-                <p>Products you've checked out recently.</p>
-            </div>
-            <div id="recentlyViewed">
-                <!-- Dynamically loaded by script.js -->
             </div>
         </div>
     </section>
@@ -298,122 +284,27 @@
     <!-- =====================================================
     SCRIPTS
     ===================================================== -->
-    <script src="products.js"></script>
+
         <!-- Shared floating contact and quote-cart controls -->
     <div class="floating-buttons" aria-label="Quick actions">
         
         <a href="https://wa.me/254750210207" class="float-btn whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         <a href="tel:+254750210207" class="float-btn call-btn" aria-label="Call Bamburi Cement"><i class="fas fa-phone" aria-hidden="true"></i></a>
-    </div>
-    
-    
-    <script src="script.js"></script>
-
-    <script>
-        // ============================================
-        // ADD TO CART FUNCTION (global for onclick)
-        // ============================================
-        window.addToCart = function(name, price, waLink) {
-            const toast = document.getElementById('toastNotification');
-            if (toast) {
-                toast.textContent = `${name} selected. Contact us to order.`;
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 3000);
-            }
-
-            if (typeof window.addToQuoteCart === 'function' && typeof products !== 'undefined') {
-                const product = products.find(p => p.name === name || name.includes(p.name));
-                if (product) {
-                    window.addToQuoteCart(product.id);
-                    return;
-                }
-            }
-
-            setTimeout(() => {
-                window.open(waLink, '_blank');
-            }, 800);
-        };
-
-        // ============================================
-        // MOBILE MENU & SCROLL TOP
-        // ============================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('.nav');
-            const body = document.body;
-
-            if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                    body.classList.toggle('no-scroll');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (nav.classList.contains('active') &&
-                        !nav.contains(e.target) &&
-                        !menuToggle.contains(e.target)) {
-                        nav.classList.remove('active');
-                        body.classList.remove('no-scroll');
-                        const icon = menuToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
-                });
-
-                nav.querySelectorAll('.nav-link, .mega-menu a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth <= 991) {
-                            nav.classList.remove('active');
-                            body.classList.remove('no-scroll');
-                            const icon = menuToggle.querySelector('i');
-                            if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
-                            }
-                        }
-                    });
-                });
-            }
-
-            // Scroll to top
-            const scrollTopBtn = document.getElementById('scrollTop');
-            if (scrollTopBtn) {
-                window.addEventListener('scroll', function() {
-                    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
-                });
-                scrollTopBtn.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // Product cards are rendered by products.js.
-            // But since it targets #featuredProducts, it will work on this page too!
-
-            // Update badges
-            if (typeof window.updateWishlistBadge === 'function') {
-                window.updateWishlistBadge();
-            }
-            if (typeof window.updateQuoteBadge === 'function') {
-                window.updateQuoteBadge();
-            }
-
-            // Load recently viewed
-            setTimeout(function() {
-                if (typeof window.renderRecentlyViewed === 'function') {
-                    window.renderRecentlyViewed();
-                }
-            }, 200);
-
-            });
-    </script>
-
+    </div><script>
+(function () {
+  const menu = document.querySelector(".shell-menu");
+  const links = document.getElementById("siteShellLinks");
+  if (menu && links) {
+    menu.addEventListener("click", function () {
+      const open = links.classList.toggle("is-open");
+      menu.setAttribute("aria-expanded", String(open));
+    });
+    links.querySelectorAll("a").forEach(function (link) { link.addEventListener("click", function () { links.classList.remove("is-open"); menu.setAttribute("aria-expanded", "false"); }); });
+  }
+  const top = document.getElementById("scrollTop");
+  if (top) { window.addEventListener("scroll", function () { top.classList.toggle("show", window.scrollY > 400); }, { passive: true }); top.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); }); }
+  document.querySelectorAll("#current-year").forEach(function (year) { year.textContent = String(new Date().getFullYear()); });
+}());
+</script>
 </body>
 </html>
