@@ -34,14 +34,10 @@
     <link rel="icon" href="favicon.jpg" type="image/jpeg">
 
     <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" /></noscript>
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-home.min.css" />
 
     <!-- removed corrupted comment -->
     <script type="application/ld+json">
@@ -127,9 +123,9 @@
                 font-size: 0.6rem;
             }
         }
-    </style>
+`r`n        .map-box .map-placeholder { min-height: 18rem; display: grid; place-items: center; padding: 1.5rem; text-align: center; color: var(--brand-primary); font-weight: 700; background: var(--bg-accent); text-decoration: none; }`r`n        .why-us, .delivery-section, .stats-section, .order-process, .testimonials, .gallery, .faq, .cta-section, .contact-map { content-visibility: auto; contain-intrinsic-size: auto 48rem; }`r`n    </style>
 
-    <link rel="stylesheet" href="site-consistency.css" />
+    <link rel="stylesheet" href="site-home.min.css" />
 </head>
 
 <body>
@@ -141,23 +137,7 @@
     </div>
 
     <!-- removed corrupted comment -->
-    <header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="index.html"><img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement" width="84" height="58"></a><button class="shell-menu" type="button" aria-label="Open navigation menu" aria-controls="siteShellLinks" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button><ul class="shell-links" id="siteShellLinks"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="description.html">Product Guide</a></li><li><a href="prices.html">Prices</a></li><li><a href="delivery.html">Delivery Areas</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
-
-    <!-- =====================================================
-    MOBILE SEARCH OVERLAY
-    ===================================================== -->
-    <div class="mobile-search-overlay" id="mobileSearchOverlay">
-        <button class="close-search" id="closeMobileSearch" aria-label="Close search">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="search-input-wrap">
-            <input type="search" id="mobileSearchInput" placeholder="Search products..." autocomplete="off" />
-        </div>
-        <div class="search-results-mobile" id="mobileSearchResults"></div>
-    </div>
-
-    <!-- =====================================================
-    HERO
+    <header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="index.html"><img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement" width="84" height="58"></a><button class="shell-menu" type="button" aria-label="Open navigation menu" aria-controls="siteShellLinks" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button><ul class="shell-links" id="siteShellLinks"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="description.html">Product Guide</a></li><li><a href="prices.html">Prices</a></li><li><a href="delivery.html">Delivery Areas</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>`r`n    <!-- =====================================================`r`n    HERO
     ===================================================== -->
     <section class="hero">
         <div class="container">
@@ -177,7 +157,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <picture class="responsive-image"><source media="(max-width: 600px)" srcset="images/mobile/hero.webp" type="image/webp"><img src="images/hero.webp" alt="Bamburi Cement Delivery" loading="eager" decoding="async" width="704" height="503"></picture>
+                    <picture class="responsive-image"><source media="(max-width: 600px)" srcset="images/mobile/hero.webp" type="image/webp"><img src="images/hero.webp" alt="Bamburi Cement Delivery" loading="eager" fetchpriority="high" decoding="async" width="704" height="503"></picture>
                     <div class="experience-card">
                         <h3>Trusted Cement Provider</h3>
                         <p>Serving customers across Kenya with reliable cement supply and delivery.</p>
@@ -211,23 +191,6 @@
     </section>
 
     <!-- =====================================================
-    PRODUCT SEARCH (Desktop)
-    ===================================================== -->
-    <section class="search-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Search Our Cement Products</h2>
-                <p>Quickly find the right cement for your construction project.</p>
-            </div>
-            <div class="search-box">
-                <i class="fa-solid fa-search"></i>
-                <input type="search" id="productSearch" placeholder="Search products..." autocomplete="off" />
-            </div>
-            <div id="searchResults" class="search-results"></div>
-        </div>
-    </section>
-
-    <!-- =====================================================
     FEATURED PRODUCTS
     ===================================================== -->
     <section class="featured-products">
@@ -236,41 +199,15 @@
                 <h2>Premium Bamburi Cement Products</h2>
                 <p>Browse our most popular cement products suitable for residential, commercial and infrastructure projects.</p>
             </div>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Dynamically generated by products.js -->
-            </div>
+            <div class="products-grid" id="featuredProducts" data-static-products="true"><article class="product-card"><div class="product-image"><img src="images/fundi.webp" alt="Bamburi Fundi" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="fundi.html">Bamburi Fundi</a></h2><p class="description">Masonry cement for plastering, mortar, rendering and brick or block laying.</p><p class="price-row"><strong>KSh 580</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Fundi%20at%20KES%20580" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="fundi.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/tembo.webp" alt="Bamburi Tembo" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="tembo.html">Bamburi Tembo</a></h2><p class="description">All-purpose cement for foundations, slabs, plastering and general construction.</p><p class="price-row"><strong>KSh 620</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Tembo%20at%20KES%20620" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="tembo.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/nguvu.webp" alt="Bamburi Nguvu" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="nguvu.html">Bamburi Nguvu</a></h2><p class="description">High-strength cement for structural applications, precast concrete and load-bearing work.</p><p class="price-row"><strong>KSh 680</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Nguvu%20at%20KES%20680" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="nguvu.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powermax.webp" alt="Bamburi PowerMax" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powermax.html">Bamburi PowerMax</a></h2><p class="description">High-performance cement for foundations, beams, columns and engineering projects.</p><p class="price-row"><strong>KSh 750</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerMax%20at%20KES%20750" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powermax.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/duracem.webp" alt="Bamburi Duracem" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="duracem.html">Bamburi Duracem</a></h2><p class="description">Sulphate-resistant cement for coastal, water-retaining and aggressive environments.</p><p class="price-row"><strong>KSh 820</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Duracem%20at%20KES%20820" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="duracem.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powerplus.webp" alt="Bamburi PowerPlus" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powerplus.html">Bamburi PowerPlus</a></h2><p class="description">Premium high-strength cement for industrial slabs and heavy-duty foundations.</p><p class="price-row"><strong>KSh 950</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerPlus%20at%20KES%20950" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powerplus.html">View Details</a></div></article>
+<article class="product-card"><div class="product-image"><img src="images/powercrete.webp" alt="Bamburi Powercrete" width="640" height="946" loading="lazy" decoding="async"></div><div class="product-body"><h2><a href="powercrete.html">Bamburi Powercrete</a></h2><p class="description">Ultra-high-strength cement for demanding structural and precast applications.</p><p class="price-row"><strong>KSh 1,050</strong> per 50 kg bag</p></div><div class="product-footer"><a class="btn-sm btn-whatsapp-order" href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Powercrete%20at%20KES%201050" target="_blank" rel="noopener">Order via WhatsApp</a><a class="btn-sm btn-outline view-details" href="powercrete.html">View Details</a></div></article></div></section>
             <div class="products-footer">
                 <a href="products.html" class="btn-primary">View All Products <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================
-    RECENTLY VIEWED
-    ===================================================== -->
-    <section class="section recently-viewed-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Recent Products</h2>
-                <p>Products you've checked out recently.</p>
-            </div>
-            <div id="recentlyViewed">
-                <!-- Dynamically loaded by script.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================
-    YOU MAY ALSO LIKE
-    ===================================================== -->
-    <section class="section you-may-also-like-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>You May Also Like</h2>
-                <p>Other products you might find interesting.</p>
-            </div>
-            <div id="youMayAlsoLike">
-                <!-- Dynamically loaded by script.js -->
             </div>
         </div>
     </section>
@@ -565,7 +502,7 @@
                     <div class="contact-item"><i class="fas fa-location-dot"></i><div><h4>Location</h4><p>Nationwide Cement Supply Across Kenya</p></div></div>
                 </div>
                 <div class="map-box">
-                    <iframe src="https://www.google.com/maps?q=Bamburi%20Cement%20Mombasa&output=embed" title="Bamburi Cement Location Map" allowfullscreen></iframe>
+                    <a class="map-placeholder" href="https://maps.google.com/maps?q=Bamburi%20Cement%20Mombasa" target="_blank" rel="noopener"><span>View Bamburi Cement location on Google Maps</span></a>
                 </div>
             </div>
         </div>
@@ -622,7 +559,7 @@
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
-        <!-- Quote Cart -->
+
         
 
         <!-- WhatsApp -->
@@ -636,500 +573,13 @@
         </a>
     </div>
 
-    <!-- Cart Overlay -->
-    
-
-    <!-- Cart Slide-Out Panel -->
-    <div class="cart-panel" id="cartPanel">
-        <div class="cart-header">
-            <h3><i class="fas fa-shopping-cart"></i> Quote Cart <span id="cartPanelCount">(0)</span></h3>
-            <button class="cart-close" id="cartClose" title="Close cart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <div class="cart-body" id="cartBody">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-cart"></i>
-                <p>Your quote cart is empty</p>
-                <a href="products.html" class="btn btn-primary" onclick="closeCart()">Browse Products</a>
-            </div>
-        </div>
-
-        <div class="cart-footer hidden" id="cartFooter">
-
-            <div class="cart-total">
-                <span>Estimated Total</span>
-                <span id="cartTotal">KSh 0</span>
-            </div>
-            <div class="cart-actions">
-                <a href="products.html" class="btn btn-outline" onclick="closeCart()">Continue Shopping</a>
-                <button class="btn btn-primary" id="cartRequestQuote">
-                    <i class="fab fa-whatsapp"></i> Request Quotation
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- =====================================================
-    TOAST NOTIFICATION
-    ===================================================== -->
-    <div id="toastNotification" class="toast-notification"></div>
-
     <!-- =====================================================
     SCRIPTS
     ===================================================== -->
-    <script src="products.js"></script>
-    <script src="script.js"></script>
-
-    <script>
-        // ============================================
-        // ADD TO CART FUNCTION
-        // ============================================
-        window.addToCart = function(name, price, waLink) {
-            const toast = document.getElementById('toastNotification');
-            if (toast) {
-                toast.textContent = `${name} selected. Contact us to order.`;
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 3000);
-            }
-
-            if (typeof window.addToQuoteCart === 'function' && typeof products !== 'undefined') {
-                const product = products.find(p => p.name === name || name.includes(p.name));
-                if (product) {
-                    window.addToQuoteCart(product.id);
-                    return;
-                }
-            }
-
-            setTimeout(() => {
-                window.open(waLink, '_blank');
-            }, 800);
-        };
-
-        // ============================================
-        // FLOATING CART PANEL
-        // ============================================
-
-        // --- DOM Elements ---
-        const cartOverlay = document.getElementById('cartOverlay');
-        const cartPanel = document.getElementById('cartPanel');
-        const cartClose = document.getElementById('cartClose');
-        const cartBody = document.getElementById('cartBody');
-        const cartFooter = document.getElementById('cartFooter');
-        const cartTotal = document.getElementById('cartTotal');
-        const cartPanelCount = document.getElementById('cartPanelCount');
-        const cartCount = document.getElementById('cartCount');
-        const requestQuoteBtn = document.getElementById('cartRequestQuote');
-
-        // --- Open Cart ---
-        function openCart() {
-            cartOverlay.classList.add('active');
-            cartPanel.classList.add('open');
-            document.body.style.overflow = 'hidden';
-            renderCartItems();
-        }
-
-        // --- Close Cart ---
-        function closeCart() {
-            cartOverlay.classList.remove('active');
-            cartPanel.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        // --- Toggle Cart ---
-        function toggleCart() {
-            if (cartPanel.classList.contains('open')) {
-                closeCart();
-            } else {
-                openCart();
-            }
-        }
-
-        // --- Event Listeners ---
-        if (cartOverlay) {
-            cartOverlay.addEventListener('click', closeCart);
-        }
-
-        // Auto-open cart if redirect included ?openCart=true
-        (function autoOpenFromQuery() {
-            try {
-                const params = new URLSearchParams(window.location.search);
-                if (params.get('openCart') === 'true') {
-                    const cart = (typeof window.getQuoteCart === 'function') ? window.getQuoteCart() : [];
-                    const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-
-                    // Open cart even if empty (requested behavior)
-                    if (totalItems >= 0) {
-                        // ensure cart elements are ready
-                        if (document.readyState === 'loading') {
-                            document.addEventListener('DOMContentLoaded', function() {
-                                openCart();
-                            }, { once: true });
-                        } else {
-                            openCart();
-                        }
-                    }
-                }
-            } catch (e) {}
-        })();
 
 
-        if (cartClose) {
-            cartClose.addEventListener('click', closeCart);
-        }
 
-        // ESC key to close
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && cartPanel.classList.contains('open')) {
-                closeCart();
-            }
-        });
-
-        // --- Render Cart Items ---
-        function renderCartItems() {
-            const cart = window.getQuoteCart ? window.getQuoteCart() : [];
-            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-
-            // Update badges
-            if (cartCount) cartCount.textContent = totalItems;
-            if (cartPanelCount) cartPanelCount.textContent = `(${totalItems})`;
-
-            if (cart.length === 0) {
-                cartBody.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>Your quote cart is empty</p>
-                        <a href="products.html" class="btn btn-primary" onclick="closeCart()">Browse Products</a>
-                    </div>
-                `;
-                cartFooter.classList.add('hidden');
-                return;
-            }
-
-            cartFooter.classList.remove('hidden');
-
-            // Build cart items HTML
-            let itemsHtml = '';
-            let total = 0;
-
-            cart.forEach((item, index) => {
-                const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
-                const subtotal = price * (item.quantity || 1);
-                total += subtotal;
-
-                const stockText = 'In Stock';
-                const stockClass = 'in-stock';
-
-                itemsHtml += `
-                    <div class="cart-item" data-index="${index}">
-                        <div class="cart-item-image">
-                            <img src="${item.image || 'images/placeholder.jpg'}" alt="${item.name}" width="${getImageDimensions(item.image).width}" height="${getImageDimensions(item.image).height}" loading="lazy" decoding="async">
-                        </div>
-                        <div class="cart-item-details">
-                            <div class="name">${item.name}</div>
-                            <div class="price">${item.price}</div>
-                            <span class="stock-status ${stockClass}"><i class="fas fa-check-circle"></i> ${stockText}</span>
-                        </div>
-                        <div class="cart-item-actions">
-                            <button class="qty-btn" onclick="updateCartQuantity(${index}, -1)">−</button>
-                            <span class="qty-display">${item.quantity || 1}</span>
-                            <button class="qty-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeCartItem(${index})" aria-label="Remove item">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            cartBody.innerHTML = itemsHtml;
-
-            // Update total
-            cartTotal.textContent = `KSh ${total.toLocaleString('en-KE', { minimumFractionDigits: 0 })}`;
-        }
-
-        // --- Update Cart Quantity ---
-        function updateCartQuantity(index, change) {
-            const cart = window.getQuoteCart ? window.getQuoteCart() : [];
-            if (cart[index]) {
-                const newQty = (cart[index].quantity || 1) + change;
-                if (newQty <= 0) {
-                    cart.splice(index, 1);
-                } else {
-                    cart[index].quantity = newQty;
-                }
-                if (window.saveQuoteCart) {
-                    window.saveQuoteCart(cart);
-                }
-                renderCartItems();
-                updateCartBadge();
-            }
-        }
-
-        // --- Remove Cart Item ---
-        function removeCartItem(index) {
-            const cart = window.getQuoteCart ? window.getQuoteCart() : [];
-            cart.splice(index, 1);
-            if (window.saveQuoteCart) {
-                window.saveQuoteCart(cart);
-            }
-            renderCartItems();
-            updateCartBadge();
-            if (typeof window.showToast === 'function') {
-                window.showToast("Product selected. Contact us to order.");
-            }
-        }
-
-        // --- Update Cart Badge (global) ---
-        function updateCartBadge() {
-            const cart = window.getQuoteCart ? window.getQuoteCart() : [];
-            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-            if (cartCount) cartCount.textContent = totalItems;
-            if (cartPanelCount) cartPanelCount.textContent = `(${totalItems})`;
-        }
-
-        // --- Request Quotation via WhatsApp ---
-        function requestQuotation() {
-            const cart = window.getQuoteCart ? window.getQuoteCart() : [];
-            if (cart.length === 0) {
-                if (typeof window.showToast === 'function') {
-                    window.showToast('Your cart is empty!');
-                }
-                return;
-            }
-
-            let message = 'Hello! I would like to request a quote for the following products:\n\n';
-            let total = 0;
-
-            cart.forEach(item => {
-                const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
-                const qty = item.quantity || 1;
-                const subtotal = price * qty;
-                total += subtotal;
-                message +=
-                    `\n${qty} x ${item.name} - KSh ${subtotal.toLocaleString()}`;
-            });
-
-            message += `\n\nTotal: KSh ${total.toLocaleString()}`;
-            message += "\n\nPlease provide delivery details and a quote.";
-            // Request summary complete.
-            message += '\n\nPlease send me your best pricing and delivery options.';
-
-            const encoded = encodeURIComponent(message);
-            const phone = '254750210207';
-            window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
-        }
-
-        // --- Event Listeners for Cart Button ---
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cart button toggles panel
-            const cartBtn = document.getElementById('cartBtn');
-            if (cartBtn) {
-                cartBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    toggleCart();
-                });
-            }
-
-            // Request Quote button
-            if (requestQuoteBtn) {
-                requestQuoteBtn.addEventListener('click', requestQuotation);
-            }
-
-            // Initial render
-            renderCartItems();
-            updateCartBadge();
-
-            // Listen for cart updates (when products are added from other pages)
-            document.addEventListener('cartUpdated', function() {
-                renderCartItems();
-                updateCartBadge();
-            });
-        });
-
-        // --- Override addToQuoteCart to trigger cart update ---
-        if (window.addToQuoteCart) {
-            const originalAddToQuoteCart = window.addToQuoteCart;
-            window.addToQuoteCart = function(productId) {
-                originalAddToQuoteCart(productId);
-                document.dispatchEvent(new CustomEvent('cartUpdated'));
-            };
-        }
-
-        // --- Override removeFromQuoteCart to trigger cart update ---
-        if (window.removeFromQuoteCart) {
-            const originalRemoveFromQuoteCart = window.removeFromQuoteCart;
-            window.removeFromQuoteCart = function(productId) {
-                originalRemoveFromQuoteCart(productId);
-                document.dispatchEvent(new CustomEvent('cartUpdated'));
-            };
-        }
-
-        // ============================================
-        // MOBILE MENU & SCROLL TOP
-        // ============================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('.nav');
-            const body = document.body;
-
-            if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                    body.classList.toggle('no-scroll');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (nav.classList.contains('active') &&
-                        !nav.contains(e.target) &&
-                        !menuToggle.contains(e.target)) {
-                        nav.classList.remove('active');
-                        body.classList.remove('no-scroll');
-                        const icon = menuToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
-                });
-
-                nav.querySelectorAll('.nav-link, .mega-menu a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth <= 991) {
-                            nav.classList.remove('active');
-                            body.classList.remove('no-scroll');
-                            const icon = menuToggle.querySelector('i');
-                            if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
-                            }
-                        }
-                    });
-                });
-
-                // Also close after clicking quicklinks that we inserted inside the header (index page only)
-                const quicklinks = document.querySelectorAll('.nav-quicklinks .nav-link');
-                quicklinks.forEach(l => {
-                    l.addEventListener('click', function() {
-                        if (window.innerWidth <= 991) {
-                            nav.classList.remove('active');
-                            body.classList.remove('no-scroll');
-                            const icon = menuToggle.querySelector('i');
-                            if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
-                            }
-                        }
-                    });
-                });
-            }
-
-            // ============================================
-            // MOBILE SEARCH OVERLAY
-            // ============================================
-            const searchToggle = document.getElementById('mobileSearchToggle');
-            const searchOverlay = document.getElementById('mobileSearchOverlay');
-            const closeSearch = document.getElementById('closeMobileSearch');
-            const searchInput = document.getElementById('mobileSearchInput');
-            const searchResults = document.getElementById('mobileSearchResults');
-
-            if (searchToggle && searchOverlay) {
-                // Open search
-                searchToggle.addEventListener('click', function() {
-                    searchOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                    setTimeout(() => {
-                        if (searchInput) searchInput.focus();
-                    }, 200);
-                });
-
-                // Close search
-                if (closeSearch) {
-                    closeSearch.addEventListener('click', function() {
-                        searchOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        if (searchInput) searchInput.value = '';
-                        if (searchResults) searchResults.innerHTML = '';
-                    });
-                }
-
-                // Close on ESC
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
-                        searchOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        if (searchInput) searchInput.value = '';
-                        if (searchResults) searchResults.innerHTML = '';
-                    }
-                });
-
-                // Live search
-                if (searchInput && searchResults && typeof products !== 'undefined') {
-                    searchInput.addEventListener('input', function() {
-                        const query = this.value.toLowerCase().trim();
-                        if (query.length < 1) {
-                            searchResults.innerHTML = '';
-                            return;
-                        }
-
-                        const matches = products.filter(product =>
-                            product.name.toLowerCase().includes(query) ||
-                            product.description.toLowerCase().includes(query)
-                        );
-
-                        if (matches.length === 0) {
-                            searchResults.innerHTML = `
-                                <div class="no-results">
-                                    No products found matching "${query}"
-                                </div>
-                            `;
-                            return;
-                        }
-
-                        searchResults.innerHTML = matches.slice(0, 10).map(product => `
-                            <a href="${product.link}" class="search-result-item">
-                                <img src="${product.image}" alt="${product.name}" width="${getImageDimensions(product.image).width}" height="${getImageDimensions(product.image).height}" loading="lazy" decoding="async">
-                                <div class="info">
-                                    <h4>${product.name}</h4>
-                                    <span>${product.price}</span>
-                                </div>
-                                <span class="price">${product.price}</span>
-                            </a>
-                        `).join('');
-                    });
-                }
-            }
-
-            // ============================================
-            // SCROLL TO TOP
-            // ============================================
-            const scrollTopBtn = document.getElementById('scrollTop');
-            if (scrollTopBtn) {
-                window.addEventListener('scroll', function() {
-                    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
-                });
-                scrollTopBtn.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // Update badges
-            if (typeof window.updateWishlistBadge === 'function') {
-                window.updateWishlistBadge();
-            }
-            if (typeof window.updateQuoteBadge === 'function') {
-                window.updateQuoteBadge();
-            }
-
-            });
-    </script>
+    <script>(function(){const menu=document.querySelector("#siteShellHeader .shell-menu"),links=document.querySelector("#siteShellHeader .shell-links");if(menu&&links){const close=function(){links.classList.remove("is-open");menu.setAttribute("aria-expanded","false");const icon=menu.querySelector("i");if(icon){icon.classList.remove("fa-times");icon.classList.add("fa-bars");}};menu.addEventListener("click",function(){const open=links.classList.toggle("is-open");menu.setAttribute("aria-expanded",String(open));const icon=menu.querySelector("i");if(icon){icon.classList.toggle("fa-bars",!open);icon.classList.toggle("fa-times",open);}});links.querySelectorAll("a").forEach(function(link){link.addEventListener("click",close);});window.addEventListener("resize",function(){if(window.innerWidth>800)close();},{passive:true});}document.querySelectorAll(".faq-question").forEach(function(button){button.addEventListener("click",function(){const item=this.closest(".faq-item");const open=item.classList.toggle("active");this.setAttribute("aria-expanded",String(open));});});const top=document.getElementById("scrollTop");if(top){window.addEventListener("scroll",function(){top.classList.toggle("show",window.scrollY>400);},{passive:true});top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});}document.querySelectorAll("#current-year").forEach(function(year){year.textContent=String(new Date().getFullYear());});}());</script>
 
 </body>
 </html>
