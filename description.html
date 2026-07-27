@@ -25,395 +25,9 @@
     <meta name="twitter:image" content="images/og-products.jpg" />
 
     <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-
     <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css" />
-
-    <style>
-        /* removed corrupted comment */
-        .description-hero {
-            padding: clamp(2.5rem, 6vw, 4.5rem) 0;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .description-hero h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .description-hero p {
-            font-size: var(--text-lg);
-            color: var(--text-secondary);
-            max-width: 720px;
-        }
-
-        .description-section {
-            padding: var(--spacing-3xl) 0;
-        }
-
-        .product-description-card {
-            background: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            margin-bottom: var(--spacing-2xl);
-            transition: all var(--transition-base);
-        }
-
-        .product-description-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--brand-primary-light);
-        }
-
-        .product-description-card .card-header {
-            padding: var(--spacing-lg) var(--spacing-xl);
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: var(--spacing-md);
-        }
-
-        .product-description-card .card-header h2 {
-            font-size: var(--text-2xl);
-            margin-bottom: 0;
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-        }
-
-        .product-description-card .card-header .badge-group {
-            display: flex;
-            gap: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .product-description-card .card-header .badge-group .badge {
-            font-size: 0.65rem;
-            padding: 0.2rem 0.8rem;
-        }
-
-        .product-description-card .card-body {
-            padding: var(--spacing-xl);
-        }
-
-        .product-description-card .card-body .strength-tag {
-            display: inline-block;
-            background: var(--bg-accent);
-            color: var(--brand-primary);
-            font-weight: 700;
-            font-size: var(--text-sm);
-            padding: 0.2rem 1rem;
-            border-radius: var(--radius-full);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .product-description-card .card-body .description-text {
-            font-size: var(--text-base);
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .product-description-card .card-body .uses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .product-description-card .card-body .uses-grid .use-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            padding: var(--spacing-sm) var(--spacing-md);
-            background: var(--bg-secondary);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all var(--transition-fast);
-        }
-
-        .product-description-card .card-body .uses-grid .use-item:hover {
-            background: var(--bg-accent);
-            border-color: var(--brand-primary-light);
-            color: var(--brand-primary);
-        }
-
-        .product-description-card .card-body .uses-grid .use-item i {
-            color: var(--brand-primary);
-            font-size: var(--text-sm);
-            width: 1.25rem;
-            text-align: center;
-        }
-
-        .product-description-card .card-body .key-attributes {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-lg);
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .product-description-card .card-body .key-attributes .attr-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            font-size: var(--text-sm);
-            color: var(--text-secondary);
-        }
-
-        .product-description-card .card-body .key-attributes .attr-item i {
-            color: #10b981;
-            font-size: var(--text-sm);
-        }
-
-        .product-description-card .card-body .action-row {
-            margin-top: var(--spacing-lg);
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-        }
-
-        .product-description-card .card-body .action-row .btn {
-            font-size: var(--text-sm);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .product-description-card .card-header {
-                padding: var(--spacing-md);
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .product-description-card .card-header h2 {
-                font-size: var(--text-xl);
-            }
-
-            .product-description-card .card-body {
-                padding: var(--spacing-md);
-            }
-
-            .product-description-card .card-body .uses-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .product-description-card .card-body .key-attributes {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product-description-card .card-header h2 {
-                font-size: var(--text-lg);
-            }
-
-            .product-description-card .card-body .uses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-description-card .card-body .key-attributes {
-                grid-template-columns: 1fr;
-            }
-
-            .product-description-card .card-body .action-row {
-                flex-direction: column;
-            }
-
-            .product-description-card .card-body .action-row .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* Dark Mode */
-        @media (prefers-color-scheme: dark) {
-            .description-hero {
-                background: var(--bg-secondary);
-                border-bottom-color: var(--border-color);
-            }
-
-            .product-description-card .card-header {
-                background: var(--bg-tertiary);
-                border-bottom-color: var(--border-color);
-            }
-
-            .product-description-card .card-body .uses-grid .use-item {
-                background: var(--bg-tertiary);
-                border-color: var(--border-color);
-            }
-
-            .product-description-card .card-body .uses-grid .use-item:hover {
-                background: var(--bg-accent);
-            }
-        }
-
-        /* Icon Colors */
-        .icon-primary {
-            color: var(--brand-primary);
-        }
-
-        .icon-success {
-            color: #10b981;
-        }
-
-        .icon-warning {
-            color: #f59e0b;
-        }
-
-        /* Badge Styles */
-        .badge-accent {
-            background: var(--bg-accent);
-            color: var(--brand-primary);
-        }
-
-        .badge-premium {
-            background: var(--brand-secondary);
-            color: var(--text-primary);
-        }
-
-        .badge-eco {
-            background: #10b981;
-            color: white;
-        }
-
-        /* Description Text */
-        .description-text-small {
-            font-size: var(--text-sm);
-            color: var(--text-muted);
-        }
-
-        /* Card Subheadings */
-        .card-subheading {
-            font-size: var(--text-base);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .card-subheading-top {
-            margin-top: var(--spacing-lg);
-        }
-
-        /* Comparison Card */
-        .card-comparison {
-            background: var(--bg-secondary);
-            border: 2px solid var(--brand-primary-light);
-        }
-
-        .card-header-primary {
-            background: var(--bg-primary);
-        }
-
-        .comparison-title {
-            font-size: var(--text-xl);
-        }
-
-        /* Table Styles */
-        .card-body-table {
-            overflow-x: auto;
-            padding: var(--spacing-lg);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: var(--text-sm);
-        }
-
-        .table-header {
-            background: var(--bg-primary);
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .table-header th {
-            padding: var(--spacing-sm);
-            text-align: left;
-        }
-
-        .comparison-table tbody tr {
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .comparison-table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .comparison-table td {
-            padding: var(--spacing-sm);
-        }
-
-        .table-note {
-            font-size: var(--text-xs);
-            color: var(--text-muted);
-            margin-top: var(--spacing-md);
-        }
-
-        .toast-notification {
-            position: fixed;
-            bottom: 8rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-xl);
-            font-weight: 600;
-            font-size: var(--text-sm);
-            z-index: var(--z-toast);
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-base);
-            border: 1px solid var(--border-color);
-            border-left: 5px solid var(--brand-secondary);
-            max-width: 90%;
-            text-align: center;
-        }
-
-        .toast-notification.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .toast-notification {
-                bottom: 6rem;
-                font-size: var(--text-xs);
-                padding: var(--spacing-sm) var(--spacing-md);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .toast-notification {
-                bottom: 5rem;
-                font-size: 0.6rem;
-                padding: var(--spacing-xs) var(--spacing-sm);
-                max-width: 95%;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .toast-notification {
-                background: var(--bg-secondary);
-                border-color: var(--border-color);
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="site-consistency.css" />
+      <link rel="stylesheet" href="assets/css/description.min.css" />
+  <link rel="stylesheet" href="assets/css/site-core.min.css" />
 </head>
 
 <body>
@@ -427,7 +41,7 @@
     <!-- =====================================================
     HEADER
     ===================================================== -->
-    <header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="index.html"><img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement" width="84" height="58"></a><button class="shell-menu" type="button" aria-label="Open navigation menu" aria-controls="siteShellLinks" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button><ul class="shell-links" id="siteShellLinks"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="description.html">Product Guide</a></li><li><a href="prices.html">Prices</a></li><li><a href="delivery.html">Delivery Areas</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
+    <header id="siteShellHeader"><nav class="shell-nav"><a class="shell-logo" href="index.html"><img src="Bamburi_Cement_Logo-84x58.png" alt="Bamburi Cement" width="84" height="58"></a><button class="shell-menu" type="button" aria-label="Open navigation menu" aria-controls="siteShellLinks" aria-expanded="false"><i class="ui-icon fas fa-bars" aria-hidden="true">☰</i></button><ul class="shell-links" id="siteShellLinks"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="description.html">Product Guide</a></li><li><a href="prices.html">Prices</a></li><li><a href="delivery.html">Delivery Areas</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header>
 
     <!-- =====================================================
     HERO
@@ -451,7 +65,7 @@
             <div class="product-description-card" id="fundi">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi Fundi
                     </h2>
                     <div class="badge-group">
@@ -469,32 +83,32 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-brick"></i> Brick & Block Laying</div>
-                        <div class="use-item"><i class="fas fa-paint-roller"></i> Interior Plastering</div>
-                        <div class="use-item"><i class="fas fa-building"></i> Exterior Rendering</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Floor Screeding</div>
-                        <div class="use-item"><i class="fas fa-tools"></i> Repair Works</div>
-                        <div class="use-item"><i class="fas fa-arrows-alt-h"></i> Pointing Joints</div>
+                        <div class="use-item"><i class="ui-icon fas fa-brick" aria-hidden="true">◆</i> Brick & Block Laying</div>
+                        <div class="use-item"><i class="ui-icon fas fa-paint-roller" aria-hidden="true">◆</i> Interior Plastering</div>
+                        <div class="use-item"><i class="ui-icon fas fa-building" aria-hidden="true">▦</i> Exterior Rendering</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Floor Screeding</div>
+                        <div class="use-item"><i class="ui-icon fas fa-tools" aria-hidden="true">◆</i> Repair Works</div>
+                        <div class="use-item"><i class="ui-icon fas fa-arrows-alt-h" aria-hidden="true">◆</i> Pointing Joints</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> Consistent mix for reliable mortar & plaster</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Improved workability for easier application</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Strong bonding for durable masonry structures</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Optimized water retention for better curing</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Cost-effective solution for general construction</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Consistent mix for reliable mortar & plaster</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Improved workability for easier application</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Strong bonding for durable masonry structures</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Optimized water retention for better curing</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Cost-effective solution for general construction</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=1" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Fundi" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -506,7 +120,7 @@
             <div class="product-description-card" id="tembo">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi Tembo
                     </h2>
                     <div class="badge-group">
@@ -521,32 +135,32 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-home"></i> Foundations</div>
-                        <div class="use-item"><i class="fas fa-columns"></i> Columns & Beams</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Slabs</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges & Infrastructure</div>
-                        <div class="use-item"><i class="fas fa-road"></i> Roads & Pavements</div>
-                        <div class="use-item"><i class="fas fa-water"></i> Water-retaining Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> Foundations</div>
+                        <div class="use-item"><i class="ui-icon fas fa-columns" aria-hidden="true">◆</i> Columns & Beams</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Slabs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges & Infrastructure</div>
+                        <div class="use-item"><i class="ui-icon fas fa-road" aria-hidden="true">◆</i> Roads & Pavements</div>
+                        <div class="use-item"><i class="ui-icon fas fa-water" aria-hidden="true">◆</i> Water-retaining Structures</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> High-strength mix for robust structural applications</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Enhanced workability for smoother concrete placement</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Superior bonding for resilient structural integrity</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Sulphate-resistant for aggressive environments</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Optimized setting time for efficient project timelines</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> High-strength mix for robust structural applications</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Enhanced workability for smoother concrete placement</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Superior bonding for resilient structural integrity</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Sulphate-resistant for aggressive environments</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Optimized setting time for efficient project timelines</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=2" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Tembo" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -558,7 +172,7 @@
             <div class="product-description-card" id="nguvu">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi Nguvu
                     </h2>
                     <div class="badge-group">
@@ -573,34 +187,34 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-home"></i> Foundations</div>
-                        <div class="use-item"><i class="fas fa-columns"></i> Columns, Beams & Staircases</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Suspended Slabs</div>
-                        <div class="use-item"><i class="fas fa-water"></i> Water Retaining Structures</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges & Overpasses</div>
-                        <div class="use-item"><i class="fas fa-industry"></i> Precast Slabs & Beams</div>
-                        <div class="use-item"><i class="fas fa-train"></i> Railway Sleepers</div>
-                        <div class="use-item"><i class="fas fa-wind"></i> Windmill Foundations</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> Foundations</div>
+                        <div class="use-item"><i class="ui-icon fas fa-columns" aria-hidden="true">◆</i> Columns, Beams & Staircases</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Suspended Slabs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-water" aria-hidden="true">◆</i> Water Retaining Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges & Overpasses</div>
+                        <div class="use-item"><i class="ui-icon fas fa-industry" aria-hidden="true">◆</i> Precast Slabs & Beams</div>
+                        <div class="use-item"><i class="ui-icon fas fa-train" aria-hidden="true">◆</i> Railway Sleepers</div>
+                        <div class="use-item"><i class="ui-icon fas fa-wind" aria-hidden="true">◆</i> Windmill Foundations</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> Maximized compressive strength for exceptional load-bearing</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Long-term durability for critical infrastructure</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Strong bonding for bricks and blocks</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Smooth plastering and easy application</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Sulphate-resistant for aggressive environments</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Maximized compressive strength for exceptional load-bearing</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Long-term durability for critical infrastructure</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Strong bonding for bricks and blocks</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Smooth plastering and easy application</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Sulphate-resistant for aggressive environments</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=3" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Nguvu" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -612,7 +226,7 @@
             <div class="product-description-card" id="powermax">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi PowerMax
                     </h2>
                     <div class="badge-group">
@@ -628,34 +242,34 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-city"></i> High-Rise Construction</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges</div>
-                        <div class="use-item"><i class="fas fa-water"></i> Large Water Holding Structures</div>
-                        <div class="use-item"><i class="fas fa-home"></i> Residential Foundations</div>
-                        <div class="use-item"><i class="fas fa-dam"></i> Dams & Reservoirs</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Massive Beams & Columns</div>
-                        <div class="use-item"><i class="fas fa-road"></i> Soil Stabilization</div>
-                        <div class="use-item"><i class="fas fa-cubes"></i> Precast Paving Slabs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-city" aria-hidden="true">◆</i> High-Rise Construction</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges</div>
+                        <div class="use-item"><i class="ui-icon fas fa-water" aria-hidden="true">◆</i> Large Water Holding Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> Residential Foundations</div>
+                        <div class="use-item"><i class="ui-icon fas fa-dam" aria-hidden="true">◆</i> Dams & Reservoirs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Massive Beams & Columns</div>
+                        <div class="use-item"><i class="ui-icon fas fa-road" aria-hidden="true">◆</i> Soil Stabilization</div>
+                        <div class="use-item"><i class="ui-icon fas fa-cubes" aria-hidden="true">◇</i> Precast Paving Slabs</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> Consistent high-strength mix for superior structural performance</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Enhanced workability for seamless concrete application</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Exceptional bonding for resilient and robust structures</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Low heat of hydration </div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Optimized setting time for faster project completion</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Consistent high-strength mix for superior structural performance</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Enhanced workability for seamless concrete application</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Exceptional bonding for resilient and robust structures</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Low heat of hydration </div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Optimized setting time for faster project completion</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=4" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerMax" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -667,7 +281,7 @@
             <div class="product-description-card" id="duracem">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi Duracem
                     </h2>
                     <div class="badge-group">
@@ -685,34 +299,34 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-water"></i> Water-retaining Structures</div>
-                        <div class="use-item"><i class="fas fa-ship"></i> Coastal & Marine Construction</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges (Makupa Bridge, Mombasa)</div>
-                        <div class="use-item"><i class="fas fa-stadium"></i> Stadiums (Talanta Sports City)</div>
-                        <div class="use-item"><i class="fas fa-dam"></i> Dams (Thwake Dam)</div>
-                        <div class="use-item"><i class="fas fa-industry"></i> Aggressive Chemical Environments</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Mass Concrete Structures</div>
-                        <div class="use-item"><i class="fas fa-home"></i> Foundations</div>
+                        <div class="use-item"><i class="ui-icon fas fa-water" aria-hidden="true">◆</i> Water-retaining Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-ship" aria-hidden="true">◆</i> Coastal & Marine Construction</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges (Makupa Bridge, Mombasa)</div>
+                        <div class="use-item"><i class="ui-icon fas fa-stadium" aria-hidden="true">◆</i> Stadiums (Talanta Sports City)</div>
+                        <div class="use-item"><i class="ui-icon fas fa-dam" aria-hidden="true">◆</i> Dams (Thwake Dam)</div>
+                        <div class="use-item"><i class="ui-icon fas fa-industry" aria-hidden="true">◆</i> Aggressive Chemical Environments</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Mass Concrete Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> Foundations</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> Superior sulphate resistance</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> 64% lower carbon emissions than OPC</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Very low heat of hydration</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> High strength durable concrete</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Maintains durability in aggressive environments</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Superior sulphate resistance</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> 64% lower carbon emissions than OPC</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Very low heat of hydration</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> High strength durable concrete</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Maintains durability in aggressive environments</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=5" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Duracem" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -724,7 +338,7 @@
             <div class="product-description-card" id="powerplus">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi PowerPlus
                     </h2>
                     <div class="badge-group">
@@ -743,34 +357,34 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-city"></i> Structures greater than 4 floors</div>
-                        <div class="use-item"><i class="fas fa-home"></i> Foundations, Beams, Columns, Slabs</div>
-                        <div class="use-item"><i class="fas fa-dam"></i> Dams & Reservoirs</div>
-                        <div class="use-item"><i class="fas fa-road"></i> Heavy-duty Roads & Industrial Floors</div>
-                        <div class="use-item"><i class="fas fa-water"></i> Water Retaining Structures</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges</div>
-                        <div class="use-item"><i class="fas fa-tunnel"></i> Tunnel Lining</div>
-                        <div class="use-item"><i class="fas fa-home"></i> General Concrete Work</div>
+                        <div class="use-item"><i class="ui-icon fas fa-city" aria-hidden="true">◆</i> Structures greater than 4 floors</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> Foundations, Beams, Columns, Slabs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-dam" aria-hidden="true">◆</i> Dams & Reservoirs</div>
+                        <div class="use-item"><i class="ui-icon fas fa-road" aria-hidden="true">◆</i> Heavy-duty Roads & Industrial Floors</div>
+                        <div class="use-item"><i class="ui-icon fas fa-water" aria-hidden="true">◆</i> Water Retaining Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges</div>
+                        <div class="use-item"><i class="ui-icon fas fa-tunnel" aria-hidden="true">◆</i> Tunnel Lining</div>
+                        <div class="use-item"><i class="ui-icon fas fa-home" aria-hidden="true">⌂</i> General Concrete Work</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> High strength concrete</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> High early age strength gain</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Quick setting and high 28-day strengths</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Versatile </div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Ideal where high concrete strengths are needed</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> High strength concrete</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> High early age strength gain</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Quick setting and high 28-day strengths</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Versatile </div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Ideal where high concrete strengths are needed</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=6" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20PowerPlus" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -782,7 +396,7 @@
             <div class="product-description-card" id="powercrete">
                 <div class="card-header">
                     <h2>
-                        <i class="fas fa-cube icon-primary"></i>
+                        <i class="ui-icon fas fa-cube icon-primary" aria-hidden="true">◇</i>
                         Bamburi Powercrete
                     </h2>
                     <div class="badge-group">
@@ -798,32 +412,32 @@
                     </p>
 
                     <h4 class="card-subheading">
-                        <i class="fas fa-check-circle icon-success"></i> Key Applications
+                        <i class="ui-icon fas fa-check-circle icon-success" aria-hidden="true">✓</i> Key Applications
                     </h4>
                     <div class="uses-grid">
-                        <div class="use-item"><i class="fas fa-city"></i> High-Rise Structures</div>
-                        <div class="use-item"><i class="fas fa-bridge"></i> Bridges</div>
-                        <div class="use-item"><i class="fas fa-tools"></i> Prestressed Concrete</div>
-                        <div class="use-item"><i class="fas fa-tools"></i> Post-Tensioned Concrete</div>
-                        <div class="use-item"><i class="fas fa-industry"></i> Advanced Engineering Projects</div>
-                        <div class="use-item"><i class="fas fa-layer-group"></i> Very High Strength Concrete</div>
+                        <div class="use-item"><i class="ui-icon fas fa-city" aria-hidden="true">◆</i> High-Rise Structures</div>
+                        <div class="use-item"><i class="ui-icon fas fa-bridge" aria-hidden="true">◆</i> Bridges</div>
+                        <div class="use-item"><i class="ui-icon fas fa-tools" aria-hidden="true">◆</i> Prestressed Concrete</div>
+                        <div class="use-item"><i class="ui-icon fas fa-tools" aria-hidden="true">◆</i> Post-Tensioned Concrete</div>
+                        <div class="use-item"><i class="ui-icon fas fa-industry" aria-hidden="true">◆</i> Advanced Engineering Projects</div>
+                        <div class="use-item"><i class="ui-icon fas fa-layer-group" aria-hidden="true">▱</i> Very High Strength Concrete</div>
                     </div>
 
                     <h4 class="card-subheading card-subheading-top">
-                        <i class="fas fa-star icon-warning"></i> Key Features
+                        <i class="ui-icon fas fa-star icon-warning" aria-hidden="true">★</i> Key Features
                     </h4>
                     <div class="key-attributes">
-                        <div class="attr-item"><i class="fas fa-check"></i> Ultra-high strength (52.5 MPa)</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Fast setting </div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Highest early-day and 28-day strengths</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Ideal for prestressed and post-tensioned concrete</div>
-                        <div class="attr-item"><i class="fas fa-check"></i> Perfect for the most demanding structural applications</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Ultra-high strength (52.5 MPa)</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Fast setting </div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Highest early-day and 28-day strengths</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Ideal for prestressed and post-tensioned concrete</div>
+                        <div class="attr-item"><i class="ui-icon fas fa-check" aria-hidden="true">✓</i> Perfect for the most demanding structural applications</div>
                     </div>
 
                     <div class="action-row">
                         <a href="product.html?id=7" class="btn btn-primary">View Product Details</a>
                         <a href="https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20Bamburi%20Powercrete" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                            <i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i> Order via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -835,7 +449,7 @@
             <div class="product-description-card card-comparison">
                 <div class="card-header card-header-primary">
                     <h2 class="comparison-title">
-                        <i class="fas fa-table icon-primary"></i>
+                        <i class="ui-icon fas fa-table icon-primary" aria-hidden="true">◆</i>
                         Quick Comparison Guide
                     </h2>
                 </div>
@@ -895,7 +509,7 @@
                         </tbody>
                     </table>
                     <p class="table-note">
-                        <i class="fas fa-info-circle"></i> MPa = Megapascal, a unit used to measure the compressive strength of concrete.
+                        <i class="ui-icon fas fa-info-circle" aria-hidden="true">i</i> MPa = Megapascal, a unit used to measure the compressive strength of concrete.
                     </p>
                 </div>
             </div>
@@ -957,24 +571,21 @@
     <!-- =====================================================
     FLOATING BUTTONS
     ===================================================== -->
-    <a href="tel:+254750210207" class="floating-call" aria-label="Call"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <a href="tel:+254750210207" class="floating-call" aria-label="Call"><i class="ui-icon fas fa-phone" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8a15.8 15.8 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg></i></a>
+    <a href="https://wa.me/254750210207" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i></a>
+    <button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="ui-icon fas fa-chevron-up" aria-hidden="true">↑</i></button>
 
     <!-- =====================================================
     SCRIPTS
     ===================================================== -->
-    <script src="products.js"></script>
-        <!-- Shared floating contact and quote-cart controls -->
+    <!-- Shared floating contact and quote-cart controls -->
     <div class="floating-buttons" aria-label="Quick actions">
         
-        <a href="https://wa.me/254750210207" class="float-btn whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-        <a href="tel:+254750210207" class="float-btn call-btn" aria-label="Call Bamburi Cement"><i class="fas fa-phone" aria-hidden="true"></i></a>
+        <a href="https://wa.me/254750210207" class="float-btn whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="ui-icon fab fa-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a9.8 9.8 0 0 0-8.4 14.9L2.3 22l5.2-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.4-1.5-3.3-2.9-.2-.3 0-.5.1-.6l.6-.7c.1-.2.2-.4.1-.6l-.8-2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5 1.9.8 3.1.9 4.2.7.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.2-.2-.4-.3-.6-.4Z"/></svg></i></a>
+        <a href="tel:+254750210207" class="float-btn call-btn" aria-label="Call Bamburi Cement"><i class="ui-icon fas fa-phone" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6.6 10.8a15.8 15.8 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg></i></a>
     </div>
     
     
-    <script src="script.js"></script>
-
     <script>
         // ============================================
         // MOBILE MENU & SCROLL TOP
@@ -1047,5 +658,6 @@
             });
     </script>
 
+  <script defer src="site-core.min.js"></script>
 </body>
 </html>
