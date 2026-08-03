@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
         message += '\n\nPlease send me your best pricing and delivery options.';
 
         const encoded = encodeURIComponent(message);
-        const phone = '254750210207';
+        const phone = '254755803749';
         window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
     };
 

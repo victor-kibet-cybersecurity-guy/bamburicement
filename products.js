@@ -249,7 +249,7 @@ function renderProducts() {
         }
 
         // WhatsApp link
-        const waLink = `https://wa.me/254750210207?text=Hello%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}%20at%20KES%20${product.price.replace(/[^0-9.]/g,'')}`;
+        const waLink = `https://wa.me/254755803749?text=Hello%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}%20at%20KES%20${product.price.replace(/[^0-9.]/g,'')}`;
 
         return `
             <div class="product-card" data-product-id="${product.id}" data-product-link="${product.link}">
