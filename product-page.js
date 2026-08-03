@@ -44,24 +44,32 @@ function getProductImageDimensions(imagePath) {
             loadingState.style.display = 'none';
             content.style.display = 'block';
 
-            // --- Update Page Title & Meta ---
-            document.title = `${product.name} | Bamburi Cement PLC`;
-            document.querySelector('meta[name="description"]').content =
-                `Buy ${product.name} in Kenya at ${product.price}. ${product.description.substring(0, 150)}`;
-
-            // --- Open Graph ---
-            document.querySelector('meta[property="og:title"]').content = `${product.name} | Bamburi Cement PLC`;
-            document.querySelector('meta[property="og:description"]').content =
-                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
-            document.querySelector('meta[property="og:image"]').content = product.image;
-
-            // --- Twitter Card ---
-            document.querySelector('meta[name="twitter:title"]').content = `${product.name} | Bamburi Cement PLC`;
-            document.querySelector('meta[name="twitter:description"]').content =
-                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`;
-            document.querySelector('meta[name="twitter:image"]').content = product.image;            // --- JSON-LD Schema ---
+            // --- Update Page Title, canonical URL and social metadata ---
             const productUrl = new URL(window.location.href);
             productUrl.searchParams.set('id', product.id);
+            const absoluteProductImage = new URL(product.image, window.location.href).href;
+            const setMetaContent = (selector, value) => {
+                const element = document.querySelector(selector);
+                if (element) element.content = value;
+            };
+
+            document.title = `${product.name} | Bamburi Cement PLC`;
+            setMetaContent('meta[name="description"]',
+                `Buy ${product.name} in Kenya at ${product.price}. ${product.description.substring(0, 150)}`);
+            setMetaContent('meta[property="og:title"]', `${product.name} | Bamburi Cement PLC`);
+            setMetaContent('meta[property="og:description"]',
+                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`);
+            setMetaContent('meta[property="og:image"]', absoluteProductImage);
+            setMetaContent('meta[property="og:url"]', productUrl.href);
+            setMetaContent('meta[name="twitter:title"]', `${product.name} | Bamburi Cement PLC`);
+            setMetaContent('meta[name="twitter:description"]',
+                `${product.name} at ${product.price}. ${product.description.substring(0, 150)}`);
+            setMetaContent('meta[name="twitter:image"]', absoluteProductImage);
+
+            const canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) canonicalLink.href = productUrl.href;
+
+            // --- JSON-LD Schema ---
             const schemaStockText = product.stock || 'In Stock';
             const schemaAvailability = schemaStockText === 'In Stock'
                 ? 'https://schema.org/InStock'
